@@ -23,7 +23,6 @@ import {
   ArrowRight,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { ThemeToggle } from "@/components/ui/theme-toggle";
 import { NAV_LINKS } from "@/lib/constants";
 import { cn } from "@/lib/utils";
 
@@ -141,9 +140,6 @@ export function Header() {
 
             {/* Right Actions */}
             <div className="flex items-center gap-2 sm:gap-3">
-              {/* Theme Toggle */}
-              <ThemeToggle />
-
               {/* Cart */}
               <Link
                 href="/store"

@@ -21,7 +21,6 @@ import {
   Bell,
 } from "lucide-react";
 import { cn } from "@/lib/utils";
-import { ThemeToggle } from "@/components/ui/theme-toggle";
 
 const sidebarLinks = [
   { label: "Dashboard", href: "/admin", icon: LayoutDashboard },
@@ -80,7 +79,6 @@ export default function AdminLayout({
           </div>
         </div>
         <div className="flex items-center gap-1">
-          <ThemeToggle />
           <button className="p-2 text-zinc-500 hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-white transition-colors relative">
             <Bell className="w-5 h-5" />
             <span className="absolute top-1.5 right-1.5 w-2 h-2 bg-orange-500 rounded-full" />
@@ -147,10 +145,6 @@ export default function AdminLayout({
 
         {/* Bottom */}
         <div className="absolute bottom-0 left-0 right-0 border-t border-zinc-200 dark:border-zinc-800/50 p-3 space-y-1">
-          <div className="flex items-center justify-between px-3 py-1">
-            <span className="text-xs text-zinc-400">Theme</span>
-            <ThemeToggle />
-          </div>
           <Link
             href="/"
             className="flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm text-zinc-500 hover:text-zinc-900 hover:bg-zinc-100 dark:hover:text-white dark:hover:bg-zinc-800/50 transition-all"
