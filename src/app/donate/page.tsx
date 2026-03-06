@@ -143,10 +143,10 @@ function ImpactSection() {
                     <area.icon className="w-4 h-4 sm:w-5 sm:h-5 text-orange-500" />
                   </div>
                   <div>
-                    <h3 className="text-base sm:text-lg font-bold text-zinc-900 font-display mb-1 sm:mb-2">
+                    <h3 className="text-base sm:text-lg font-bold text-white font-display mb-1 sm:mb-2">
                       {area.title}
                     </h3>
-                    <p className="text-xs sm:text-sm text-zinc-600 leading-relaxed">
+                    <p className="text-xs sm:text-sm text-zinc-400 leading-relaxed">
                       {area.description}
                     </p>
                   </div>

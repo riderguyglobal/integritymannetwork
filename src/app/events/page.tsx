@@ -93,12 +93,12 @@ function EventSection({ event, index }: { event: (typeof EVENTS_INFO)[number]; i
             <CardContent className="p-0">
               <div className="grid grid-cols-1 lg:grid-cols-5 gap-0">
                 {/* Left */}
-                <div className="lg:col-span-2 p-5 sm:p-8 md:p-12 flex flex-col items-start justify-center border-b lg:border-b-0 lg:border-r border-zinc-200/80">
+                <div className="lg:col-span-2 p-5 sm:p-8 md:p-12 flex flex-col items-start justify-center border-b lg:border-b-0 lg:border-r border-white/10">
                   <div className="w-12 h-12 sm:w-16 sm:h-16 rounded-xl sm:rounded-2xl bg-linear-to-br from-orange-500/15 to-orange-600/5 border border-orange-500/20 flex items-center justify-center mb-4 sm:mb-6">
                     <Icon className="w-5 h-5 sm:w-7 sm:h-7 text-orange-500" />
                   </div>
                   <Badge className="mb-2 sm:mb-3">{event.schedule}</Badge>
-                  <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-zinc-900 font-display mb-3 sm:mb-4">{event.name}</h2>
+                  <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-white font-display mb-3 sm:mb-4">{event.name}</h2>
                   <div className="mt-4 sm:mt-8 flex flex-wrap gap-3 sm:gap-4 text-xs text-zinc-500">
                     <div className="flex items-center gap-1.5"><Users className="w-3.5 h-3.5 text-orange-500" /><span>Men of Purpose</span></div>
                     <div className="flex items-center gap-1.5"><MapPin className="w-3.5 h-3.5 text-orange-500" /><span>See Schedule</span></div>
@@ -106,9 +106,9 @@ function EventSection({ event, index }: { event: (typeof EVENTS_INFO)[number]; i
                 </div>
 
                 {/* Right */}
-                <div className="lg:col-span-3 p-5 sm:p-8 md:p-12 space-y-4 sm:space-y-5 text-sm sm:text-base text-zinc-600 leading-relaxed">
+                <div className="lg:col-span-3 p-5 sm:p-8 md:p-12 space-y-4 sm:space-y-5 text-sm sm:text-base text-zinc-400 leading-relaxed">
                   <p>{event.description}</p>
-                  <p className="text-orange-600 italic font-medium text-base sm:text-lg border-l-2 border-orange-500/40 pl-4 sm:pl-6">{event.highlight}</p>
+                  <p className="text-orange-500 italic font-medium text-base sm:text-lg border-l-2 border-orange-500/40 pl-4 sm:pl-6">{event.highlight}</p>
                 </div>
               </div>
             </CardContent>

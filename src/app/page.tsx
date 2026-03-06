@@ -181,8 +181,8 @@ function DefinitionsSection() {
                       <Icon className="w-5 h-5 sm:w-6 sm:h-6 text-orange-500" />
                     </div>
                     <div>
-                      <h3 className="text-lg sm:text-xl font-bold text-zinc-900 mb-2 sm:mb-3 font-display">{def.term}</h3>
-                      <p className="text-xs sm:text-sm text-zinc-600 leading-relaxed">{def.definition}</p>
+                      <h3 className="text-lg sm:text-xl font-bold text-white mb-2 sm:mb-3 font-display">{def.term}</h3>
+                      <p className="text-xs sm:text-sm text-zinc-400 leading-relaxed">{def.definition}</p>
                     </div>
                   </div>
                 </Card>
@@ -237,9 +237,9 @@ function ChannelsPreview() {
                         <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-xl bg-linear-to-br from-orange-500/20 to-orange-600/10 border border-orange-500/20 flex items-center justify-center mb-5 sm:mb-6 group-hover:from-orange-500/30 transition-all duration-500">
                           <Icon className="w-5 h-5 sm:w-6 sm:h-6 text-orange-500" />
                         </div>
-                        <h3 className="text-lg sm:text-xl font-bold text-zinc-900 mb-2">{channel.title}</h3>
+                        <h3 className="text-lg sm:text-xl font-bold text-white mb-2">{channel.title}</h3>
                         <p className="text-[10px] sm:text-xs text-orange-500/70 font-medium uppercase tracking-wider mb-3 sm:mb-4">{channel.subtitle}</p>
-                        <p className="text-sm text-zinc-600 leading-relaxed line-clamp-3">{channel.description}</p>
+                        <p className="text-sm text-zinc-400 leading-relaxed line-clamp-3">{channel.description}</p>
                         <div className="mt-5 flex items-center gap-1 text-sm text-orange-500 font-medium">
                           Learn more <ChevronRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                         </div>
@@ -323,9 +323,9 @@ function EventsPreview() {
                       </div>
                       <Badge>{event.schedule}</Badge>
                     </div>
-                    <h3 className="text-lg sm:text-xl font-bold text-zinc-900 mb-2 sm:mb-3 font-display">{event.name}</h3>
-                    <p className="text-xs sm:text-sm text-zinc-600 leading-relaxed flex-1">{event.description}</p>
-                    <div className="mt-4 sm:mt-6 pt-4 sm:pt-5 border-t border-zinc-200">
+                    <h3 className="text-lg sm:text-xl font-bold text-white mb-2 sm:mb-3 font-display">{event.name}</h3>
+                    <p className="text-xs sm:text-sm text-zinc-400 leading-relaxed flex-1">{event.description}</p>
+                    <div className="mt-4 sm:mt-6 pt-4 sm:pt-5 border-t border-white/10">
                       <p className="text-xs sm:text-sm text-orange-500 italic font-medium">&ldquo;{event.highlight}&rdquo;</p>
                     </div>
                   </CardContent>
