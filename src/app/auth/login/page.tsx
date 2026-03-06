@@ -4,20 +4,58 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import { Shield, Mail, Lock, Eye, EyeOff, ArrowRight } from "lucide-react";
 import Link from "next/link";
+import { useRouter, useSearchParams } from "next/navigation";
+import { signIn } from "next-auth/react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Card, CardContent } from "@/components/ui/card";
 
 export default function LoginPage() {
+  const router = useRouter();
+  const searchParams = useSearchParams();
   const [showPassword, setShowPassword] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
+  const [isGoogleLoading, setIsGoogleLoading] = useState(false);
+  const [error, setError] = useState("");
+  const justRegistered = searchParams.get("registered") === "true";
+
+  const handleGoogleSignIn = async () => {
+    setIsGoogleLoading(true);
+    setError("");
+    try {
+      await signIn("google", { callbackUrl: "/dashboard" });
+    } catch {
+      setError("Google sign-in failed. Please try again.");
+      setIsGoogleLoading(false);
+    }
+  };
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setIsLoading(true);
-    // Auth logic will be connected to NextAuth
-    await new Promise((resolve) => setTimeout(resolve, 1500));
-    setIsLoading(false);
+    setError("");
+
+    const formData = new FormData(e.currentTarget);
+    const email = formData.get("email") as string;
+    const password = formData.get("password") as string;
+
+    try {
+      const result = await signIn("credentials", {
+        email,
+        password,
+        redirect: false,
+      });
+
+      if (result?.error) {
+        setError("Invalid email or password.");
+        setIsLoading(false);
+      } else {
+        router.push("/dashboard");
+      }
+    } catch {
+      setError("Something went wrong. Please try again.");
+      setIsLoading(false);
+    }
   };
 
   return (
@@ -59,7 +97,9 @@ export default function LoginPage() {
               {/* Google Sign In */}
               <button
                 type="button"
-                className="w-full flex items-center justify-center gap-3 px-4 py-3 rounded-lg bg-zinc-100 dark:bg-zinc-800/50 border border-zinc-200 dark:border-zinc-700/50 text-sm font-medium text-zinc-600 dark:text-zinc-300 hover:bg-zinc-200 dark:hover:bg-zinc-800 hover:border-zinc-300 dark:hover:border-zinc-600 transition-all"
+                onClick={handleGoogleSignIn}
+                disabled={isGoogleLoading}
+                className="w-full flex items-center justify-center gap-3 px-4 py-3 rounded-lg bg-zinc-100 dark:bg-zinc-800/50 border border-zinc-200 dark:border-zinc-700/50 text-sm font-medium text-zinc-600 dark:text-zinc-300 hover:bg-zinc-200 dark:hover:bg-zinc-800 hover:border-zinc-300 dark:hover:border-zinc-600 transition-all disabled:opacity-50"
               >
                 <svg className="w-5 h-5" viewBox="0 0 24 24">
                   <path
@@ -79,8 +119,22 @@ export default function LoginPage() {
                     fill="#EA4335"
                   />
                 </svg>
-                Continue with Google
+                {isGoogleLoading ? "Connecting..." : "Continue with Google"}
               </button>
+
+              {/* Success Message */}
+              {justRegistered && (
+                <div className="p-3 rounded-lg bg-green-500/10 border border-green-500/20 text-sm text-green-400">
+                  Account created! Please sign in.
+                </div>
+              )}
+
+              {/* Error Message */}
+              {error && (
+                <div className="p-3 rounded-lg bg-red-500/10 border border-red-500/20 text-sm text-red-400">
+                  {error}
+                </div>
+              )}
 
               {/* Divider */}
               <div className="flex items-center gap-4">

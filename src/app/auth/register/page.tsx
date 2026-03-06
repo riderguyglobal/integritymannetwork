@@ -13,14 +13,19 @@ import {
   CheckCircle2,
 } from "lucide-react";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
+import { signIn } from "next-auth/react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Card, CardContent } from "@/components/ui/card";
 
 export default function RegisterPage() {
+  const router = useRouter();
   const [showPassword, setShowPassword] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
+  const [isGoogleLoading, setIsGoogleLoading] = useState(false);
   const [password, setPassword] = useState("");
+  const [error, setError] = useState("");
 
   const passwordRequirements = [
     { label: "At least 8 characters", met: password.length >= 8 },
@@ -28,11 +33,61 @@ export default function RegisterPage() {
     { label: "One number", met: /[0-9]/.test(password) },
   ];
 
+  const handleGoogleSignUp = async () => {
+    setIsGoogleLoading(true);
+    setError("");
+    try {
+      await signIn("google", { callbackUrl: "/dashboard" });
+    } catch {
+      setError("Google sign-up failed. Please try again.");
+      setIsGoogleLoading(false);
+    }
+  };
+
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setIsLoading(true);
-    await new Promise((resolve) => setTimeout(resolve, 1500));
-    setIsLoading(false);
+    setError("");
+
+    const formData = new FormData(e.currentTarget);
+    const firstName = formData.get("firstName") as string;
+    const lastName = formData.get("lastName") as string;
+    const email = formData.get("email") as string;
+    const pwd = formData.get("password") as string;
+
+    try {
+      // 1. Register the user
+      const res = await fetch("/api/auth/register", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ firstName, lastName, email, password: pwd }),
+      });
+
+      const data = await res.json();
+
+      if (!res.ok) {
+        setError(data.error || "Registration failed. Please try again.");
+        setIsLoading(false);
+        return;
+      }
+
+      // 2. Auto sign-in after successful registration
+      const signInResult = await signIn("credentials", {
+        email,
+        password: pwd,
+        redirect: false,
+      });
+
+      if (signInResult?.error) {
+        // Registration succeeded but auto-login failed — redirect to login
+        router.push("/auth/login?registered=true");
+      } else {
+        router.push("/dashboard");
+      }
+    } catch {
+      setError("Something went wrong. Please try again.");
+      setIsLoading(false);
+    }
   };
 
   return (
@@ -73,7 +128,9 @@ export default function RegisterPage() {
               {/* Google Sign Up */}
               <button
                 type="button"
-                className="w-full flex items-center justify-center gap-3 px-4 py-3 rounded-lg bg-zinc-100 dark:bg-zinc-800/50 border border-zinc-200 dark:border-zinc-700/50 text-sm font-medium text-zinc-600 dark:text-zinc-300 hover:bg-zinc-200 dark:hover:bg-zinc-800 hover:border-zinc-300 dark:hover:border-zinc-600 transition-all"
+                onClick={handleGoogleSignUp}
+                disabled={isGoogleLoading}
+                className="w-full flex items-center justify-center gap-3 px-4 py-3 rounded-lg bg-zinc-100 dark:bg-zinc-800/50 border border-zinc-200 dark:border-zinc-700/50 text-sm font-medium text-zinc-600 dark:text-zinc-300 hover:bg-zinc-200 dark:hover:bg-zinc-800 hover:border-zinc-300 dark:hover:border-zinc-600 transition-all disabled:opacity-50"
               >
                 <svg className="w-5 h-5" viewBox="0 0 24 24">
                   <path
@@ -93,8 +150,15 @@ export default function RegisterPage() {
                     fill="#EA4335"
                   />
                 </svg>
-                Continue with Google
+                {isGoogleLoading ? "Connecting..." : "Continue with Google"}
               </button>
+
+              {/* Error Message */}
+              {error && (
+                <div className="p-3 rounded-lg bg-red-500/10 border border-red-500/20 text-sm text-red-400">
+                  {error}
+                </div>
+              )}
 
               <div className="flex items-center gap-4">
                 <div className="flex-1 h-px bg-zinc-200 dark:bg-zinc-800" />

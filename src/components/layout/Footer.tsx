@@ -183,6 +183,12 @@ export function Footer() {
             >
               Terms of Service
             </Link>
+            <Link
+              href="/admin"
+              className="text-xs text-zinc-400/50 dark:text-zinc-700 hover:text-zinc-500 dark:hover:text-zinc-500 transition-colors"
+            >
+              Admin
+            </Link>
           </div>
         </div>
       </div>
