@@ -16,6 +16,8 @@ services:
         value: production
       - key: PORT
         value: "3000"
+      - key: AUTH_TRUST_HOST
+        value: "true"
       - key: DATABASE_URL
         sync: false            # Set manually in Render dashboard
       - key: NEXTAUTH_URL
