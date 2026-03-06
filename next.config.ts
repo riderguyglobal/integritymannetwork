@@ -9,6 +9,9 @@ const securityHeaders = [
 ];
 
 const nextConfig: NextConfig = {
+  // ── Output mode (standalone for Render / Docker) ──
+  output: "standalone",
+
   // ── Compiler optimizations ──
   compiler: {
     removeConsole: process.env.NODE_ENV === "production" ? { exclude: ["error", "warn"] } : false,

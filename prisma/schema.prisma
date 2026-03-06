@@ -2,8 +2,7 @@
 // Powered by Neon (Serverless PostgreSQL) + Prisma ORM
 
 generator client {
-  provider        = "prisma-client-js"
-  previewFeatures = ["driverAdapters"]
+  provider = "prisma-client-js"
 }
 
 datasource db {
