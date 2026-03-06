@@ -12,7 +12,6 @@ import {
   Heart,
   MessageSquare,
   Settings,
-  Shield,
   BarChart3,
   Menu,
   X,
@@ -20,6 +19,7 @@ import {
   ChevronRight,
   Bell,
 } from "lucide-react";
+import Image from "next/image";
 import { cn } from "@/lib/utils";
 
 const sidebarLinks = [
@@ -72,9 +72,13 @@ export default function AdminLayout({
             {sidebarOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
           </button>
           <div className="flex items-center gap-2">
-            <div className="w-7 h-7 rounded-md bg-linear-to-br from-orange-500 to-orange-600 flex items-center justify-center">
-              <Shield className="w-3.5 h-3.5 text-white" />
-            </div>
+            <Image
+              src="/images/IntegrityMan Logo.png"
+              alt="TIMN"
+              width={28}
+              height={28}
+              className="w-7 h-7 object-contain"
+            />
             <span className="text-sm font-bold text-white">TIMN Admin</span>
           </div>
         </div>
@@ -104,9 +108,13 @@ export default function AdminLayout({
       >
         {/* Logo */}
         <div className="flex items-center gap-3 px-6 py-5 border-b border-zinc-800/50">
-          <div className="w-9 h-9 rounded-lg bg-linear-to-br from-orange-500 to-orange-600 flex items-center justify-center shadow-lg shadow-orange-500/20">
-            <Shield className="w-4.5 h-4.5 text-white" />
-          </div>
+          <Image
+            src="/images/IntegrityMan Logo.png"
+            alt="Integrity Man Network"
+            width={36}
+            height={36}
+            className="w-9 h-9 object-contain"
+          />
           <div>
             <p className="font-display font-bold text-white text-sm">TIMN</p>
             <p className="text-[10px] text-zinc-500">Admin Panel</p>

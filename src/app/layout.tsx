@@ -55,6 +55,14 @@ export const metadata: Metadata = {
     type: "website",
     locale: "en_US",
     siteName: "The Integrity Man Network",
+    images: [
+      {
+        url: "/images/IntegrityMan Logo.png",
+        width: 512,
+        height: 512,
+        alt: "Integrity Man Network Logo",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",

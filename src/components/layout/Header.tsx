@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
 import {
@@ -11,7 +12,6 @@ import {
   User,
   ChevronDown,
   LogIn,
-  Shield,
   Home,
   Info,
   Megaphone,
@@ -95,9 +95,14 @@ export function Header() {
             {/* Logo */}
             <Link href="/" className="flex items-center gap-2.5 sm:gap-3 group">
               <div className="relative">
-                <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-lg bg-linear-to-br from-orange-500 to-orange-700 flex items-center justify-center shadow-lg shadow-orange-500/20 group-hover:shadow-orange-500/40 transition-shadow duration-300">
-                  <Shield className="w-4 h-4 sm:w-5 sm:h-5 text-white" />
-                </div>
+                <Image
+                  src="/images/IntegrityMan Logo.png"
+                  alt="Integrity Man Network"
+                  width={44}
+                  height={44}
+                  className="w-9 h-9 sm:w-11 sm:h-11 object-contain drop-shadow-lg group-hover:scale-105 transition-transform duration-300"
+                  priority
+                />
                 <div className="absolute -inset-1 rounded-xl bg-orange-500/20 blur-md opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
               </div>
               <div className="flex flex-col">
@@ -205,9 +210,13 @@ export function Header() {
               {/* Menu Header */}
               <div className="flex items-center justify-between px-6 py-5 border-b border-zinc-800/50">
                 <div className="flex items-center gap-2.5">
-                  <div className="w-8 h-8 rounded-lg bg-linear-to-br from-orange-500 to-orange-700 flex items-center justify-center">
-                    <Shield className="w-4 h-4 text-white" />
-                  </div>
+                  <Image
+                    src="/images/IntegrityMan Logo.png"
+                    alt="Integrity Man Network"
+                    width={32}
+                    height={32}
+                    className="w-8 h-8 object-contain"
+                  />
                   <span className="text-sm font-bold text-white">Menu</span>
                 </div>
                 <button

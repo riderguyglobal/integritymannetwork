@@ -2,8 +2,9 @@
 
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { Shield, Mail, ArrowRight, ArrowLeft } from "lucide-react";
+import { Mail, ArrowRight, ArrowLeft } from "lucide-react";
 import Link from "next/link";
+import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Card, CardContent } from "@/components/ui/card";
@@ -37,9 +38,14 @@ export default function ForgotPasswordPage() {
         {/* Logo */}
         <div className="text-center mb-8">
           <Link href="/" className="inline-flex items-center gap-3 group mb-6">
-            <div className="w-10 h-10 rounded-lg bg-linear-to-br from-orange-500 to-orange-600 flex items-center justify-center">
-              <Shield className="w-5 h-5 text-white" />
-            </div>
+            <Image
+              src="/images/IntegrityMan Logo.png"
+              alt="Integrity Man Network"
+              width={48}
+              height={48}
+              className="w-12 h-12 object-contain group-hover:scale-105 transition-transform"
+              priority
+            />
             <span className="font-display text-lg font-bold text-white group-hover:text-orange-400 transition-colors">
               TIMN
             </span>

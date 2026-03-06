@@ -1,6 +1,6 @@
 import Link from "next/link";
+import Image from "next/image";
 import {
-  Shield,
   Mail,
   Phone,
   MapPin,
@@ -81,9 +81,13 @@ export function Footer() {
           {/* Brand Column */}
           <div className="col-span-2 md:col-span-1">
             <Link href="/" className="flex items-center gap-2 sm:gap-3 mb-4 sm:mb-6">
-              <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-lg bg-linear-to-br from-orange-500 to-orange-700 flex items-center justify-center">
-                <Shield className="w-4 h-4 sm:w-5 sm:h-5 text-white" />
-              </div>
+              <Image
+                src="/images/IntegrityMan Logo.png"
+                alt="Integrity Man Network"
+                width={44}
+                height={44}
+                className="w-9 h-9 sm:w-11 sm:h-11 object-contain"
+              />
               <div className="flex flex-col">
                 <span className="text-sm sm:text-base font-bold tracking-tight text-white leading-none">
                   Integrity Man
