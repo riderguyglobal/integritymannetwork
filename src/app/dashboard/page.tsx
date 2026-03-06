@@ -67,11 +67,11 @@ const quickLinks = [
 
 export default function DashboardPage() {
   return (
-    <div className="min-h-screen bg-white dark:bg-zinc-950">
+    <div className="min-h-screen bg-zinc-950">
       <div className="max-w-6xl mx-auto px-6 py-12">
         {/* Header */}
         <div className="mb-8">
-          <h1 className="text-3xl font-bold text-zinc-900 dark:text-white font-display">
+          <h1 className="text-3xl font-bold text-white font-display">
             Welcome back
           </h1>
           <p className="text-zinc-500 mt-1">
@@ -85,10 +85,10 @@ export default function DashboardPage() {
             <Link key={link.label} href={link.href}>
               <motion.div
                 whileHover={{ y: -2 }}
-                className="flex flex-col items-center gap-2 p-4 rounded-xl bg-zinc-50 dark:bg-zinc-900/50 border border-zinc-200 dark:border-zinc-800/50 hover:border-orange-500/20 transition-all text-center"
+                className="flex flex-col items-center gap-2 p-4 rounded-xl bg-zinc-900/50 border border-zinc-800/50 hover:border-orange-500/20 transition-all text-center"
               >
-                <link.icon className="w-5 h-5 text-orange-500 dark:text-orange-400" />
-                <span className="text-xs text-zinc-600 dark:text-zinc-300">{link.label}</span>
+                <link.icon className="w-5 h-5 text-orange-400" />
+                <span className="text-xs text-zinc-300">{link.label}</span>
               </motion.div>
             </Link>
           ))}
@@ -110,17 +110,17 @@ export default function DashboardPage() {
               {userOrders.map((order) => (
                 <div
                   key={order.id}
-                  className="flex items-center justify-between p-3 rounded-lg bg-zinc-100/50 dark:bg-zinc-800/20 border border-zinc-200 dark:border-zinc-800/30"
+                  className="flex items-center justify-between p-3 rounded-lg bg-zinc-800/20 border border-zinc-800/30"
                 >
                   <div>
-                    <p className="text-sm font-medium text-zinc-900 dark:text-white">{order.id}</p>
+                    <p className="text-sm font-medium text-white">{order.id}</p>
                     <p className="text-xs text-zinc-500">
                       {order.date}  {order.items} item
                       {order.items > 1 ? "s" : ""}
                     </p>
                   </div>
                   <div className="text-right">
-                    <p className="text-sm font-semibold text-zinc-900 dark:text-white">
+                    <p className="text-sm font-semibold text-white">
                       {formatCurrency(order.total)}
                     </p>
                     <Badge
@@ -137,7 +137,7 @@ export default function DashboardPage() {
 
               {userOrders.length === 0 && (
                 <div className="text-center py-6">
-                  <ShoppingBag className="w-8 h-8 text-zinc-300 dark:text-zinc-700 mx-auto mb-2" />
+                  <ShoppingBag className="w-8 h-8 text-zinc-700 mx-auto mb-2" />
                   <p className="text-sm text-zinc-500">No orders yet.</p>
                 </div>
               )}
@@ -159,10 +159,10 @@ export default function DashboardPage() {
               {upcomingEvents.map((event) => (
                 <div
                   key={event.title}
-                  className="flex items-center justify-between p-3 rounded-lg bg-zinc-100/50 dark:bg-zinc-800/20 border border-zinc-200 dark:border-zinc-800/30"
+                  className="flex items-center justify-between p-3 rounded-lg bg-zinc-800/20 border border-zinc-800/30"
                 >
                   <div>
-                    <p className="text-sm font-medium text-zinc-900 dark:text-white">
+                    <p className="text-sm font-medium text-white">
                       {event.title}
                     </p>
                     <p className="text-xs text-zinc-500">{event.date}</p>
@@ -181,10 +181,10 @@ export default function DashboardPage() {
           <CardContent className="p-6">
             <div className="flex items-center gap-5">
               <div className="w-16 h-16 rounded-full bg-orange-500/10 border-2 border-orange-500/30 flex items-center justify-center">
-                <User className="w-7 h-7 text-orange-500 dark:text-orange-400" />
+                <User className="w-7 h-7 text-orange-400" />
               </div>
               <div className="flex-1">
-                <h3 className="text-lg font-bold text-zinc-900 dark:text-white">Your Profile</h3>
+                <h3 className="text-lg font-bold text-white">Your Profile</h3>
                 <p className="text-sm text-zinc-500">
                   Update your personal information, password, and preferences.
                 </p>

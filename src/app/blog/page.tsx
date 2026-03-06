@@ -100,22 +100,22 @@ const CATEGORIES = ["All", "Purpose", "Leadership", "Community", "Family", "Fait
 function BlogHero() {
   return (
     <section className="relative hero-padding overflow-hidden">
-      <div className="absolute inset-0 bg-white dark:bg-zinc-950" />
+      <div className="absolute inset-0 bg-zinc-950" />
       <div className="absolute inset-0 bg-grid opacity-30" />
       <div className="absolute inset-0 bg-radial-dark" />
 
       <div className="container-wide relative z-10">
         <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }} className="max-w-4xl mx-auto text-center">
           <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-orange-500/10 border border-orange-500/20 mb-5 sm:mb-8">
-            <BookOpen className="w-3.5 h-3.5 text-orange-500 dark:text-orange-400" />
-            <span className="text-[10px] sm:text-xs font-semibold tracking-wider uppercase text-orange-500 dark:text-orange-400">Insights & Teachings</span>
+            <BookOpen className="w-3.5 h-3.5 text-orange-400" />
+            <span className="text-[10px] sm:text-xs font-semibold tracking-wider uppercase text-orange-400">Insights & Teachings</span>
           </div>
 
-          <h1 className="font-display text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-bold tracking-tight text-zinc-900 dark:text-white leading-[0.95] mb-4 sm:mb-6">
+          <h1 className="font-display text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-bold tracking-tight text-white leading-[0.95] mb-4 sm:mb-6">
             The <span className="text-gradient">Blog</span>
           </h1>
 
-          <p className="text-sm sm:text-lg md:text-xl text-zinc-500 dark:text-zinc-400 leading-relaxed max-w-2xl mx-auto">
+          <p className="text-sm sm:text-lg md:text-xl text-zinc-400 leading-relaxed max-w-2xl mx-auto">
             Thought-provoking articles, devotionals, and teachings for men pursuing purpose, integrity, and alignment with God&apos;s eternal plan.
           </p>
         </motion.div>
@@ -133,10 +133,10 @@ function FeaturedPost({ post }: { post: (typeof SAMPLE_POSTS)[0] }) {
           <div className="h-1.5 bg-linear-to-r from-orange-500 via-orange-400 to-orange-600" />
           <CardContent className="p-0">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-0">
-              <div className="aspect-16/10 lg:aspect-auto bg-zinc-100 dark:bg-zinc-800/50 relative flex items-center justify-center border-b lg:border-b-0 lg:border-r border-zinc-200 dark:border-zinc-800/50">
+              <div className="aspect-16/10 lg:aspect-auto bg-zinc-800/50 relative flex items-center justify-center border-b lg:border-b-0 lg:border-r border-zinc-800/50">
                 <div className="text-center">
-                  <BookOpen className="w-12 h-12 text-zinc-300 dark:text-zinc-700 mx-auto mb-3" />
-                  <p className="text-xs text-zinc-400 dark:text-zinc-600">Featured Article</p>
+                  <BookOpen className="w-12 h-12 text-zinc-700 mx-auto mb-3" />
+                  <p className="text-xs text-zinc-600">Featured Article</p>
                 </div>
               </div>
 
@@ -146,11 +146,11 @@ function FeaturedPost({ post }: { post: (typeof SAMPLE_POSTS)[0] }) {
                   <Badge variant="outline">Featured</Badge>
                 </div>
 
-                <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-zinc-900 dark:text-white font-display mb-3 sm:mb-4 group-hover:text-orange-500 dark:group-hover:text-orange-400 transition-colors">
+                <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-white font-display mb-3 sm:mb-4 group-hover:text-orange-400 transition-colors">
                   {post.title}
                 </h2>
 
-                <p className="text-sm sm:text-base text-zinc-500 dark:text-zinc-400 leading-relaxed mb-4 sm:mb-6">
+                <p className="text-sm sm:text-base text-zinc-400 leading-relaxed mb-4 sm:mb-6">
                   {post.excerpt}
                 </p>
 
@@ -161,7 +161,7 @@ function FeaturedPost({ post }: { post: (typeof SAMPLE_POSTS)[0] }) {
                 </div>
 
                 <div className="mt-4 sm:mt-6">
-                  <span className="inline-flex items-center gap-2 text-sm font-medium text-orange-500 dark:text-orange-400 group-hover:gap-3 transition-all">
+                  <span className="inline-flex items-center gap-2 text-sm font-medium text-orange-400 group-hover:gap-3 transition-all">
                     Read Article
                     <ArrowRight className="w-4 h-4" />
                   </span>
@@ -180,8 +180,8 @@ function PostCard({ post }: { post: (typeof SAMPLE_POSTS)[0] }) {
   return (
     <Link href={`/blog/${post.slug}`}>
       <Card className="h-full overflow-hidden group hover:border-orange-500/20 transition-all duration-300">
-        <div className="aspect-video bg-zinc-100 dark:bg-zinc-800/50 relative flex items-center justify-center">
-          <BookOpen className="w-8 h-8 text-zinc-300 dark:text-zinc-700" />
+        <div className="aspect-video bg-zinc-800/50 relative flex items-center justify-center">
+          <BookOpen className="w-8 h-8 text-zinc-700" />
         </div>
 
         <CardContent className="p-4 sm:p-6">
@@ -190,11 +190,11 @@ function PostCard({ post }: { post: (typeof SAMPLE_POSTS)[0] }) {
             <span className="text-[10px] text-zinc-500">{post.readTime}</span>
           </div>
 
-          <h3 className="text-base sm:text-lg font-bold text-zinc-900 dark:text-white font-display mb-2 sm:mb-3 line-clamp-2 group-hover:text-orange-500 dark:group-hover:text-orange-400 transition-colors">
+          <h3 className="text-base sm:text-lg font-bold text-white font-display mb-2 sm:mb-3 line-clamp-2 group-hover:text-orange-400 transition-colors">
             {post.title}
           </h3>
 
-          <p className="text-xs sm:text-sm text-zinc-500 dark:text-zinc-400 leading-relaxed line-clamp-2 sm:line-clamp-3 mb-3 sm:mb-4">
+          <p className="text-xs sm:text-sm text-zinc-400 leading-relaxed line-clamp-2 sm:line-clamp-3 mb-3 sm:mb-4">
             {post.excerpt}
           </p>
 
@@ -244,7 +244,7 @@ export default function BlogPage() {
                   className={`px-3 sm:px-4 py-2 rounded-lg text-xs sm:text-sm font-medium transition-all whitespace-nowrap ${
                     activeCategory === cat
                       ? "bg-orange-500 text-white shadow-lg shadow-orange-500/20"
-                      : "bg-zinc-100 dark:bg-zinc-800/50 text-zinc-500 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-white border border-zinc-200 dark:border-zinc-700/50 hover:border-zinc-300 dark:hover:border-zinc-600"
+                      : "bg-zinc-800/50 text-zinc-400 hover:text-white border border-zinc-700/50 hover:border-zinc-600"
                   }`}>
                   {cat}
                 </button>
@@ -267,8 +267,8 @@ export default function BlogPage() {
             </div>
           ) : (
             <div className="text-center py-20">
-              <BookOpen className="w-12 h-12 text-zinc-300 dark:text-zinc-700 mx-auto mb-4" />
-              <p className="text-zinc-500 dark:text-zinc-400">No articles found matching your criteria.</p>
+              <BookOpen className="w-12 h-12 text-zinc-700 mx-auto mb-4" />
+              <p className="text-zinc-400">No articles found matching your criteria.</p>
               <Button variant="outline" className="mt-4" onClick={() => { setActiveCategory("All"); setSearchQuery(""); }}>
                 Clear Filters
               </Button>

@@ -21,7 +21,7 @@ export default function ForgotPasswordPage() {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-white dark:bg-zinc-950 relative overflow-hidden py-20 px-4">
+    <div className="min-h-screen flex items-center justify-center bg-zinc-950 relative overflow-hidden py-20 px-4">
       <div className="absolute inset-0 bg-grid opacity-20" />
       <div className="absolute inset-0 bg-radial-dark" />
 
@@ -40,21 +40,21 @@ export default function ForgotPasswordPage() {
             <div className="w-10 h-10 rounded-lg bg-linear-to-br from-orange-500 to-orange-600 flex items-center justify-center">
               <Shield className="w-5 h-5 text-white" />
             </div>
-            <span className="font-display text-lg font-bold text-zinc-900 dark:text-white group-hover:text-orange-500 dark:group-hover:text-orange-400 transition-colors">
+            <span className="font-display text-lg font-bold text-white group-hover:text-orange-400 transition-colors">
               TIMN
             </span>
           </Link>
-          <h1 className="text-2xl font-bold text-zinc-900 dark:text-white font-display">
+          <h1 className="text-2xl font-bold text-white font-display">
             {submitted ? "Check Your Email" : "Reset Password"}
           </h1>
-          <p className="text-sm text-zinc-500 dark:text-zinc-400 mt-2">
+          <p className="text-sm text-zinc-400 mt-2">
             {submitted
               ? "We've sent you a password reset link"
               : "Enter your email and we'll send you a reset link"}
           </p>
         </div>
 
-        <Card className="bg-zinc-50 dark:bg-zinc-900/50 backdrop-blur-sm">
+        <Card className="bg-zinc-900/50 backdrop-blur-sm">
           <CardContent className="p-6 md:p-8">
             {submitted ? (
               <motion.div
@@ -63,9 +63,9 @@ export default function ForgotPasswordPage() {
                 className="text-center py-4"
               >
                 <div className="w-16 h-16 rounded-full bg-orange-500/10 border border-orange-500/20 flex items-center justify-center mx-auto mb-6">
-                  <Mail className="w-7 h-7 text-orange-500 dark:text-orange-400" />
+                  <Mail className="w-7 h-7 text-orange-400" />
                 </div>
-                <p className="text-sm text-zinc-500 dark:text-zinc-400 mb-6">
+                <p className="text-sm text-zinc-400 mb-6">
                   If an account exists with that email address, you&apos;ll
                   receive a password reset link shortly.
                 </p>
@@ -82,7 +82,7 @@ export default function ForgotPasswordPage() {
                 <div className="space-y-2">
                   <label
                     htmlFor="email"
-                    className="text-sm font-medium text-zinc-600 dark:text-zinc-300"
+                    className="text-sm font-medium text-zinc-300"
                   >
                     Email Address
                   </label>
@@ -125,7 +125,7 @@ export default function ForgotPasswordPage() {
         <p className="text-center mt-6">
           <Link
             href="/auth/login"
-            className="inline-flex items-center gap-2 text-sm text-zinc-500 hover:text-orange-500 dark:hover:text-orange-400 transition-colors"
+            className="inline-flex items-center gap-2 text-sm text-zinc-500 hover:text-orange-400 transition-colors"
           >
             <ArrowLeft className="w-3.5 h-3.5" />
             Back to Sign In

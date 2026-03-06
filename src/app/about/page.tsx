@@ -85,21 +85,21 @@ function ContentSection({
 }) {
   const hasMedia = image || video;
   return (
-    <section className={`section-padding relative ${accent ? "bg-gray-50 dark:bg-zinc-900/30" : ""}`}>
+    <section className={`section-padding relative ${accent ? "bg-zinc-900/30" : ""}`}>
       {accent && <div className="absolute inset-0 bg-radial-dark pointer-events-none" />}
       <div className="container-wide relative z-10">
         <div className={`${hasMedia ? "grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-12 items-center" : "max-w-4xl mx-auto"}`}>
           <div className={`${reverse ? "lg:order-2" : ""} ${hasMedia ? "order-2 lg:order-0" : ""}`}>
             <motion.div {...fadeInUp} className="flex items-center gap-3 sm:gap-4 mb-6 sm:mb-10">
               <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-lg sm:rounded-xl bg-linear-to-br from-orange-500/20 to-orange-600/10 border border-orange-500/20 flex items-center justify-center">
-                <Icon className="w-4 h-4 sm:w-5 sm:h-5 text-orange-500 dark:text-orange-400" />
+                <Icon className="w-4 h-4 sm:w-5 sm:h-5 text-orange-400" />
               </div>
-              <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-zinc-900 dark:text-white font-display">{section.title}</h2>
+              <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-white font-display">{section.title}</h2>
             </motion.div>
 
             <div className="space-y-4 sm:space-y-6">
               {section.paragraphs.map((paragraph, i) => (
-                <motion.p key={i} {...fadeInUp} className="text-sm sm:text-base md:text-lg text-zinc-500 dark:text-zinc-400 leading-relaxed">
+                <motion.p key={i} {...fadeInUp} className="text-sm sm:text-base md:text-lg text-zinc-400 leading-relaxed">
                   {paragraph}
                 </motion.p>
               ))}
@@ -117,7 +117,7 @@ function ContentSection({
               {video ? (
                 <VideoPlayer src={video} rounded="2xl" />
               ) : image ? (
-                <div className="relative aspect-4/3 rounded-xl sm:rounded-2xl overflow-hidden border border-zinc-200 dark:border-zinc-800/50">
+                <div className="relative aspect-4/3 rounded-xl sm:rounded-2xl overflow-hidden border border-zinc-800/50">
                   <ProtectedImage src={image} alt={imageAlt || section.title} fill className="object-cover" />
                   <div className="absolute inset-0 bg-linear-to-t from-zinc-950/30 to-transparent" />
                 </div>
@@ -138,16 +138,16 @@ function MethodSection() {
         <div className="max-w-4xl mx-auto">
           <motion.div {...fadeInUp} className="flex items-center gap-3 sm:gap-4 mb-4 sm:mb-6">
             <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-lg sm:rounded-xl bg-linear-to-br from-orange-500/20 to-orange-600/10 border border-orange-500/20 flex items-center justify-center">
-              <Map className="w-4 h-4 sm:w-5 sm:h-5 text-orange-500 dark:text-orange-400" />
+              <Map className="w-4 h-4 sm:w-5 sm:h-5 text-orange-400" />
             </div>
-            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-zinc-900 dark:text-white font-display">{ABOUT_CONTENT.method.title}</h2>
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-white font-display">{ABOUT_CONTENT.method.title}</h2>
           </motion.div>
 
           {ABOUT_CONTENT.method.paragraphs.map((p, i) => (
-            <motion.p key={i} {...fadeInUp} className="text-sm sm:text-base md:text-lg text-zinc-500 dark:text-zinc-400 leading-relaxed mb-5 sm:mb-8">{p}</motion.p>
+            <motion.p key={i} {...fadeInUp} className="text-sm sm:text-base md:text-lg text-zinc-400 leading-relaxed mb-5 sm:mb-8">{p}</motion.p>
           ))}
 
-          <motion.p {...fadeInUp} className="text-sm sm:text-base text-zinc-500 dark:text-zinc-400 leading-relaxed mb-8 sm:mb-12">
+          <motion.p {...fadeInUp} className="text-sm sm:text-base text-zinc-400 leading-relaxed mb-8 sm:mb-12">
             Below is an overview of our core channels. Each channel addresses a specific dimension of formation, deployment, or support.
           </motion.p>
         </div>
@@ -159,10 +159,10 @@ function MethodSection() {
               <Link key={channel.id} href={`/channels#${channel.id}`}>
                 <Card className="group h-full p-4 sm:p-6 hover:border-orange-500/30 cursor-pointer transition-all duration-500 hover:-translate-y-1">
                   <div className="w-9 h-9 sm:w-11 sm:h-11 rounded-lg sm:rounded-xl bg-linear-to-br from-orange-500/20 to-orange-600/10 border border-orange-500/20 flex items-center justify-center mb-3 sm:mb-4">
-                    <Icon className="w-4 h-4 sm:w-5 sm:h-5 text-orange-500 dark:text-orange-400" />
+                    <Icon className="w-4 h-4 sm:w-5 sm:h-5 text-orange-400" />
                   </div>
-                  <h3 className="text-sm sm:text-lg font-bold text-zinc-900 dark:text-white mb-1 sm:mb-2">{channel.title}</h3>
-                  <p className="text-[10px] sm:text-xs text-orange-500/70 dark:text-orange-400/70 font-medium uppercase tracking-wider mb-1 sm:mb-2">{channel.subtitle}</p>
+                  <h3 className="text-sm sm:text-lg font-bold text-white mb-1 sm:mb-2">{channel.title}</h3>
+                  <p className="text-[10px] sm:text-xs text-orange-400/70 font-medium uppercase tracking-wider mb-1 sm:mb-2">{channel.subtitle}</p>
                   <p className="text-xs sm:text-sm text-zinc-500 leading-relaxed line-clamp-2 sm:line-clamp-3 hidden sm:block">{channel.description}</p>
                 </Card>
               </Link>

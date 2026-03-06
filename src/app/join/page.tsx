@@ -37,7 +37,7 @@ const fadeInUp = {
 function JoinHero() {
   return (
     <section className="relative hero-padding overflow-hidden">
-      <div className="absolute inset-0 bg-white dark:bg-zinc-950" />
+      <div className="absolute inset-0 bg-zinc-950" />
       <div className="absolute inset-0 bg-grid opacity-30" />
       <div className="absolute inset-0 bg-radial-dark" />
 
@@ -50,18 +50,18 @@ function JoinHero() {
             className="order-2 lg:order-1"
           >
             <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-orange-500/10 border border-orange-500/20 mb-5 sm:mb-8">
-              <Shield className="w-3.5 h-3.5 text-orange-500 dark:text-orange-400" />
-              <span className="text-[10px] sm:text-xs font-semibold tracking-wider uppercase text-orange-500 dark:text-orange-400">
+              <Shield className="w-3.5 h-3.5 text-orange-400" />
+              <span className="text-[10px] sm:text-xs font-semibold tracking-wider uppercase text-orange-400">
                 Become A Member
               </span>
             </div>
 
-            <h1 className="font-display text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-bold tracking-tight text-zinc-900 dark:text-white leading-[0.95] mb-4 sm:mb-6">
+            <h1 className="font-display text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-bold tracking-tight text-white leading-[0.95] mb-4 sm:mb-6">
               Join The{" "}
               <span className="text-gradient">Network</span>
             </h1>
 
-            <p className="text-sm sm:text-lg md:text-xl text-zinc-500 dark:text-zinc-400 leading-relaxed max-w-2xl">
+            <p className="text-sm sm:text-lg md:text-xl text-zinc-400 leading-relaxed max-w-2xl">
               Step into a covenant community of men committed to integrity,
               purpose-driven work, and alignment with God&apos;s eternal plan.
             </p>
@@ -156,12 +156,12 @@ function BenefitsSection() {
               <Card className="h-full hover:border-orange-500/20 transition-colors">
                 <CardContent className="p-4 sm:p-6">
                   <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-lg sm:rounded-xl bg-linear-to-br from-orange-500/20 to-orange-600/10 border border-orange-500/20 flex items-center justify-center mb-3 sm:mb-4">
-                    <benefit.icon className="w-4 h-4 sm:w-5 sm:h-5 text-orange-500 dark:text-orange-400" />
+                    <benefit.icon className="w-4 h-4 sm:w-5 sm:h-5 text-orange-400" />
                   </div>
-                  <h3 className="text-base sm:text-lg font-bold text-zinc-900 dark:text-white font-display mb-1 sm:mb-2">
+                  <h3 className="text-base sm:text-lg font-bold text-white font-display mb-1 sm:mb-2">
                     {benefit.title}
                   </h3>
-                  <p className="text-xs sm:text-sm text-zinc-500 dark:text-zinc-400 leading-relaxed">
+                  <p className="text-xs sm:text-sm text-zinc-400 leading-relaxed">
                     {benefit.description}
                   </p>
                 </CardContent>
@@ -198,12 +198,12 @@ function RegistrationForm() {
         className="text-center py-16"
       >
         <div className="w-20 h-20 rounded-full bg-orange-500/10 border border-orange-500/20 flex items-center justify-center mx-auto mb-6">
-          <CheckCircle2 className="w-8 h-8 text-orange-500 dark:text-orange-400" />
+          <CheckCircle2 className="w-8 h-8 text-orange-400" />
         </div>
-        <h3 className="text-2xl font-bold text-zinc-900 dark:text-white font-display mb-3">
+        <h3 className="text-2xl font-bold text-white font-display mb-3">
           Welcome to the Network!
         </h3>
-        <p className="text-zinc-500 dark:text-zinc-400 max-w-sm mx-auto">
+        <p className="text-zinc-400 max-w-sm mx-auto">
           Your registration has been received. We&apos;ll be in touch shortly
           with next steps and access details.
         </p>
@@ -221,13 +221,13 @@ function RegistrationForm() {
     <form onSubmit={handleSubmit} className="space-y-4 sm:space-y-6">
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
         <div className="space-y-1.5 sm:space-y-2">
-          <label htmlFor="firstName" className="text-xs sm:text-sm font-medium text-zinc-600 dark:text-zinc-300">
+          <label htmlFor="firstName" className="text-xs sm:text-sm font-medium text-zinc-300">
             First Name *
           </label>
           <Input id="firstName" name="firstName" placeholder="John" required />
         </div>
         <div className="space-y-1.5 sm:space-y-2">
-          <label htmlFor="lastName" className="text-xs sm:text-sm font-medium text-zinc-600 dark:text-zinc-300">
+          <label htmlFor="lastName" className="text-xs sm:text-sm font-medium text-zinc-300">
             Last Name *
           </label>
           <Input id="lastName" name="lastName" placeholder="Doe" required />
@@ -236,7 +236,7 @@ function RegistrationForm() {
 
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
         <div className="space-y-1.5 sm:space-y-2">
-          <label htmlFor="email" className="text-xs sm:text-sm font-medium text-zinc-600 dark:text-zinc-300">
+          <label htmlFor="email" className="text-xs sm:text-sm font-medium text-zinc-300">
             Email Address *
           </label>
           <Input
@@ -248,7 +248,7 @@ function RegistrationForm() {
           />
         </div>
         <div className="space-y-1.5 sm:space-y-2">
-          <label htmlFor="phone" className="text-xs sm:text-sm font-medium text-zinc-600 dark:text-zinc-300">
+          <label htmlFor="phone" className="text-xs sm:text-sm font-medium text-zinc-300">
             Phone Number
           </label>
           <Input
@@ -262,13 +262,13 @@ function RegistrationForm() {
 
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
         <div className="space-y-1.5 sm:space-y-2">
-          <label htmlFor="city" className="text-xs sm:text-sm font-medium text-zinc-600 dark:text-zinc-300">
+          <label htmlFor="city" className="text-xs sm:text-sm font-medium text-zinc-300">
             City *
           </label>
           <Input id="city" name="city" placeholder="Lagos" required />
         </div>
         <div className="space-y-1.5 sm:space-y-2">
-          <label htmlFor="country" className="text-xs sm:text-sm font-medium text-zinc-600 dark:text-zinc-300">
+          <label htmlFor="country" className="text-xs sm:text-sm font-medium text-zinc-300">
             Country *
           </label>
           <Input id="country" name="country" placeholder="Nigeria" required />
@@ -276,7 +276,7 @@ function RegistrationForm() {
       </div>
 
       <div className="space-y-1.5 sm:space-y-2">
-        <label htmlFor="occupation" className="text-xs sm:text-sm font-medium text-zinc-600 dark:text-zinc-300">
+        <label htmlFor="occupation" className="text-xs sm:text-sm font-medium text-zinc-300">
           Occupation / Profession
         </label>
         <Input
@@ -287,7 +287,7 @@ function RegistrationForm() {
       </div>
 
       <div className="space-y-1.5 sm:space-y-2">
-        <label htmlFor="reason" className="text-xs sm:text-sm font-medium text-zinc-600 dark:text-zinc-300">
+        <label htmlFor="reason" className="text-xs sm:text-sm font-medium text-zinc-300">
           Why do you want to join? (Optional)
         </label>
         <Textarea
@@ -303,9 +303,9 @@ function RegistrationForm() {
           type="checkbox"
           id="agree"
           required
-          className="mt-1 w-4 h-4 rounded border-zinc-200 dark:border-zinc-700 bg-zinc-100 dark:bg-zinc-800 text-orange-500 focus:ring-orange-500"
+          className="mt-1 w-4 h-4 rounded border-zinc-700 bg-zinc-800 text-orange-500 focus:ring-orange-500"
         />
-        <label htmlFor="agree" className="text-xs sm:text-sm text-zinc-500 dark:text-zinc-400">
+        <label htmlFor="agree" className="text-xs sm:text-sm text-zinc-400">
           I agree to be contacted by The Integrity Man Network and understand
           that my information will be handled with confidentiality.
         </label>
@@ -382,7 +382,7 @@ export default function JoinPage() {
       <div className="divider-gradient" />
 
       {/* Registration Form */}
-      <section className="section-padding relative bg-zinc-50 dark:bg-zinc-900/30">
+      <section className="section-padding relative bg-zinc-900/30">
         <div className="absolute inset-0 bg-radial-dark pointer-events-none" />
         <div className="container-wide relative z-10">
           <motion.div {...fadeInUp}>
@@ -394,7 +394,7 @@ export default function JoinPage() {
           </motion.div>
 
           <motion.div {...fadeInUp} className="mt-8 sm:mt-12 max-w-3xl mx-auto">
-            <Card className="bg-zinc-50 dark:bg-zinc-900/50">
+            <Card className="bg-zinc-900/50">
               <CardContent className="p-4 sm:p-6 md:p-10">
                 <RegistrationForm />
               </CardContent>

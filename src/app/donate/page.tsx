@@ -37,7 +37,7 @@ const fadeInUp = {
 function DonateHero() {
   return (
     <section className="relative hero-padding overflow-hidden">
-      <div className="absolute inset-0 bg-white dark:bg-zinc-950" />
+      <div className="absolute inset-0 bg-zinc-950" />
       {/* Background image */}
       <div className="absolute inset-0">
         <ProtectedImage
@@ -47,7 +47,7 @@ function DonateHero() {
           className="object-cover opacity-15"
           priority
         />
-        <div className="absolute inset-0 bg-linear-to-b from-white/50 via-white/80 to-white dark:from-zinc-950/50 dark:via-zinc-950/80 dark:to-zinc-950" />
+        <div className="absolute inset-0 bg-linear-to-b from-white/50 via-white/80 to-white from-zinc-950/50 via-zinc-950/80 to-zinc-950" />
       </div>
       <div className="absolute inset-0 bg-grid opacity-30" />
 
@@ -59,18 +59,18 @@ function DonateHero() {
           className="max-w-4xl mx-auto text-center"
         >
           <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-orange-500/10 border border-orange-500/20 mb-5 sm:mb-8">
-            <Heart className="w-3.5 h-3.5 text-orange-500 dark:text-orange-400" />
-            <span className="text-[10px] sm:text-xs font-semibold tracking-wider uppercase text-orange-500 dark:text-orange-400">
+            <Heart className="w-3.5 h-3.5 text-orange-400" />
+            <span className="text-[10px] sm:text-xs font-semibold tracking-wider uppercase text-orange-400">
               Support The Vision
             </span>
           </div>
 
-          <h1 className="font-display text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-bold tracking-tight text-zinc-900 dark:text-white leading-[0.95] mb-4 sm:mb-6">
+          <h1 className="font-display text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-bold tracking-tight text-white leading-[0.95] mb-4 sm:mb-6">
             Partner With{" "}
             <span className="text-gradient">Us</span>
           </h1>
 
-          <p className="text-sm sm:text-lg md:text-xl text-zinc-500 dark:text-zinc-400 leading-relaxed max-w-3xl mx-auto">
+          <p className="text-sm sm:text-lg md:text-xl text-zinc-400 leading-relaxed max-w-3xl mx-auto">
             Your generosity fuels the formation of men, the expansion of
             communities, and the advancement of purpose-driven impact across
             nations.
@@ -140,13 +140,13 @@ function ImpactSection() {
               <Card className="h-full hover:border-orange-500/20 transition-colors">
                 <CardContent className="p-4 sm:p-6 flex items-start gap-3 sm:gap-4">
                   <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-lg sm:rounded-xl bg-linear-to-br from-orange-500/20 to-orange-600/10 border border-orange-500/20 flex items-center justify-center shrink-0">
-                    <area.icon className="w-4 h-4 sm:w-5 sm:h-5 text-orange-500 dark:text-orange-400" />
+                    <area.icon className="w-4 h-4 sm:w-5 sm:h-5 text-orange-400" />
                   </div>
                   <div>
-                    <h3 className="text-base sm:text-lg font-bold text-zinc-900 dark:text-white font-display mb-1 sm:mb-2">
+                    <h3 className="text-base sm:text-lg font-bold text-white font-display mb-1 sm:mb-2">
                       {area.title}
                     </h3>
-                    <p className="text-xs sm:text-sm text-zinc-500 dark:text-zinc-400 leading-relaxed">
+                    <p className="text-xs sm:text-sm text-zinc-400 leading-relaxed">
                       {area.description}
                     </p>
                   </div>
@@ -180,13 +180,13 @@ function DonationForm() {
   return (
     <div className="space-y-8">
       {/* Donation Type Toggle */}
-      <div className="flex gap-2 p-1 rounded-lg bg-zinc-100 dark:bg-zinc-800/50 border border-zinc-200 dark:border-zinc-700/50 w-fit">
+      <div className="flex gap-2 p-1 rounded-lg bg-zinc-800/50 border border-zinc-700/50 w-fit">
         <button
           onClick={() => setDonationType("one-time")}
           className={`px-5 py-2 rounded-md text-sm font-medium transition-all ${
             donationType === "one-time"
               ? "bg-orange-500 text-white shadow-lg shadow-orange-500/20"
-              : "text-zinc-500 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-white"
+              : "text-zinc-400 hover:text-white"
           }`}
         >
           One-Time
@@ -196,7 +196,7 @@ function DonationForm() {
           className={`px-5 py-2 rounded-md text-sm font-medium transition-all ${
             donationType === "monthly"
               ? "bg-orange-500 text-white shadow-lg shadow-orange-500/20"
-              : "text-zinc-500 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-white"
+              : "text-zinc-400 hover:text-white"
           }`}
         >
           Monthly
@@ -205,7 +205,7 @@ function DonationForm() {
 
       {/* Preset Amounts */}
       <div>
-        <label className="text-xs sm:text-sm font-medium text-zinc-600 dark:text-zinc-300 mb-2 sm:mb-3 block">
+        <label className="text-xs sm:text-sm font-medium text-zinc-300 mb-2 sm:mb-3 block">
           Select Amount (NGN)
         </label>
         <div className="grid grid-cols-2 sm:grid-cols-3 gap-2 sm:gap-3">
@@ -218,8 +218,8 @@ function DonationForm() {
               }}
               className={`px-3 sm:px-4 py-3 rounded-lg text-xs sm:text-sm font-semibold transition-all border ${
                 selectedAmount === amount && !customAmount
-                  ? "bg-orange-500/10 border-orange-500/50 text-orange-500 dark:text-orange-400"
-                  : "bg-zinc-100 dark:bg-zinc-800/30 border-zinc-200 dark:border-zinc-700/50 text-zinc-600 dark:text-zinc-300 hover:border-orange-500/30"
+                  ? "bg-orange-500/10 border-orange-500/50 text-orange-400"
+                  : "bg-zinc-800/30 border-zinc-700/50 text-zinc-300 hover:border-orange-500/30"
               }`}>
               {formatCurrency(amount)}
             </button>
@@ -229,7 +229,7 @@ function DonationForm() {
 
       {/* Custom Amount */}
       <div className="space-y-1.5 sm:space-y-2">
-        <label className="text-xs sm:text-sm font-medium text-zinc-600 dark:text-zinc-300">
+        <label className="text-xs sm:text-sm font-medium text-zinc-300">
           Or Enter Custom Amount (NGN)
         </label>
         <div className="relative">
@@ -256,12 +256,12 @@ function DonationForm() {
         >
           <div className="flex items-center justify-between">
             <div>
-              <p className="text-sm text-zinc-500 dark:text-zinc-400">
+              <p className="text-sm text-zinc-400">
                 {donationType === "monthly"
                   ? "Monthly Donation"
                   : "One-Time Donation"}
               </p>
-              <p className="text-2xl font-bold text-zinc-900 dark:text-white font-display mt-1">
+              <p className="text-2xl font-bold text-white font-display mt-1">
                 {formatCurrency(currentAmount)}
               </p>
             </div>
@@ -274,7 +274,7 @@ function DonationForm() {
 
       {/* Payment Methods */}
       <div className="space-y-2 sm:space-y-3">
-        <label className="text-xs sm:text-sm font-medium text-zinc-600 dark:text-zinc-300 block">
+        <label className="text-xs sm:text-sm font-medium text-zinc-300 block">
           Payment Method
         </label>
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-2 sm:gap-3">
@@ -285,12 +285,12 @@ function DonationForm() {
           ].map((method) => (
             <button
               key={method.name}
-              className="p-4 rounded-lg bg-zinc-100 dark:bg-zinc-800/30 border border-zinc-200 dark:border-zinc-700/50 hover:border-orange-500/30 transition-all text-left group"
+              className="p-4 rounded-lg bg-zinc-800/30 border border-zinc-700/50 hover:border-orange-500/30 transition-all text-left group"
             >
               <div className="flex items-center gap-3">
-                <CreditCard className="w-5 h-5 text-orange-500 dark:text-orange-400" />
+                <CreditCard className="w-5 h-5 text-orange-400" />
                 <div>
-                  <p className="text-sm font-semibold text-zinc-900 dark:text-white group-hover:text-orange-500 dark:group-hover:text-orange-400 transition-colors">
+                  <p className="text-sm font-semibold text-white group-hover:text-orange-400 transition-colors">
                     {method.name}
                   </p>
                   <p className="text-xs text-zinc-500">{method.desc}</p>
@@ -353,7 +353,7 @@ export default function DonatePage() {
       <div className="divider-gradient" />
 
       {/* Donation Form Section */}
-      <section className="section-padding bg-zinc-50 dark:bg-zinc-900/30">
+      <section className="section-padding bg-zinc-900/30">
         <div className="absolute inset-0 bg-radial-dark pointer-events-none" />
         <div className="container-wide relative z-10">
           <motion.div {...fadeInUp}>
@@ -380,32 +380,32 @@ export default function DonatePage() {
               transition={{ duration: 0.8 }}
               className="lg:col-span-2 space-y-4 sm:space-y-6 hidden lg:block"
             >
-              <div className="relative aspect-3/4 rounded-xl sm:rounded-2xl overflow-hidden border border-zinc-200 dark:border-zinc-800/50">
+              <div className="relative aspect-3/4 rounded-xl sm:rounded-2xl overflow-hidden border border-zinc-800/50">
                 <ProtectedImage
                   src="/images/man-5.jpg"
                   alt="Support the Vision"
                   fill
                   className="object-cover"
                 />
-                <div className="absolute inset-0 bg-linear-to-t from-white/70 dark:from-zinc-950/70 to-transparent" />
+                <div className="absolute inset-0 bg-linear-to-t from-zinc-950/70 to-transparent" />
                 <div className="absolute bottom-6 left-6 right-6">
-                  <p className="text-zinc-900 dark:text-white font-display text-xl font-bold mb-2">
+                  <p className="text-white font-display text-xl font-bold mb-2">
                     Your Gift Matters
                   </p>
-                  <p className="text-zinc-600 dark:text-zinc-300 text-sm">
+                  <p className="text-zinc-300 text-sm">
                     Every contribution fuels the formation of men and the expansion
                     of purpose across nations.
                   </p>
                 </div>
               </div>
-              <div className="relative aspect-video rounded-xl sm:rounded-2xl overflow-hidden border border-zinc-200 dark:border-zinc-800/50">
+              <div className="relative aspect-video rounded-xl sm:rounded-2xl overflow-hidden border border-zinc-800/50">
                 <ProtectedImage
                   src="/images/hero-alt.jpg"
                   alt="Integrity Man Network"
                   fill
                   className="object-cover"
                 />
-                <div className="absolute inset-0 bg-linear-to-t from-white/50 dark:from-zinc-950/50 to-transparent" />
+                <div className="absolute inset-0 bg-linear-to-t from-zinc-950/50 to-transparent" />
               </div>
             </motion.div>
           </div>

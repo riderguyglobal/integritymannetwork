@@ -77,7 +77,7 @@ export default function AdminAnalyticsPage() {
   if (!stats) {
     return (
       <div className="flex flex-col items-center justify-center min-h-[60vh] gap-4">
-        <p className="text-red-500 dark:text-red-400 text-sm">Failed to load analytics</p>
+        <p className="text-red-400 text-sm">Failed to load analytics</p>
         <Button variant="outline" onClick={fetchStats}><RefreshCw className="w-4 h-4" />Retry</Button>
       </div>
     );
@@ -112,7 +112,7 @@ export default function AdminAnalyticsPage() {
     <div className="space-y-6">
       <div className="flex items-center justify-between">
         <div>
-          <h1 className="text-2xl font-bold text-zinc-900 dark:text-white font-display">Analytics</h1>
+          <h1 className="text-2xl font-bold text-white font-display">Analytics</h1>
           <p className="text-sm text-zinc-500 mt-1">Platform performance metrics and insights.</p>
         </div>
         <Button variant="outline" size="sm" onClick={fetchStats}><RefreshCw className="w-3.5 h-3.5" />Refresh</Button>
@@ -124,13 +124,13 @@ export default function AdminAnalyticsPage() {
           <Card key={metric.label}>
             <CardContent className="p-5">
               <div className="flex items-center justify-between mb-3">
-                <metric.icon className="w-5 h-5 text-orange-500 dark:text-orange-400" />
-                <span className="flex items-center gap-0.5 text-xs text-green-600 dark:text-green-400 font-medium">
+                <metric.icon className="w-5 h-5 text-orange-400" />
+                <span className="flex items-center gap-0.5 text-xs text-green-400 font-medium">
                   <ArrowUpRight className="w-3 h-3" />{metric.change}
                 </span>
               </div>
               <p className="text-xs text-zinc-500">{metric.label}</p>
-              <p className="text-xl font-bold text-zinc-900 dark:text-white font-display mt-1">{metric.value}</p>
+              <p className="text-xl font-bold text-white font-display mt-1">{metric.value}</p>
             </CardContent>
           </Card>
         ))}
@@ -141,7 +141,7 @@ export default function AdminAnalyticsPage() {
         <Card className="lg:col-span-2">
           <CardHeader>
             <CardTitle className="text-lg flex items-center gap-2">
-              <BarChart3 className="w-4 h-4 text-orange-500 dark:text-orange-400" />
+              <BarChart3 className="w-4 h-4 text-orange-400" />
               Platform Overview
             </CardTitle>
           </CardHeader>
@@ -158,10 +158,10 @@ export default function AdminAnalyticsPage() {
               {summaryItems.map((item, idx) => (
                 <div key={idx} className="flex items-center justify-between">
                   <div className="flex items-center gap-3">
-                    <item.icon className="w-4 h-4 text-zinc-400 dark:text-zinc-500" />
-                    <p className="text-sm text-zinc-600 dark:text-zinc-300">{item.label}</p>
+                    <item.icon className="w-4 h-4 text-zinc-500" />
+                    <p className="text-sm text-zinc-300">{item.label}</p>
                   </div>
-                  <span className="text-sm text-zinc-900 dark:text-white font-medium">{item.value}</span>
+                  <span className="text-sm text-white font-medium">{item.value}</span>
                 </div>
               ))}
             </div>

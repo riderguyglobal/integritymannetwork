@@ -112,10 +112,10 @@ function WelcomeSection() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 sm:gap-12 lg:gap-16 items-center">
           <motion.div {...fadeInUp} className="order-2 lg:order-1">
             <SectionHeading label="Welcome" title="Welcome to The Integrity Man Network" align="left" />
-            <motion.p {...fadeInUp} className="mt-5 sm:mt-8 text-base sm:text-lg md:text-xl text-zinc-600 dark:text-zinc-300 leading-relaxed">
+            <motion.p {...fadeInUp} className="mt-5 sm:mt-8 text-base sm:text-lg md:text-xl text-zinc-300 leading-relaxed">
               Raising Men of Integrity for advancing The Eternal Purpose of God on Earth through work.
             </motion.p>
-            <motion.p {...fadeInUp} className="mt-4 sm:mt-6 text-sm sm:text-base text-zinc-500 dark:text-zinc-400 leading-relaxed">
+            <motion.p {...fadeInUp} className="mt-4 sm:mt-6 text-sm sm:text-base text-zinc-400 leading-relaxed">
               {SITE.description}
             </motion.p>
             <motion.div {...fadeInUp} className="mt-6 sm:mt-8">
@@ -134,19 +134,19 @@ function WelcomeSection() {
         </div>
 
         <motion.div {...fadeInUp} className="mt-12 sm:mt-20 grid grid-cols-2 md:grid-cols-4 gap-3 sm:gap-4">
-          <div className="relative aspect-3/4 rounded-xl sm:rounded-2xl overflow-hidden border border-zinc-200 dark:border-zinc-800/50 group">
+          <div className="relative aspect-3/4 rounded-xl sm:rounded-2xl overflow-hidden border border-zinc-800/50 group">
             <ProtectedImage src="/images/man-1.jpg" alt="Man of Integrity" fill className="object-cover group-hover:scale-105 transition-transform duration-700" />
             <div className="absolute inset-0 bg-linear-to-t from-zinc-950/60 to-transparent" />
           </div>
-          <div className="relative aspect-3/4 rounded-xl sm:rounded-2xl overflow-hidden border border-zinc-200 dark:border-zinc-800/50 group mt-4 sm:mt-8">
+          <div className="relative aspect-3/4 rounded-xl sm:rounded-2xl overflow-hidden border border-zinc-800/50 group mt-4 sm:mt-8">
             <ProtectedImage src="/images/man-5.jpg" alt="Integrity Network" fill className="object-cover group-hover:scale-105 transition-transform duration-700" />
             <div className="absolute inset-0 bg-linear-to-t from-zinc-950/60 to-transparent" />
           </div>
-          <div className="relative aspect-3/4 rounded-xl sm:rounded-2xl overflow-hidden border border-zinc-200 dark:border-zinc-800/50 group hidden md:block">
+          <div className="relative aspect-3/4 rounded-xl sm:rounded-2xl overflow-hidden border border-zinc-800/50 group hidden md:block">
             <ProtectedImage src="/images/man-integrity.jpg" alt="Purpose Driven" fill className="object-cover group-hover:scale-105 transition-transform duration-700" />
             <div className="absolute inset-0 bg-linear-to-t from-zinc-950/60 to-transparent" />
           </div>
-          <div className="relative aspect-3/4 rounded-xl sm:rounded-2xl overflow-hidden border border-zinc-200 dark:border-zinc-800/50 group mt-4 sm:mt-8 hidden md:block">
+          <div className="relative aspect-3/4 rounded-xl sm:rounded-2xl overflow-hidden border border-zinc-800/50 group mt-4 sm:mt-8 hidden md:block">
             <ProtectedImage src="/images/community-2.jpg" alt="Community of Men" fill className="object-cover group-hover:scale-105 transition-transform duration-700" />
             <div className="absolute inset-0 bg-linear-to-t from-zinc-950/60 to-transparent" />
           </div>
@@ -173,11 +173,11 @@ function DefinitionsSection() {
                 <Card className="group h-full p-5 sm:p-8 hover:border-orange-500/30 transition-all duration-500">
                   <div className="flex items-start gap-4 sm:gap-5">
                     <div className="shrink-0 w-11 h-11 sm:w-14 sm:h-14 rounded-xl bg-linear-to-br from-orange-500/20 to-orange-600/10 border border-orange-500/20 flex items-center justify-center group-hover:from-orange-500/30 group-hover:to-orange-600/20 transition-all duration-500">
-                      <Icon className="w-5 h-5 sm:w-6 sm:h-6 text-orange-500 dark:text-orange-400" />
+                      <Icon className="w-5 h-5 sm:w-6 sm:h-6 text-orange-400" />
                     </div>
                     <div>
-                      <h3 className="text-lg sm:text-xl font-bold text-zinc-900 dark:text-white mb-2 sm:mb-3 font-display">{def.term}</h3>
-                      <p className="text-xs sm:text-sm text-zinc-500 dark:text-zinc-400 leading-relaxed">{def.definition}</p>
+                      <h3 className="text-lg sm:text-xl font-bold text-white mb-2 sm:mb-3 font-display">{def.term}</h3>
+                      <p className="text-xs sm:text-sm text-zinc-400 leading-relaxed">{def.definition}</p>
                     </div>
                   </div>
                 </Card>
@@ -208,12 +208,12 @@ function ChannelsPreview() {
                 <Link href={`/channels#${channel.id}`}>
                   <Card className="group h-full p-4 sm:p-6 hover:border-orange-500/30 cursor-pointer transition-all duration-500 hover:-translate-y-1">
                     <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-lg sm:rounded-xl bg-linear-to-br from-orange-500/20 to-orange-600/10 border border-orange-500/20 flex items-center justify-center mb-3 sm:mb-5 group-hover:from-orange-500/30 transition-all duration-500">
-                      <Icon className="w-4 h-4 sm:w-5 sm:h-5 text-orange-500 dark:text-orange-400" />
+                      <Icon className="w-4 h-4 sm:w-5 sm:h-5 text-orange-400" />
                     </div>
-                    <h3 className="text-sm sm:text-lg font-bold text-zinc-900 dark:text-white mb-1 sm:mb-2">{channel.title}</h3>
-                    <p className="text-[10px] sm:text-xs text-orange-500/70 dark:text-orange-400/70 font-medium uppercase tracking-wider mb-2 sm:mb-3">{channel.subtitle}</p>
+                    <h3 className="text-sm sm:text-lg font-bold text-white mb-1 sm:mb-2">{channel.title}</h3>
+                    <p className="text-[10px] sm:text-xs text-orange-400/70 font-medium uppercase tracking-wider mb-2 sm:mb-3">{channel.subtitle}</p>
                     <p className="text-xs sm:text-sm text-zinc-500 leading-relaxed line-clamp-2 sm:line-clamp-3 hidden sm:block">{channel.description}</p>
-                    <div className="mt-3 sm:mt-4 flex items-center gap-1 text-xs sm:text-sm text-orange-500 dark:text-orange-400 sm:opacity-0 sm:group-hover:opacity-100 transition-opacity duration-300">
+                    <div className="mt-3 sm:mt-4 flex items-center gap-1 text-xs sm:text-sm text-orange-400 sm:opacity-0 sm:group-hover:opacity-100 transition-opacity duration-300">
                       Learn more <ChevronRight className="w-3 h-3 sm:w-4 sm:h-4" />
                     </div>
                   </Card>
@@ -255,14 +255,14 @@ function EventsPreview() {
                   <CardContent className="p-5 sm:p-8 flex-1 flex flex-col">
                     <div className="flex items-center gap-2.5 sm:gap-3 mb-4 sm:mb-6">
                       <div className="w-10 h-10 sm:w-11 sm:h-11 rounded-lg sm:rounded-xl bg-linear-to-br from-orange-500/20 to-orange-600/10 border border-orange-500/20 flex items-center justify-center">
-                        <Icon className="w-4 h-4 sm:w-5 sm:h-5 text-orange-500 dark:text-orange-400" />
+                        <Icon className="w-4 h-4 sm:w-5 sm:h-5 text-orange-400" />
                       </div>
                       <Badge>{event.schedule}</Badge>
                     </div>
-                    <h3 className="text-lg sm:text-xl font-bold text-zinc-900 dark:text-white mb-2 sm:mb-3 font-display">{event.name}</h3>
-                    <p className="text-xs sm:text-sm text-zinc-500 dark:text-zinc-400 leading-relaxed flex-1">{event.description}</p>
-                    <div className="mt-4 sm:mt-6 pt-4 sm:pt-5 border-t border-zinc-200 dark:border-zinc-800/50">
-                      <p className="text-xs sm:text-sm text-orange-500/80 dark:text-orange-400/80 italic font-medium">&ldquo;{event.highlight}&rdquo;</p>
+                    <h3 className="text-lg sm:text-xl font-bold text-white mb-2 sm:mb-3 font-display">{event.name}</h3>
+                    <p className="text-xs sm:text-sm text-zinc-400 leading-relaxed flex-1">{event.description}</p>
+                    <div className="mt-4 sm:mt-6 pt-4 sm:pt-5 border-t border-zinc-800/50">
+                      <p className="text-xs sm:text-sm text-orange-400/80 italic font-medium">&ldquo;{event.highlight}&rdquo;</p>
                     </div>
                   </CardContent>
                 </Card>

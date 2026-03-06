@@ -83,7 +83,7 @@ export function Header() {
         className={cn(
           "fixed top-0 left-0 right-0 z-50 transition-all duration-500",
           isScrolled
-            ? "bg-white/80 dark:bg-zinc-950/80 backdrop-blur-xl border-b border-zinc-200/50 dark:border-zinc-800/50 shadow-lg dark:shadow-2xl shadow-black/5 dark:shadow-black/20"
+            ? "bg-zinc-950/80 backdrop-blur-xl border-b border-zinc-800/50 shadow-2xl shadow-black/20"
             : "bg-transparent"
         )}
       >
@@ -101,10 +101,10 @@ export function Header() {
                 <div className="absolute -inset-1 rounded-xl bg-orange-500/20 blur-md opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
               </div>
               <div className="flex flex-col">
-                <span className="text-base sm:text-lg font-bold tracking-tight text-zinc-900 dark:text-white leading-none">
+                <span className="text-base sm:text-lg font-bold tracking-tight text-white leading-none">
                   Integrity Man
                 </span>
-                <span className="text-[9px] sm:text-[10px] font-semibold tracking-[0.2em] uppercase text-orange-500 dark:text-orange-400/80 leading-none mt-0.5 sm:mt-1">
+                <span className="text-[9px] sm:text-[10px] font-semibold tracking-[0.2em] uppercase text-orange-400/80 leading-none mt-0.5 sm:mt-1">
                   Network
                 </span>
               </div>
@@ -121,8 +121,8 @@ export function Header() {
                     className={cn(
                       "relative px-4 py-2 text-sm font-medium transition-colors duration-200 rounded-lg",
                       isActive
-                        ? "text-orange-500 dark:text-orange-400"
-                        : "text-zinc-500 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-white"
+                        ? "text-orange-400"
+                        : "text-zinc-400 hover:text-white"
                     )}
                   >
                     {link.label}
@@ -143,7 +143,7 @@ export function Header() {
               {/* Cart */}
               <Link
                 href="/store"
-                className="relative p-2 text-zinc-500 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-white transition-colors duration-200"
+                className="relative p-2 text-zinc-400 hover:text-white transition-colors duration-200"
               >
                 <ShoppingBag className="w-5 h-5" />
               </Link>
@@ -164,7 +164,7 @@ export function Header() {
               {/* Mobile Toggle */}
               <button
                 onClick={() => setIsMobileOpen(!isMobileOpen)}
-                className="lg:hidden p-2 text-zinc-500 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-white transition-colors"
+                className="lg:hidden p-2 text-zinc-400 hover:text-white transition-colors"
                 aria-label={isMobileOpen ? "Close menu" : "Open menu"}
               >
                 {isMobileOpen ? (
@@ -200,19 +200,19 @@ export function Header() {
               animate={{ x: 0 }}
               exit={{ x: "100%" }}
               transition={{ type: "spring", damping: 30, stiffness: 300 }}
-              className="absolute right-0 top-0 bottom-0 w-[85%] max-w-sm bg-white dark:bg-zinc-950 border-l border-zinc-200 dark:border-zinc-800/50 shadow-2xl overflow-y-auto"
+              className="absolute right-0 top-0 bottom-0 w-[85%] max-w-sm bg-zinc-950 border-l border-zinc-800/50 shadow-2xl overflow-y-auto"
             >
               {/* Menu Header */}
-              <div className="flex items-center justify-between px-6 py-5 border-b border-zinc-200 dark:border-zinc-800/50">
+              <div className="flex items-center justify-between px-6 py-5 border-b border-zinc-800/50">
                 <div className="flex items-center gap-2.5">
                   <div className="w-8 h-8 rounded-lg bg-linear-to-br from-orange-500 to-orange-700 flex items-center justify-center">
                     <Shield className="w-4 h-4 text-white" />
                   </div>
-                  <span className="text-sm font-bold text-zinc-900 dark:text-white">Menu</span>
+                  <span className="text-sm font-bold text-white">Menu</span>
                 </div>
                 <button
                   onClick={() => setIsMobileOpen(false)}
-                  className="w-10 h-10 rounded-xl bg-zinc-100 dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 flex items-center justify-center text-zinc-500 dark:text-zinc-400"
+                  className="w-10 h-10 rounded-xl bg-zinc-900 border border-zinc-800 flex items-center justify-center text-zinc-400"
                 >
                   <X className="w-5 h-5" />
                 </button>
@@ -236,8 +236,8 @@ export function Header() {
                           className={cn(
                             "flex items-center gap-4 px-4 py-3.5 rounded-xl text-base font-medium transition-all duration-200",
                             isActive
-                              ? "bg-orange-500/10 text-orange-500 dark:text-orange-400 border border-orange-500/20"
-                              : "text-zinc-600 dark:text-zinc-300 hover:bg-zinc-100 dark:hover:bg-zinc-900 active:bg-zinc-200 dark:active:bg-zinc-800"
+                              ? "bg-orange-500/10 text-orange-400 border border-orange-500/20"
+                              : "text-zinc-300 hover:bg-zinc-900 active:bg-zinc-800"
                           )}
                         >
                           <div
@@ -245,13 +245,13 @@ export function Header() {
                               "w-9 h-9 rounded-lg flex items-center justify-center shrink-0",
                               isActive
                                 ? "bg-orange-500/20"
-                                : "bg-zinc-100 dark:bg-zinc-800/50"
+                                : "bg-zinc-800/50"
                             )}
                           >
                             <Icon
                               className={cn(
                                 "w-4 h-4",
-                                isActive ? "text-orange-500 dark:text-orange-400" : "text-zinc-400 dark:text-zinc-500"
+                                isActive ? "text-orange-400" : "text-zinc-500"
                               )}
                             />
                           </div>
@@ -267,7 +267,7 @@ export function Header() {
               </nav>
 
               {/* Divider */}
-              <div className="mx-6 h-px bg-zinc-200 dark:bg-zinc-800/50" />
+              <div className="mx-6 h-px bg-zinc-800/50" />
 
               {/* Bottom Actions */}
               <div className="px-6 py-6 space-y-3">
@@ -287,7 +287,7 @@ export function Header() {
 
               {/* Footer note */}
               <div className="px-6 pb-8">
-                <p className="text-[11px] text-zinc-400 dark:text-zinc-600 text-center">
+                <p className="text-[11px] text-zinc-600 text-center">
                   The Integrity Man Network
                 </p>
               </div>

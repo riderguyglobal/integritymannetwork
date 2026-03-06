@@ -36,12 +36,12 @@ export function SectionHeading({
         </div>
       )}
 
-      <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-zinc-900 dark:text-white leading-tight tracking-tight font-display">
+      <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-white leading-tight tracking-tight font-display">
         {title}
       </h2>
 
       {description && (
-        <p className={cn("mt-4 sm:mt-5 text-sm sm:text-base md:text-lg text-zinc-500 dark:text-zinc-400 leading-relaxed max-w-2xl", align === "center" && "mx-auto")}>
+        <p className={cn("mt-4 sm:mt-5 text-sm sm:text-base md:text-lg text-zinc-400 leading-relaxed max-w-2xl", align === "center" && "mx-auto")}>
           {description}
         </p>
       )}

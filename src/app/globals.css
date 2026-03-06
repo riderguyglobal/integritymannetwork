@@ -28,24 +28,15 @@
 /* ── Base Styles ── */
 
 * {
-  border-color: theme(colors.zinc.200);
-}
-
-.dark * {
   border-color: theme(colors.zinc.800);
 }
 
 body {
   font-family: var(--font-body);
-  background-color: #ffffff;
-  color: #18181b;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-.dark body {
   background-color: #09090b;
   color: #fafafa;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 /* ── Media Protection — prevents saving/downloading videos & images ── */
@@ -91,13 +82,6 @@ img + div {
 }
 
 .text-gradient-subtle {
-  background: linear-gradient(135deg, #18181b 0%, #71717a 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-}
-
-.dark .text-gradient-subtle {
   background: linear-gradient(135deg, #ffffff 0%, #a1a1aa 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -144,15 +128,6 @@ img + div {
 
 .bg-grid {
   background-image: linear-gradient(
-      rgba(0, 0, 0, 0.03) 1px,
-      transparent 1px
-    ),
-    linear-gradient(90deg, rgba(0, 0, 0, 0.03) 1px, transparent 1px);
-  background-size: 60px 60px;
-}
-
-.dark .bg-grid {
-  background-image: linear-gradient(
       rgba(255, 255, 255, 0.02) 1px,
       transparent 1px
     ),
@@ -161,14 +136,6 @@ img + div {
 }
 
 .bg-radial-dark {
-  background: radial-gradient(
-    ellipse at center,
-    rgba(249, 115, 22, 0.03) 0%,
-    transparent 70%
-  );
-}
-
-.dark .bg-radial-dark {
   background: radial-gradient(
     ellipse at center,
     rgba(249, 115, 22, 0.05) 0%,
@@ -180,15 +147,6 @@ img + div {
 
 .divider-gradient {
   height: 1px;
-  background: linear-gradient(
-    90deg,
-    transparent,
-    rgba(249, 115, 22, 0.2),
-    transparent
-  );
-}
-
-.dark .divider-gradient {
   background: linear-gradient(
     90deg,
     transparent,
@@ -340,11 +298,6 @@ img + div {
 /* ── Selection ── */
 
 ::selection {
-  background: rgba(249, 115, 22, 0.2);
-  color: #18181b;
-}
-
-.dark ::selection {
   background: rgba(249, 115, 22, 0.3);
   color: #fff;
 }

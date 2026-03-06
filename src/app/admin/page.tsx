@@ -66,10 +66,10 @@ function StatCard({
         <div className="flex items-start justify-between">
           <div>
             <p className="text-sm text-zinc-500 mb-1">{label}</p>
-            <p className="text-2xl font-bold text-zinc-900 dark:text-white font-display">{value}</p>
+            <p className="text-2xl font-bold text-white font-display">{value}</p>
           </div>
           <div className="w-10 h-10 rounded-lg bg-orange-500/10 border border-orange-500/20 flex items-center justify-center">
-            <Icon className="w-5 h-5 text-orange-500 dark:text-orange-400" />
+            <Icon className="w-5 h-5 text-orange-400" />
           </div>
         </div>
         <div className="mt-3 flex items-center gap-1.5">
@@ -81,7 +81,7 @@ function StatCard({
           <span className={`text-xs font-medium ${trend === "up" ? "text-green-500" : "text-red-500"}`}>
             {change >= 0 ? "+" : ""}{change}%
           </span>
-          <span className="text-xs text-zinc-400 dark:text-zinc-600">vs last month</span>
+          <span className="text-xs text-zinc-600">vs last month</span>
         </div>
       </CardContent>
     </Card>
@@ -152,7 +152,7 @@ export default function AdminDashboardPage() {
     <div className="space-y-8">
       <div className="flex items-center justify-between">
         <div>
-          <h1 className="text-2xl font-bold text-zinc-900 dark:text-white font-display">Dashboard</h1>
+          <h1 className="text-2xl font-bold text-white font-display">Dashboard</h1>
           <p className="text-sm text-zinc-500 mt-1">Overview of your platform.</p>
         </div>
         <Button onClick={fetchData} variant="ghost" size="sm">
@@ -180,10 +180,10 @@ export default function AdminDashboardPage() {
             <Card className="hover:border-orange-500/30 cursor-pointer group">
               <CardContent className="p-5">
                 <div className="flex items-center gap-3 mb-3">
-                  <item.icon className="w-4 h-4 text-orange-500 dark:text-orange-400" />
-                  <span className="text-sm font-semibold text-zinc-900 dark:text-white">{item.label}</span>
+                  <item.icon className="w-4 h-4 text-orange-400" />
+                  <span className="text-sm font-semibold text-white">{item.label}</span>
                 </div>
-                <p className="text-2xl font-bold text-zinc-900 dark:text-white font-display">{item.total}</p>
+                <p className="text-2xl font-bold text-white font-display">{item.total}</p>
                 <p className="text-xs text-zinc-500 mt-1">{item.metric}</p>
               </CardContent>
             </Card>
@@ -203,13 +203,13 @@ export default function AdminDashboardPage() {
             ) : (
               <div className="space-y-3">
                 {activity.map((item, i) => (
-                  <div key={i} className="flex items-start gap-3 py-2 border-b border-zinc-100 dark:border-zinc-800/50 last:border-0">
+                  <div key={i} className="flex items-start gap-3 py-2 border-b border-zinc-800/50 last:border-0">
                     <div className="w-8 h-8 rounded-full bg-orange-500/10 flex items-center justify-center shrink-0 mt-0.5">
-                      <span className="text-[10px] font-bold text-orange-500 dark:text-orange-400 uppercase">{item.type.slice(0, 2)}</span>
+                      <span className="text-[10px] font-bold text-orange-400 uppercase">{item.type.slice(0, 2)}</span>
                     </div>
                     <div className="min-w-0">
-                      <p className="text-sm text-zinc-700 dark:text-zinc-300 truncate">{item.message}</p>
-                      <p className="text-xs text-zinc-400 dark:text-zinc-600 mt-0.5">{timeAgo(item.time)}</p>
+                      <p className="text-sm text-zinc-300 truncate">{item.message}</p>
+                      <p className="text-xs text-zinc-600 mt-0.5">{timeAgo(item.time)}</p>
                     </div>
                   </div>
                 ))}
@@ -227,9 +227,9 @@ export default function AdminDashboardPage() {
             <div className="grid grid-cols-2 gap-3">
               {quickActions.map((action) => (
                 <Link key={action.label} href={action.href}>
-                  <div className="p-4 rounded-lg border border-zinc-200 dark:border-zinc-800 hover:border-orange-500/30 hover:bg-orange-500/5 transition-all cursor-pointer text-center group">
-                    <action.icon className="w-5 h-5 text-zinc-400 dark:text-zinc-500 mx-auto mb-2 group-hover:text-orange-500" />
-                    <span className="text-xs font-medium text-zinc-600 dark:text-zinc-400 group-hover:text-zinc-900 dark:group-hover:text-white">{action.label}</span>
+                  <div className="p-4 rounded-lg border border-zinc-800 hover:border-orange-500/30 hover:bg-orange-500/5 transition-all cursor-pointer text-center group">
+                    <action.icon className="w-5 h-5 text-zinc-500 mx-auto mb-2 group-hover:text-orange-500" />
+                    <span className="text-xs font-medium text-zinc-400 group-hover:text-white">{action.label}</span>
                   </div>
                 </Link>
               ))}

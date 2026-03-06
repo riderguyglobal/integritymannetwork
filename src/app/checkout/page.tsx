@@ -31,10 +31,10 @@ export default function CheckoutPage() {
 
   if (items.length === 0) {
     return (
-      <div className="min-h-screen bg-white dark:bg-zinc-950 flex items-center justify-center">
+      <div className="min-h-screen bg-zinc-950 flex items-center justify-center">
         <div className="text-center">
-          <ShoppingBag className="w-16 h-16 text-zinc-300 dark:text-zinc-700 mx-auto mb-4" />
-          <h1 className="text-2xl font-bold text-zinc-900 dark:text-white font-display mb-2">
+          <ShoppingBag className="w-16 h-16 text-zinc-700 mx-auto mb-4" />
+          <h1 className="text-2xl font-bold text-white font-display mb-2">
             Your Cart is Empty
           </h1>
           <p className="text-zinc-500 mb-6">
@@ -55,17 +55,17 @@ export default function CheckoutPage() {
   ];
 
   return (
-    <div className="min-h-screen bg-white dark:bg-zinc-950 py-12">
+    <div className="min-h-screen bg-zinc-950 py-12">
       <div className="max-w-6xl mx-auto px-6">
         {/* Header */}
         <div className="flex items-center gap-3 mb-8">
           <Link
             href="/store"
-            className="text-zinc-500 hover:text-zinc-900 dark:hover:text-white transition-colors"
+            className="text-zinc-500 hover:text-white transition-colors"
           >
             <ChevronLeft className="w-5 h-5" />
           </Link>
-          <h1 className="text-2xl font-bold text-zinc-900 dark:text-white font-display">
+          <h1 className="text-2xl font-bold text-white font-display">
             Checkout
           </h1>
           <div className="flex items-center gap-1 ml-auto text-xs text-zinc-500">
@@ -85,10 +85,10 @@ export default function CheckoutPage() {
                 <div
                   className={`flex items-center gap-2 px-4 py-2 rounded-full text-sm transition-all ${
                     isActive
-                      ? "bg-orange-500/10 border border-orange-500/30 text-orange-500 dark:text-orange-400"
+                      ? "bg-orange-500/10 border border-orange-500/30 text-orange-400"
                       : isDone
                       ? "bg-green-500/10 border border-green-500/30 text-green-400"
-                      : "bg-zinc-100 dark:bg-zinc-800/30 border border-zinc-200 dark:border-zinc-800/50 text-zinc-500"
+                      : "bg-zinc-800/30 border border-zinc-800/50 text-zinc-500"
                   }`}
                 >
                   {isDone ? (
@@ -99,7 +99,7 @@ export default function CheckoutPage() {
                   {s.label}
                 </div>
                 {idx < steps.length - 1 && (
-                  <div className="w-8 h-px bg-zinc-100 dark:bg-zinc-800" />
+                  <div className="w-8 h-px bg-zinc-800" />
                 )}
               </div>
             );
@@ -114,22 +114,22 @@ export default function CheckoutPage() {
               <motion.div
                 initial={{ opacity: 0, x: -20 }}
                 animate={{ opacity: 1, x: 0 }}
-                className="bg-zinc-50 dark:bg-zinc-900/50 rounded-xl border border-zinc-200 dark:border-zinc-800/50 p-6 space-y-5"
+                className="bg-zinc-900/50 rounded-xl border border-zinc-800/50 p-6 space-y-5"
               >
-                <h2 className="text-lg font-bold text-zinc-900 dark:text-white flex items-center gap-2">
-                  <Truck className="w-5 h-5 text-orange-500 dark:text-orange-400" />
+                <h2 className="text-lg font-bold text-white flex items-center gap-2">
+                  <Truck className="w-5 h-5 text-orange-400" />
                   Shipping Information
                 </h2>
 
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <div>
-                    <label className="block text-sm text-zinc-500 dark:text-zinc-400 mb-1.5">
+                    <label className="block text-sm text-zinc-400 mb-1.5">
                       First Name
                     </label>
                     <Input placeholder="John" />
                   </div>
                   <div>
-                    <label className="block text-sm text-zinc-500 dark:text-zinc-400 mb-1.5">
+                    <label className="block text-sm text-zinc-400 mb-1.5">
                       Last Name
                     </label>
                     <Input placeholder="Doe" />
@@ -137,21 +137,21 @@ export default function CheckoutPage() {
                 </div>
 
                 <div>
-                  <label className="block text-sm text-zinc-500 dark:text-zinc-400 mb-1.5">
+                  <label className="block text-sm text-zinc-400 mb-1.5">
                     Email
                   </label>
                   <Input type="email" placeholder="john@example.com" />
                 </div>
 
                 <div>
-                  <label className="block text-sm text-zinc-500 dark:text-zinc-400 mb-1.5">
+                  <label className="block text-sm text-zinc-400 mb-1.5">
                     Phone
                   </label>
                   <Input type="tel" placeholder="+234 812 345 6789" />
                 </div>
 
                 <div>
-                  <label className="block text-sm text-zinc-500 dark:text-zinc-400 mb-1.5">
+                  <label className="block text-sm text-zinc-400 mb-1.5">
                     Address
                   </label>
                   <Input placeholder="123 Main Street" />
@@ -159,19 +159,19 @@ export default function CheckoutPage() {
 
                 <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
                   <div>
-                    <label className="block text-sm text-zinc-500 dark:text-zinc-400 mb-1.5">
+                    <label className="block text-sm text-zinc-400 mb-1.5">
                       City
                     </label>
                     <Input placeholder="Lagos" />
                   </div>
                   <div>
-                    <label className="block text-sm text-zinc-500 dark:text-zinc-400 mb-1.5">
+                    <label className="block text-sm text-zinc-400 mb-1.5">
                       State
                     </label>
                     <Input placeholder="Lagos" />
                   </div>
                   <div>
-                    <label className="block text-sm text-zinc-500 dark:text-zinc-400 mb-1.5">
+                    <label className="block text-sm text-zinc-400 mb-1.5">
                       Country
                     </label>
                     <Input placeholder="Nigeria" />
@@ -191,10 +191,10 @@ export default function CheckoutPage() {
               <motion.div
                 initial={{ opacity: 0, x: -20 }}
                 animate={{ opacity: 1, x: 0 }}
-                className="bg-zinc-50 dark:bg-zinc-900/50 rounded-xl border border-zinc-200 dark:border-zinc-800/50 p-6 space-y-5"
+                className="bg-zinc-900/50 rounded-xl border border-zinc-800/50 p-6 space-y-5"
               >
-                <h2 className="text-lg font-bold text-zinc-900 dark:text-white flex items-center gap-2">
-                  <CreditCard className="w-5 h-5 text-orange-500 dark:text-orange-400" />
+                <h2 className="text-lg font-bold text-white flex items-center gap-2">
+                  <CreditCard className="w-5 h-5 text-orange-400" />
                   Payment Method
                 </h2>
 
@@ -221,7 +221,7 @@ export default function CheckoutPage() {
                       className={`flex items-center gap-4 p-4 rounded-lg border cursor-pointer transition-all ${
                         paymentMethod === method.id
                           ? "border-orange-500/30 bg-orange-500/5"
-                          : "border-zinc-200 dark:border-zinc-800/50 bg-zinc-100/50 dark:bg-zinc-800/20 hover:border-zinc-300 dark:hover:border-zinc-700/50"
+                          : "border-zinc-800/50 bg-zinc-800/20 hover:border-zinc-700/50"
                       }`}
                     >
                       <input
@@ -230,10 +230,10 @@ export default function CheckoutPage() {
                         value={method.id}
                         checked={paymentMethod === method.id}
                         onChange={() => setPaymentMethod(method.id)}
-                        className="w-4 h-4 text-orange-500 bg-zinc-100 dark:bg-zinc-800 border-zinc-300 dark:border-zinc-600 focus:ring-orange-500/20"
+                        className="w-4 h-4 text-orange-500 bg-zinc-800 border-zinc-600 focus:ring-orange-500/20"
                       />
                       <div>
-                        <p className="text-sm font-medium text-zinc-900 dark:text-white">
+                        <p className="text-sm font-medium text-white">
                           {method.label}
                         </p>
                         <p className="text-xs text-zinc-500">{method.desc}</p>
@@ -261,10 +261,10 @@ export default function CheckoutPage() {
               <motion.div
                 initial={{ opacity: 0, x: -20 }}
                 animate={{ opacity: 1, x: 0 }}
-                className="bg-zinc-50 dark:bg-zinc-900/50 rounded-xl border border-zinc-200 dark:border-zinc-800/50 p-6 space-y-5"
+                className="bg-zinc-900/50 rounded-xl border border-zinc-800/50 p-6 space-y-5"
               >
-                <h2 className="text-lg font-bold text-zinc-900 dark:text-white flex items-center gap-2">
-                  <Check className="w-5 h-5 text-orange-500 dark:text-orange-400" />
+                <h2 className="text-lg font-bold text-white flex items-center gap-2">
+                  <Check className="w-5 h-5 text-orange-400" />
                   Order Review
                 </h2>
 
@@ -272,17 +272,17 @@ export default function CheckoutPage() {
                   {items.map((item) => (
                     <div
                       key={item.id}
-                      className="flex items-center justify-between py-3 border-b border-zinc-200 dark:border-zinc-800/30 last:border-0"
+                      className="flex items-center justify-between py-3 border-b border-zinc-800/30 last:border-0"
                     >
                       <div>
-                        <p className="text-sm font-medium text-zinc-900 dark:text-white">
+                        <p className="text-sm font-medium text-white">
                           {item.name}
                         </p>
                         <p className="text-xs text-zinc-500">
                           Qty: {item.quantity}
                         </p>
                       </div>
-                      <p className="text-sm text-zinc-900 dark:text-white font-medium">
+                      <p className="text-sm text-white font-medium">
                         {formatCurrency(
                           (item.salePrice ?? item.price) * item.quantity
                         )}
@@ -291,24 +291,24 @@ export default function CheckoutPage() {
                   ))}
                 </div>
 
-                <div className="space-y-2 pt-3 border-t border-zinc-200 dark:border-zinc-800/50">
+                <div className="space-y-2 pt-3 border-t border-zinc-800/50">
                   <div className="flex justify-between text-sm">
-                    <span className="text-zinc-500 dark:text-zinc-400">Subtotal</span>
-                    <span className="text-zinc-900 dark:text-white">
+                    <span className="text-zinc-400">Subtotal</span>
+                    <span className="text-white">
                       {formatCurrency(subtotal())}
                     </span>
                   </div>
                   <div className="flex justify-between text-sm">
-                    <span className="text-zinc-500 dark:text-zinc-400">Shipping</span>
-                    <span className="text-zinc-900 dark:text-white">
+                    <span className="text-zinc-400">Shipping</span>
+                    <span className="text-white">
                       {shippingCost === 0
                         ? "Free"
                         : formatCurrency(shippingCost)}
                     </span>
                   </div>
-                  <div className="flex justify-between text-base font-bold pt-2 border-t border-zinc-200 dark:border-zinc-800/50">
-                    <span className="text-zinc-900 dark:text-white">Total</span>
-                    <span className="text-orange-500 dark:text-orange-400">
+                  <div className="flex justify-between text-base font-bold pt-2 border-t border-zinc-800/50">
+                    <span className="text-white">Total</span>
+                    <span className="text-orange-400">
                       {formatCurrency(total)}
                     </span>
                   </div>
@@ -332,8 +332,8 @@ export default function CheckoutPage() {
 
           {/* Order Summary Sidebar */}
           <div className="lg:col-span-1">
-            <div className="bg-zinc-50 dark:bg-zinc-900/50 rounded-xl border border-zinc-200 dark:border-zinc-800/50 p-6 sticky top-24">
-              <h3 className="text-sm font-semibold text-zinc-900 dark:text-white mb-4">
+            <div className="bg-zinc-900/50 rounded-xl border border-zinc-800/50 p-6 sticky top-24">
+              <h3 className="text-sm font-semibold text-white mb-4">
                 Order Summary
               </h3>
 
@@ -343,11 +343,11 @@ export default function CheckoutPage() {
                     key={item.id}
                     className="flex items-center gap-3"
                   >
-                    <div className="w-10 h-10 rounded-md bg-zinc-100 dark:bg-zinc-800/50 border border-zinc-200 dark:border-zinc-700/50 flex items-center justify-center shrink-0">
-                      <ShoppingBag className="w-4 h-4 text-zinc-400 dark:text-zinc-600" />
+                    <div className="w-10 h-10 rounded-md bg-zinc-800/50 border border-zinc-700/50 flex items-center justify-center shrink-0">
+                      <ShoppingBag className="w-4 h-4 text-zinc-600" />
                     </div>
                     <div className="flex-1 min-w-0">
-                      <p className="text-xs font-medium text-zinc-900 dark:text-white truncate">
+                      <p className="text-xs font-medium text-white truncate">
                         {item.name}
                       </p>
                       <p className="text-[10px] text-zinc-500">
@@ -358,29 +358,29 @@ export default function CheckoutPage() {
                 ))}
               </div>
 
-              <div className="space-y-2 pt-4 border-t border-zinc-200 dark:border-zinc-800/50">
+              <div className="space-y-2 pt-4 border-t border-zinc-800/50">
                 <div className="flex justify-between text-sm">
-                  <span className="text-zinc-500 dark:text-zinc-400">Subtotal</span>
-                  <span className="text-zinc-900 dark:text-white">
+                  <span className="text-zinc-400">Subtotal</span>
+                  <span className="text-white">
                     {formatCurrency(subtotal())}
                   </span>
                 </div>
                 <div className="flex justify-between text-sm">
-                  <span className="text-zinc-500 dark:text-zinc-400">Shipping</span>
-                  <span className="text-zinc-900 dark:text-white">
+                  <span className="text-zinc-400">Shipping</span>
+                  <span className="text-white">
                     {shippingCost === 0 ? "Free" : formatCurrency(shippingCost)}
                   </span>
                 </div>
-                <div className="flex justify-between text-base font-bold pt-2 border-t border-zinc-200 dark:border-zinc-800/50">
-                  <span className="text-zinc-900 dark:text-white">Total</span>
-                  <span className="text-orange-500 dark:text-orange-400">
+                <div className="flex justify-between text-base font-bold pt-2 border-t border-zinc-800/50">
+                  <span className="text-white">Total</span>
+                  <span className="text-orange-400">
                     {formatCurrency(total)}
                   </span>
                 </div>
               </div>
 
               {/* Trust badges */}
-              <div className="mt-6 pt-4 border-t border-zinc-200 dark:border-zinc-800/50 space-y-2">
+              <div className="mt-6 pt-4 border-t border-zinc-800/50 space-y-2">
                 <div className="flex items-center gap-2 text-xs text-zinc-500">
                   <Shield className="w-3.5 h-3.5 text-green-400" />
                   Secure checkout  SSL encrypted

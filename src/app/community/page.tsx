@@ -144,14 +144,14 @@ export default function CommunityPage() {
   const currentChannel = channels.find((c) => c.id === activeChannel);
 
   return (
-    <div className="min-h-screen bg-white dark:bg-zinc-950 flex">
+    <div className="min-h-screen bg-zinc-950 flex">
       {/* Channel Sidebar */}
-      <aside className="w-64 bg-zinc-50 dark:bg-zinc-900/50 border-r border-zinc-200 dark:border-zinc-800/50 hidden lg:flex flex-col">
+      <aside className="w-64 bg-zinc-900/50 border-r border-zinc-800/50 hidden lg:flex flex-col">
         {/* Header */}
-        <div className="p-4 border-b border-zinc-200 dark:border-zinc-800/50">
+        <div className="p-4 border-b border-zinc-800/50">
           <div className="flex items-center gap-2 mb-3">
-            <Shield className="w-5 h-5 text-orange-500 dark:text-orange-400" />
-            <h2 className="text-sm font-bold text-zinc-900 dark:text-white">TIMN Community</h2>
+            <Shield className="w-5 h-5 text-orange-400" />
+            <h2 className="text-sm font-bold text-white">TIMN Community</h2>
           </div>
           <div className="relative">
             <Search className="absolute left-2.5 top-1/2 -translate-y-1/2 w-3.5 h-3.5 text-zinc-500" />
@@ -164,7 +164,7 @@ export default function CommunityPage() {
 
         {/* Channels */}
         <div className="flex-1 overflow-y-auto p-3 space-y-0.5">
-          <p className="text-[10px] px-2 py-1.5 text-zinc-400 dark:text-zinc-600 uppercase tracking-wider font-semibold">
+          <p className="text-[10px] px-2 py-1.5 text-zinc-600 uppercase tracking-wider font-semibold">
             Channels
           </p>
           {channels.map((channel) => (
@@ -173,8 +173,8 @@ export default function CommunityPage() {
               onClick={() => setActiveChannel(channel.id)}
               className={`flex items-center justify-between w-full px-2.5 py-2 rounded-md text-sm transition-all ${
                 activeChannel === channel.id
-                  ? "bg-orange-500/10 text-orange-500 dark:text-orange-400"
-                  : "text-zinc-500 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-white hover:bg-zinc-100/50 dark:hover:bg-zinc-800/30"
+                  ? "bg-orange-500/10 text-orange-400"
+                  : "text-zinc-400 hover:text-white hover:bg-zinc-800/30"
               }`}
             >
               <span className="flex items-center gap-2">
@@ -191,13 +191,13 @@ export default function CommunityPage() {
         </div>
 
         {/* User Footer */}
-        <div className="p-3 border-t border-zinc-200 dark:border-zinc-800/50">
+        <div className="p-3 border-t border-zinc-800/50">
           <div className="flex items-center gap-2.5 px-2 py-1.5">
-            <div className="w-7 h-7 rounded-full bg-orange-500/20 border border-orange-500/30 flex items-center justify-center text-xs font-bold text-orange-500 dark:text-orange-400">
+            <div className="w-7 h-7 rounded-full bg-orange-500/20 border border-orange-500/30 flex items-center justify-center text-xs font-bold text-orange-400">
               Y
             </div>
             <div className="flex-1 min-w-0">
-              <p className="text-xs font-medium text-zinc-900 dark:text-white truncate">You</p>
+              <p className="text-xs font-medium text-white truncate">You</p>
               <p className="text-[10px] text-green-400">Online</p>
             </div>
             <Settings className="w-3.5 h-3.5 text-zinc-500" />
@@ -208,11 +208,11 @@ export default function CommunityPage() {
       {/* Main Chat Area */}
       <div className="flex-1 flex flex-col">
         {/* Channel Header */}
-        <header className="px-6 py-3.5 border-b border-zinc-200 dark:border-zinc-800/50 flex items-center justify-between bg-white/80 dark:bg-zinc-950/80 backdrop-blur-sm">
+        <header className="px-6 py-3.5 border-b border-zinc-800/50 flex items-center justify-between bg-zinc-950/80 backdrop-blur-sm">
           <div>
             <div className="flex items-center gap-2">
-              <Hash className="w-4 h-4 text-orange-500 dark:text-orange-400" />
-              <h2 className="text-sm font-bold text-zinc-900 dark:text-white">
+              <Hash className="w-4 h-4 text-orange-400" />
+              <h2 className="text-sm font-bold text-white">
                 {currentChannel?.name}
               </h2>
             </div>
@@ -221,10 +221,10 @@ export default function CommunityPage() {
             </p>
           </div>
           <div className="flex items-center gap-3">
-            <button className="text-zinc-500 hover:text-zinc-900 dark:hover:text-white transition-colors">
+            <button className="text-zinc-500 hover:text-white transition-colors">
               <Bell className="w-4 h-4" />
             </button>
-            <button className="text-zinc-500 hover:text-zinc-900 dark:hover:text-white transition-colors">
+            <button className="text-zinc-500 hover:text-white transition-colors">
               <Users className="w-4 h-4" />
             </button>
           </div>
@@ -234,9 +234,9 @@ export default function CommunityPage() {
         <div className="flex-1 overflow-y-auto px-6 py-4 space-y-4">
           {/* Date Divider */}
           <div className="flex items-center gap-3 py-2">
-            <div className="flex-1 h-px bg-zinc-200 dark:bg-zinc-800/50" />
-            <span className="text-[10px] text-zinc-400 dark:text-zinc-600 px-2">Today</span>
-            <div className="flex-1 h-px bg-zinc-200 dark:bg-zinc-800/50" />
+            <div className="flex-1 h-px bg-zinc-800/50" />
+            <span className="text-[10px] text-zinc-600 px-2">Today</span>
+            <div className="flex-1 h-px bg-zinc-800/50" />
           </div>
 
           {sampleMessages.map((msg) => (
@@ -244,30 +244,30 @@ export default function CommunityPage() {
               key={msg.id}
               initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
-              className="flex gap-3 group hover:bg-zinc-100/50 dark:hover:bg-zinc-800/10 rounded-lg px-2 py-2 -mx-2 transition-colors"
+              className="flex gap-3 group hover:bg-zinc-800/10 rounded-lg px-2 py-2 -mx-2 transition-colors"
             >
-              <div className="w-9 h-9 rounded-full bg-orange-500/10 border border-orange-500/20 flex items-center justify-center text-xs font-bold text-orange-500 dark:text-orange-400 shrink-0 mt-0.5">
+              <div className="w-9 h-9 rounded-full bg-orange-500/10 border border-orange-500/20 flex items-center justify-center text-xs font-bold text-orange-400 shrink-0 mt-0.5">
                 {msg.avatar}
               </div>
               <div className="flex-1 min-w-0">
                 <div className="flex items-center gap-2 mb-0.5">
-                  <span className="text-sm font-semibold text-zinc-900 dark:text-white">
+                  <span className="text-sm font-semibold text-white">
                     {msg.user}
                   </span>
                   {msg.role !== "Member" && (
                     <span
                       className={`text-[10px] px-1.5 py-0.5 rounded-full font-medium ${
                         msg.role === "Admin"
-                          ? "bg-orange-500/20 text-orange-500 dark:text-orange-400"
+                          ? "bg-orange-500/20 text-orange-400"
                           : "bg-blue-500/20 text-blue-400"
                       }`}
                     >
                       {msg.role}
                     </span>
                   )}
-                  <span className="text-[10px] text-zinc-400 dark:text-zinc-600">{msg.time}</span>
+                  <span className="text-[10px] text-zinc-600">{msg.time}</span>
                 </div>
-                <p className="text-sm text-zinc-600 dark:text-zinc-300 leading-relaxed">
+                <p className="text-sm text-zinc-300 leading-relaxed">
                   {msg.message}
                 </p>
               </div>
@@ -276,10 +276,10 @@ export default function CommunityPage() {
         </div>
 
         {/* Message Input */}
-        <div className="px-6 py-4 border-t border-zinc-200 dark:border-zinc-800/50">
+        <div className="px-6 py-4 border-t border-zinc-800/50">
           <div className="flex items-center gap-3">
-            <button className="w-8 h-8 rounded-lg bg-zinc-100 dark:bg-zinc-800/50 hover:bg-zinc-200/50 dark:hover:bg-zinc-700/50 flex items-center justify-center transition-colors">
-              <Plus className="w-4 h-4 text-zinc-500 dark:text-zinc-400" />
+            <button className="w-8 h-8 rounded-lg bg-zinc-800/50 hover:bg-zinc-700/50 flex items-center justify-center transition-colors">
+              <Plus className="w-4 h-4 text-zinc-400" />
             </button>
             <div className="flex-1 relative">
               <Input
@@ -297,7 +297,7 @@ export default function CommunityPage() {
                 className={`absolute right-2 top-1/2 -translate-y-1/2 w-7 h-7 rounded-md flex items-center justify-center transition-all ${
                   message.trim()
                     ? "bg-orange-500 text-white"
-                    : "bg-zinc-200/50 dark:bg-zinc-700/50 text-zinc-500"
+                    : "bg-zinc-700/50 text-zinc-500"
                 }`}
               >
                 <Send className="w-3.5 h-3.5" />
@@ -308,28 +308,28 @@ export default function CommunityPage() {
       </div>
 
       {/* Members Sidebar */}
-      <aside className="w-56 bg-zinc-50 dark:bg-zinc-900/30 border-l border-zinc-200 dark:border-zinc-800/50 hidden xl:block p-4">
-        <p className="text-[10px] px-2 py-1.5 text-zinc-400 dark:text-zinc-600 uppercase tracking-wider font-semibold mb-2">
+      <aside className="w-56 bg-zinc-900/30 border-l border-zinc-800/50 hidden xl:block p-4">
+        <p className="text-[10px] px-2 py-1.5 text-zinc-600 uppercase tracking-wider font-semibold mb-2">
           Online  {onlineMembers.length}
         </p>
         <div className="space-y-1">
           {onlineMembers.map((member) => (
             <div
               key={member.name}
-              className="flex items-center gap-2.5 px-2 py-1.5 rounded-md hover:bg-zinc-100/50 dark:hover:bg-zinc-800/30 transition-colors"
+              className="flex items-center gap-2.5 px-2 py-1.5 rounded-md hover:bg-zinc-800/30 transition-colors"
             >
               <div className="relative">
-                <div className="w-7 h-7 rounded-full bg-zinc-100 dark:bg-zinc-800 border border-zinc-200 dark:border-zinc-700/50 flex items-center justify-center text-[10px] font-bold text-zinc-500 dark:text-zinc-400">
+                <div className="w-7 h-7 rounded-full bg-zinc-800 border border-zinc-700/50 flex items-center justify-center text-[10px] font-bold text-zinc-400">
                   {member.name
                     .split(" ")
                     .map((n) => n[0])
                     .join("")}
                 </div>
-                <div className="absolute -bottom-0.5 -right-0.5 w-2.5 h-2.5 rounded-full bg-green-400 border-2 border-white dark:border-zinc-900" />
+                <div className="absolute -bottom-0.5 -right-0.5 w-2.5 h-2.5 rounded-full bg-green-400 border-2 border-zinc-900" />
               </div>
               <div>
-                <p className="text-xs text-zinc-600 dark:text-zinc-300">{member.name}</p>
-                <p className="text-[10px] text-zinc-400 dark:text-zinc-600">{member.role}</p>
+                <p className="text-xs text-zinc-300">{member.name}</p>
+                <p className="text-[10px] text-zinc-600">{member.role}</p>
               </div>
             </div>
           ))}

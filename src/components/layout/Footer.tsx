@@ -47,18 +47,18 @@ const SOCIALS = [
 
 export function Footer() {
   return (
-    <footer className="relative border-t border-zinc-200 dark:border-zinc-800/50 bg-gray-50 dark:bg-zinc-950">
+    <footer className="relative border-t border-zinc-800/50 bg-zinc-950">
       {/* Ambient glow */}
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-2/3 h-px bg-linear-to-r from-transparent via-orange-500/30 to-transparent" />
 
       <div className="container-wide">
         {/* Newsletter Section */}
-        <div className="py-10 sm:py-16 border-b border-zinc-200 dark:border-zinc-800/50">
+        <div className="py-10 sm:py-16 border-b border-zinc-800/50">
           <div className="max-w-2xl mx-auto text-center">
-            <h3 className="text-xl sm:text-2xl md:text-3xl font-bold text-zinc-900 dark:text-white mb-2 sm:mb-3 font-display">
+            <h3 className="text-xl sm:text-2xl md:text-3xl font-bold text-white mb-2 sm:mb-3 font-display">
               Stay Connected
             </h3>
-            <p className="text-sm sm:text-base text-zinc-500 dark:text-zinc-400 mb-6 sm:mb-8">
+            <p className="text-sm sm:text-base text-zinc-400 mb-6 sm:mb-8">
               Join our mailing list for updates on events, resources, and the
               movement of men walking in integrity.
             </p>
@@ -85,10 +85,10 @@ export function Footer() {
                 <Shield className="w-4 h-4 sm:w-5 sm:h-5 text-white" />
               </div>
               <div className="flex flex-col">
-                <span className="text-sm sm:text-base font-bold tracking-tight text-zinc-900 dark:text-white leading-none">
+                <span className="text-sm sm:text-base font-bold tracking-tight text-white leading-none">
                   Integrity Man
                 </span>
-                <span className="text-[8px] sm:text-[9px] font-semibold tracking-[0.2em] uppercase text-orange-500 dark:text-orange-400/80 leading-none mt-1">
+                <span className="text-[8px] sm:text-[9px] font-semibold tracking-[0.2em] uppercase text-orange-400/80 leading-none mt-1">
                   Network
                 </span>
               </div>
@@ -101,7 +101,7 @@ export function Footer() {
                 <a
                   key={label}
                   href={href}
-                  className="w-9 h-9 rounded-lg bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 flex items-center justify-center text-zinc-400 dark:text-zinc-500 hover:text-orange-500 dark:hover:text-orange-400 hover:border-orange-500/30 transition-all duration-200"
+                  className="w-9 h-9 rounded-lg bg-zinc-900 border border-zinc-800 flex items-center justify-center text-zinc-500 hover:text-orange-400 hover:border-orange-500/30 transition-all duration-200"
                   aria-label={label}
                 >
                   <Icon className="w-4 h-4" />
@@ -112,7 +112,7 @@ export function Footer() {
 
           {/* Ministry */}
           <div>
-            <h4 className="text-[10px] sm:text-xs font-semibold tracking-[0.15em] uppercase text-zinc-400 dark:text-zinc-500 mb-3 sm:mb-5">
+            <h4 className="text-[10px] sm:text-xs font-semibold tracking-[0.15em] uppercase text-zinc-500 mb-3 sm:mb-5">
               Ministry
             </h4>
             <ul className="space-y-2.5 sm:space-y-3">
@@ -120,7 +120,7 @@ export function Footer() {
                 <li key={link.href}>
                   <Link
                     href={link.href}
-                    className="text-xs sm:text-sm text-zinc-500 dark:text-zinc-400 hover:text-orange-500 dark:hover:text-orange-400 transition-colors duration-200">
+                    className="text-xs sm:text-sm text-zinc-400 hover:text-orange-400 transition-colors duration-200">
                     {link.label}
                   </Link>
                 </li>
@@ -130,7 +130,7 @@ export function Footer() {
 
           {/* Community */}
           <div>
-            <h4 className="text-[10px] sm:text-xs font-semibold tracking-[0.15em] uppercase text-zinc-400 dark:text-zinc-500 mb-3 sm:mb-5">
+            <h4 className="text-[10px] sm:text-xs font-semibold tracking-[0.15em] uppercase text-zinc-500 mb-3 sm:mb-5">
               Community
             </h4>
             <ul className="space-y-2.5 sm:space-y-3">
@@ -138,7 +138,7 @@ export function Footer() {
                 <li key={link.href}>
                   <Link
                     href={link.href}
-                    className="text-xs sm:text-sm text-zinc-500 dark:text-zinc-400 hover:text-orange-500 dark:hover:text-orange-400 transition-colors duration-200">
+                    className="text-xs sm:text-sm text-zinc-400 hover:text-orange-400 transition-colors duration-200">
                     {link.label}
                   </Link>
                 </li>
@@ -148,7 +148,7 @@ export function Footer() {
 
           {/* Channels */}
           <div>
-            <h4 className="text-[10px] sm:text-xs font-semibold tracking-[0.15em] uppercase text-zinc-400 dark:text-zinc-500 mb-3 sm:mb-5">
+            <h4 className="text-[10px] sm:text-xs font-semibold tracking-[0.15em] uppercase text-zinc-500 mb-3 sm:mb-5">
               Channels
             </h4>
             <ul className="space-y-2.5 sm:space-y-3">
@@ -156,7 +156,7 @@ export function Footer() {
                 <li key={link.label}>
                   <Link
                     href={link.href}
-                    className="text-xs sm:text-sm text-zinc-500 dark:text-zinc-400 hover:text-orange-500 dark:hover:text-orange-400 transition-colors duration-200">
+                    className="text-xs sm:text-sm text-zinc-400 hover:text-orange-400 transition-colors duration-200">
                     {link.label}
                   </Link>
                 </li>
@@ -166,26 +166,26 @@ export function Footer() {
         </div>
 
         {/* Bottom Bar */}
-        <div className="py-4 sm:py-6 border-t border-zinc-200 dark:border-zinc-800/50 flex flex-col sm:flex-row items-center justify-between gap-3 sm:gap-4">
-          <p className="text-[10px] sm:text-xs text-zinc-400 dark:text-zinc-600">
+        <div className="py-4 sm:py-6 border-t border-zinc-800/50 flex flex-col sm:flex-row items-center justify-between gap-3 sm:gap-4">
+          <p className="text-[10px] sm:text-xs text-zinc-600">
             &copy; {new Date().getFullYear()} {SITE.name}. All rights reserved.
           </p>
           <div className="flex items-center gap-4 sm:gap-6">
             <Link
               href="/privacy"
-              className="text-xs text-zinc-400 dark:text-zinc-600 hover:text-zinc-600 dark:hover:text-zinc-400 transition-colors"
+              className="text-xs text-zinc-600 hover:text-zinc-400 transition-colors"
             >
               Privacy Policy
             </Link>
             <Link
               href="/terms"
-              className="text-xs text-zinc-400 dark:text-zinc-600 hover:text-zinc-600 dark:hover:text-zinc-400 transition-colors"
+              className="text-xs text-zinc-600 hover:text-zinc-400 transition-colors"
             >
               Terms of Service
             </Link>
             <Link
               href="/admin"
-              className="text-xs text-zinc-400/50 dark:text-zinc-700 hover:text-zinc-500 dark:hover:text-zinc-500 transition-colors"
+              className="text-xs text-zinc-700 hover:text-zinc-500 transition-colors"
             >
               Admin
             </Link>

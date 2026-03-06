@@ -3,7 +3,6 @@ import { Inter, Playfair_Display } from "next/font/google";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { CartDrawer } from "@/components/cart/CartDrawer";
-import { ThemeProvider } from "@/components/providers/ThemeProvider";
 import "./globals.css";
 
 const inter = Inter({
@@ -25,7 +24,7 @@ export const viewport: Viewport = {
   width: "device-width",
   initialScale: 1,
   maximumScale: 5,
-  themeColor: [{media: "(prefers-color-scheme: light)", color: "#ffffff"}, {media: "(prefers-color-scheme: dark)", color: "#09090b"}],
+  themeColor: "#09090b",
 };
 
 export const metadata: Metadata = {
@@ -82,7 +81,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${inter.variable} ${playfair.variable}`} suppressHydrationWarning>
+    <html lang="en" className={`${inter.variable} ${playfair.variable}`}>
       <head>
         {/* DNS prefetch & preconnect for external resources */}
         <link rel="dns-prefetch" href="https://res.cloudinary.com" />
@@ -92,13 +91,11 @@ export default function RootLayout({
         <link rel="dns-prefetch" href="https://fonts.gstatic.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
       </head>
-      <body className="min-h-screen bg-white dark:bg-zinc-950 text-zinc-900 dark:text-zinc-50 antialiased">
-        <ThemeProvider>
-          <Header />
-          <main className="relative">{children}</main>
-          <Footer />
-          <CartDrawer />
-        </ThemeProvider>
+      <body className="min-h-screen bg-zinc-950 text-zinc-50 antialiased">
+        <Header />
+        <main className="relative">{children}</main>
+        <Footer />
+        <CartDrawer />
       </body>
     </html>
   );

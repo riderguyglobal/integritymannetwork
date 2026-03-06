@@ -107,7 +107,7 @@ export default function AdminUsersPage() {
   return (
     <div className="space-y-6">
       <div>
-        <h1 className="text-2xl font-bold text-zinc-900 dark:text-white font-display">Users</h1>
+        <h1 className="text-2xl font-bold text-white font-display">Users</h1>
         <p className="text-sm text-zinc-500 mt-1">Manage members and roles.</p>
       </div>
 
@@ -125,7 +125,7 @@ export default function AdminUsersPage() {
         <select
           value={roleFilter}
           onChange={(e) => { setRoleFilter(e.target.value); setPage(1); }}
-          className="h-11 rounded-lg border border-zinc-300 dark:border-zinc-800 bg-white dark:bg-zinc-900/50 px-3 text-sm text-zinc-700 dark:text-zinc-300"
+          className="h-11 rounded-lg border border-zinc-800 bg-zinc-900/50 px-3 text-sm text-zinc-300"
         >
           {ROLES.map((r) => (
             <option key={r} value={r}>{r === "ALL" ? "All Roles" : r.replace("_", " ")}</option>
@@ -144,7 +144,7 @@ export default function AdminUsersPage() {
       ) : users.length === 0 ? (
         <Card>
           <CardContent className="py-16 text-center">
-            <Users className="w-10 h-10 text-zinc-300 dark:text-zinc-700 mx-auto mb-3" />
+            <Users className="w-10 h-10 text-zinc-700 mx-auto mb-3" />
             <p className="text-zinc-500">No users found</p>
           </CardContent>
         </Card>
@@ -153,24 +153,24 @@ export default function AdminUsersPage() {
           <div className="overflow-x-auto">
             <table className="w-full text-sm">
               <thead>
-                <tr className="border-b border-zinc-200 dark:border-zinc-800">
-                  <th className="text-left py-3 px-4 font-medium text-zinc-500 dark:text-zinc-400">User</th>
-                  <th className="text-left py-3 px-4 font-medium text-zinc-500 dark:text-zinc-400 hidden sm:table-cell">Email</th>
-                  <th className="text-left py-3 px-4 font-medium text-zinc-500 dark:text-zinc-400">Role</th>
-                  <th className="text-left py-3 px-4 font-medium text-zinc-500 dark:text-zinc-400 hidden md:table-cell">Status</th>
-                  <th className="text-left py-3 px-4 font-medium text-zinc-500 dark:text-zinc-400 hidden lg:table-cell">Joined</th>
-                  <th className="text-right py-3 px-4 font-medium text-zinc-500 dark:text-zinc-400">Actions</th>
+                <tr className="border-b border-zinc-800">
+                  <th className="text-left py-3 px-4 font-medium text-zinc-400">User</th>
+                  <th className="text-left py-3 px-4 font-medium text-zinc-400 hidden sm:table-cell">Email</th>
+                  <th className="text-left py-3 px-4 font-medium text-zinc-400">Role</th>
+                  <th className="text-left py-3 px-4 font-medium text-zinc-400 hidden md:table-cell">Status</th>
+                  <th className="text-left py-3 px-4 font-medium text-zinc-400 hidden lg:table-cell">Joined</th>
+                  <th className="text-right py-3 px-4 font-medium text-zinc-400">Actions</th>
                 </tr>
               </thead>
               <tbody>
                 {users.map((user) => (
-                  <tr key={user.id} className="border-b border-zinc-100 dark:border-zinc-800/50 hover:bg-zinc-50 dark:hover:bg-zinc-800/30 transition-colors">
+                  <tr key={user.id} className="border-b border-zinc-800/50 hover:bg-zinc-800/30 transition-colors">
                     <td className="py-3 px-4">
                       <div className="flex items-center gap-3">
-                        <div className="w-8 h-8 rounded-full bg-orange-500/10 flex items-center justify-center text-xs font-bold text-orange-500 dark:text-orange-400">
+                        <div className="w-8 h-8 rounded-full bg-orange-500/10 flex items-center justify-center text-xs font-bold text-orange-400">
                           {getInitials(user.firstName || "", user.lastName || "")}
                         </div>
-                        <span className="font-medium text-zinc-900 dark:text-white truncate max-w-[140px]">
+                        <span className="font-medium text-white truncate max-w-[140px]">
                           {user.firstName || ""} {user.lastName || "Unnamed"}
                         </span>
                       </div>
@@ -188,26 +188,26 @@ export default function AdminUsersPage() {
                     <td className="py-3 px-4 text-right relative">
                       <button
                         onClick={() => setMenuOpen(menuOpen === user.id ? null : user.id)}
-                        className="p-1.5 rounded-lg hover:bg-zinc-100 dark:hover:bg-zinc-800 transition-colors"
+                        className="p-1.5 rounded-lg hover:bg-zinc-800 transition-colors"
                       >
                         <MoreVertical className="w-4 h-4 text-zinc-400" />
                       </button>
                       {menuOpen === user.id && (
-                        <div className="absolute right-6 top-12 z-50 bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 rounded-lg shadow-xl py-1 min-w-45">
-                          <button onClick={() => updateRole(user.id, "ADMIN")} className="w-full text-left px-4 py-2 text-sm text-zinc-700 dark:text-zinc-300 hover:bg-zinc-100 dark:hover:bg-zinc-800 flex items-center gap-2">
+                        <div className="absolute right-6 top-12 z-50 bg-zinc-900 border border-zinc-800 rounded-lg shadow-xl py-1 min-w-45">
+                          <button onClick={() => updateRole(user.id, "ADMIN")} className="w-full text-left px-4 py-2 text-sm text-zinc-300 hover:bg-zinc-800 flex items-center gap-2">
                             <ShieldCheck className="w-3.5 h-3.5" /> Make Admin
                           </button>
-                          <button onClick={() => updateRole(user.id, "MODERATOR")} className="w-full text-left px-4 py-2 text-sm text-zinc-700 dark:text-zinc-300 hover:bg-zinc-100 dark:hover:bg-zinc-800 flex items-center gap-2">
+                          <button onClick={() => updateRole(user.id, "MODERATOR")} className="w-full text-left px-4 py-2 text-sm text-zinc-300 hover:bg-zinc-800 flex items-center gap-2">
                             <Shield className="w-3.5 h-3.5" /> Make Moderator
                           </button>
-                          <button onClick={() => updateRole(user.id, "MEMBER")} className="w-full text-left px-4 py-2 text-sm text-zinc-700 dark:text-zinc-300 hover:bg-zinc-100 dark:hover:bg-zinc-800 flex items-center gap-2">
+                          <button onClick={() => updateRole(user.id, "MEMBER")} className="w-full text-left px-4 py-2 text-sm text-zinc-300 hover:bg-zinc-800 flex items-center gap-2">
                             <UserCheck className="w-3.5 h-3.5" /> Make Member
                           </button>
-                          <hr className="my-1 border-zinc-200 dark:border-zinc-800" />
-                          <button onClick={() => toggleActive(user.id, user.isActive)} className="w-full text-left px-4 py-2 text-sm text-zinc-700 dark:text-zinc-300 hover:bg-zinc-100 dark:hover:bg-zinc-800 flex items-center gap-2">
+                          <hr className="my-1 border-zinc-800" />
+                          <button onClick={() => toggleActive(user.id, user.isActive)} className="w-full text-left px-4 py-2 text-sm text-zinc-300 hover:bg-zinc-800 flex items-center gap-2">
                             <UserX className="w-3.5 h-3.5" /> {user.isActive ? "Deactivate" : "Activate"}
                           </button>
-                          <button onClick={() => deleteUser(user.id)} className="w-full text-left px-4 py-2 text-sm text-red-500 hover:bg-red-50 dark:hover:bg-red-500/10 flex items-center gap-2">
+                          <button onClick={() => deleteUser(user.id)} className="w-full text-left px-4 py-2 text-sm text-red-500 hover:bg-red-500/10 flex items-center gap-2">
                             <Trash2 className="w-3.5 h-3.5" /> Delete User
                           </button>
                         </div>

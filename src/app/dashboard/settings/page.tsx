@@ -15,11 +15,11 @@ export default function DashboardSettingsPage() {
   };
 
   return (
-    <div className="min-h-screen bg-white dark:bg-zinc-950">
+    <div className="min-h-screen bg-zinc-950">
       <div className="max-w-3xl mx-auto px-6 py-12">
         <div className="flex items-center justify-between mb-8">
           <div>
-            <h1 className="text-2xl font-bold text-zinc-900 dark:text-white font-display">
+            <h1 className="text-2xl font-bold text-white font-display">
               Account Settings
             </h1>
             <p className="text-sm text-zinc-500 mt-1">
@@ -37,46 +37,46 @@ export default function DashboardSettingsPage() {
           <Card>
             <CardHeader>
               <CardTitle className="text-lg flex items-center gap-2">
-                <User className="w-4 h-4 text-orange-500 dark:text-orange-400" />
+                <User className="w-4 h-4 text-orange-400" />
                 Profile Information
               </CardTitle>
             </CardHeader>
             <CardContent className="space-y-4">
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div>
-                  <label className="block text-sm text-zinc-500 dark:text-zinc-400 mb-1.5">
+                  <label className="block text-sm text-zinc-400 mb-1.5">
                     First Name
                   </label>
                   <Input placeholder="John" />
                 </div>
                 <div>
-                  <label className="block text-sm text-zinc-500 dark:text-zinc-400 mb-1.5">
+                  <label className="block text-sm text-zinc-400 mb-1.5">
                     Last Name
                   </label>
                   <Input placeholder="Doe" />
                 </div>
               </div>
               <div>
-                <label className="block text-sm text-zinc-500 dark:text-zinc-400 mb-1.5">
+                <label className="block text-sm text-zinc-400 mb-1.5">
                   Email
                 </label>
                 <Input type="email" placeholder="john@example.com" />
               </div>
               <div>
-                <label className="block text-sm text-zinc-500 dark:text-zinc-400 mb-1.5">
+                <label className="block text-sm text-zinc-400 mb-1.5">
                   Phone
                 </label>
                 <Input type="tel" placeholder="+234 812 345 6789" />
               </div>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div>
-                  <label className="block text-sm text-zinc-500 dark:text-zinc-400 mb-1.5">
+                  <label className="block text-sm text-zinc-400 mb-1.5">
                     City
                   </label>
                   <Input placeholder="Lagos" />
                 </div>
                 <div>
-                  <label className="block text-sm text-zinc-500 dark:text-zinc-400 mb-1.5">
+                  <label className="block text-sm text-zinc-400 mb-1.5">
                     Country
                   </label>
                   <Input placeholder="Nigeria" />
@@ -89,25 +89,25 @@ export default function DashboardSettingsPage() {
           <Card>
             <CardHeader>
               <CardTitle className="text-lg flex items-center gap-2">
-                <Lock className="w-4 h-4 text-orange-500 dark:text-orange-400" />
+                <Lock className="w-4 h-4 text-orange-400" />
                 Change Password
               </CardTitle>
             </CardHeader>
             <CardContent className="space-y-4">
               <div>
-                <label className="block text-sm text-zinc-500 dark:text-zinc-400 mb-1.5">
+                <label className="block text-sm text-zinc-400 mb-1.5">
                   Current Password
                 </label>
                 <Input type="password" />
               </div>
               <div>
-                <label className="block text-sm text-zinc-500 dark:text-zinc-400 mb-1.5">
+                <label className="block text-sm text-zinc-400 mb-1.5">
                   New Password
                 </label>
                 <Input type="password" />
               </div>
               <div>
-                <label className="block text-sm text-zinc-500 dark:text-zinc-400 mb-1.5">
+                <label className="block text-sm text-zinc-400 mb-1.5">
                   Confirm New Password
                 </label>
                 <Input type="password" />
@@ -119,7 +119,7 @@ export default function DashboardSettingsPage() {
           <Card>
             <CardHeader>
               <CardTitle className="text-lg flex items-center gap-2">
-                <Bell className="w-4 h-4 text-orange-500 dark:text-orange-400" />
+                <Bell className="w-4 h-4 text-orange-400" />
                 Email Preferences
               </CardTitle>
             </CardHeader>
@@ -138,9 +138,9 @@ export default function DashboardSettingsPage() {
                   <input
                     type="checkbox"
                     defaultChecked={pref.default}
-                    className="w-4 h-4 rounded bg-zinc-100 dark:bg-zinc-800 border-zinc-300 dark:border-zinc-700 text-orange-500 focus:ring-orange-500/20"
+                    className="w-4 h-4 rounded bg-zinc-800 border-zinc-700 text-orange-500 focus:ring-orange-500/20"
                   />
-                  <span className="text-sm text-zinc-600 dark:text-zinc-300 group-hover:text-zinc-900 dark:group-hover:text-white transition-colors">
+                  <span className="text-sm text-zinc-300 group-hover:text-white transition-colors">
                     {pref.label}
                   </span>
                 </label>

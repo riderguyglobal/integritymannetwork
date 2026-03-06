@@ -91,7 +91,7 @@ export default function RegisterPage() {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-white dark:bg-zinc-950 relative overflow-hidden py-20 px-4">
+    <div className="min-h-screen flex items-center justify-center bg-zinc-950 relative overflow-hidden py-20 px-4">
       <div className="absolute inset-0 bg-grid opacity-20" />
       <div className="absolute inset-0 bg-radial-dark" />
 
@@ -110,19 +110,19 @@ export default function RegisterPage() {
             <div className="w-10 h-10 rounded-lg bg-linear-to-br from-orange-500 to-orange-600 flex items-center justify-center">
               <Shield className="w-5 h-5 text-white" />
             </div>
-            <span className="font-display text-lg font-bold text-zinc-900 dark:text-white group-hover:text-orange-500 dark:group-hover:text-orange-400 transition-colors">
+            <span className="font-display text-lg font-bold text-white group-hover:text-orange-400 transition-colors">
               TIMN
             </span>
           </Link>
-          <h1 className="text-2xl font-bold text-zinc-900 dark:text-white font-display">
+          <h1 className="text-2xl font-bold text-white font-display">
             Create Your Account
           </h1>
-          <p className="text-sm text-zinc-500 dark:text-zinc-400 mt-2">
+          <p className="text-sm text-zinc-400 mt-2">
             Join the community and begin your journey
           </p>
         </div>
 
-        <Card className="bg-zinc-50 dark:bg-zinc-900/50 backdrop-blur-sm">
+        <Card className="bg-zinc-900/50 backdrop-blur-sm">
           <CardContent className="p-6 md:p-8">
             <form onSubmit={handleSubmit} className="space-y-5">
               {/* Google Sign Up */}
@@ -130,7 +130,7 @@ export default function RegisterPage() {
                 type="button"
                 onClick={handleGoogleSignUp}
                 disabled={isGoogleLoading}
-                className="w-full flex items-center justify-center gap-3 px-4 py-3 rounded-lg bg-zinc-100 dark:bg-zinc-800/50 border border-zinc-200 dark:border-zinc-700/50 text-sm font-medium text-zinc-600 dark:text-zinc-300 hover:bg-zinc-200 dark:hover:bg-zinc-800 hover:border-zinc-300 dark:hover:border-zinc-600 transition-all disabled:opacity-50"
+                className="w-full flex items-center justify-center gap-3 px-4 py-3 rounded-lg bg-zinc-800/50 border border-zinc-700/50 text-sm font-medium text-zinc-300 hover:bg-zinc-800 hover:border-zinc-600 transition-all disabled:opacity-50"
               >
                 <svg className="w-5 h-5" viewBox="0 0 24 24">
                   <path
@@ -161,11 +161,11 @@ export default function RegisterPage() {
               )}
 
               <div className="flex items-center gap-4">
-                <div className="flex-1 h-px bg-zinc-200 dark:bg-zinc-800" />
+                <div className="flex-1 h-px bg-zinc-800" />
                 <span className="text-xs text-zinc-500 uppercase">
                   or register with email
                 </span>
-                <div className="flex-1 h-px bg-zinc-200 dark:bg-zinc-800" />
+                <div className="flex-1 h-px bg-zinc-800" />
               </div>
 
               {/* Name */}
@@ -173,7 +173,7 @@ export default function RegisterPage() {
                 <div className="space-y-2">
                   <label
                     htmlFor="firstName"
-                    className="text-sm font-medium text-zinc-600 dark:text-zinc-300"
+                    className="text-sm font-medium text-zinc-300"
                   >
                     First Name
                   </label>
@@ -191,7 +191,7 @@ export default function RegisterPage() {
                 <div className="space-y-2">
                   <label
                     htmlFor="lastName"
-                    className="text-sm font-medium text-zinc-600 dark:text-zinc-300"
+                    className="text-sm font-medium text-zinc-300"
                   >
                     Last Name
                   </label>
@@ -208,7 +208,7 @@ export default function RegisterPage() {
               <div className="space-y-2">
                 <label
                   htmlFor="email"
-                  className="text-sm font-medium text-zinc-600 dark:text-zinc-300"
+                  className="text-sm font-medium text-zinc-300"
                 >
                   Email Address
                 </label>
@@ -229,7 +229,7 @@ export default function RegisterPage() {
               <div className="space-y-2">
                 <label
                   htmlFor="password"
-                  className="text-sm font-medium text-zinc-600 dark:text-zinc-300"
+                  className="text-sm font-medium text-zinc-300"
                 >
                   Password
                 </label>
@@ -248,7 +248,7 @@ export default function RegisterPage() {
                   <button
                     type="button"
                     onClick={() => setShowPassword(!showPassword)}
-                    className="absolute right-3 top-1/2 -translate-y-1/2 text-zinc-500 hover:text-zinc-600 dark:hover:text-zinc-300"
+                    className="absolute right-3 top-1/2 -translate-y-1/2 text-zinc-500 hover:text-zinc-300"
                   >
                     {showPassword ? (
                       <EyeOff className="w-4 h-4" />
@@ -272,7 +272,7 @@ export default function RegisterPage() {
                       >
                         <CheckCircle2
                           className={`w-3.5 h-3.5 ${
-                            req.met ? "text-green-400" : "text-zinc-400 dark:text-zinc-600"
+                            req.met ? "text-green-400" : "text-zinc-600"
                           }`}
                         />
                         <span
@@ -294,23 +294,23 @@ export default function RegisterPage() {
                   type="checkbox"
                   id="terms"
                   required
-                  className="mt-1 w-4 h-4 rounded border-zinc-200 dark:border-zinc-700 bg-zinc-100 dark:bg-zinc-800 text-orange-500 focus:ring-orange-500"
+                  className="mt-1 w-4 h-4 rounded border-zinc-700 bg-zinc-800 text-orange-500 focus:ring-orange-500"
                 />
                 <label
                   htmlFor="terms"
-                  className="text-xs text-zinc-500 dark:text-zinc-400 leading-relaxed"
+                  className="text-xs text-zinc-400 leading-relaxed"
                 >
                   I agree to the{" "}
                   <Link
                     href="/terms"
-                    className="text-orange-500 dark:text-orange-400 hover:underline"
+                    className="text-orange-400 hover:underline"
                   >
                     Terms of Service
                   </Link>{" "}
                   and{" "}
                   <Link
                     href="/privacy"
-                    className="text-orange-500 dark:text-orange-400 hover:underline"
+                    className="text-orange-400 hover:underline"
                   >
                     Privacy Policy
                   </Link>
@@ -343,7 +343,7 @@ export default function RegisterPage() {
           Already have an account?{" "}
           <Link
             href="/auth/login"
-            className="text-orange-500 dark:text-orange-400 hover:text-orange-600 dark:hover:text-orange-300 font-medium transition-colors"
+            className="text-orange-400 hover:text-orange-300 font-medium transition-colors"
           >
             Sign in
           </Link>

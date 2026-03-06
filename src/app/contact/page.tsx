@@ -34,7 +34,7 @@ const fadeInUp = {
 function ContactHero() {
   return (
     <section className="relative hero-padding overflow-hidden">
-      <div className="absolute inset-0 bg-white dark:bg-zinc-950" />
+      <div className="absolute inset-0 bg-zinc-950" />
       {/* Background image */}
       <div className="absolute inset-0">
         <ProtectedImage
@@ -44,7 +44,7 @@ function ContactHero() {
           className="object-cover opacity-15"
           priority
         />
-        <div className="absolute inset-0 bg-linear-to-b from-white/50 via-white/80 to-white dark:from-zinc-950/50 dark:via-zinc-950/80 dark:to-zinc-950" />
+        <div className="absolute inset-0 bg-linear-to-b from-white/50 via-white/80 to-white from-zinc-950/50 via-zinc-950/80 to-zinc-950" />
       </div>
       <div className="absolute inset-0 bg-grid opacity-30" />
 
@@ -56,18 +56,18 @@ function ContactHero() {
           className="max-w-4xl mx-auto text-center"
         >
           <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-orange-500/10 border border-orange-500/20 mb-5 sm:mb-8">
-            <MessageSquare className="w-3.5 h-3.5 text-orange-500 dark:text-orange-400" />
-            <span className="text-[10px] sm:text-xs font-semibold tracking-wider uppercase text-orange-500 dark:text-orange-400">
+            <MessageSquare className="w-3.5 h-3.5 text-orange-400" />
+            <span className="text-[10px] sm:text-xs font-semibold tracking-wider uppercase text-orange-400">
               Get In Touch
             </span>
           </div>
 
-          <h1 className="font-display text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-bold tracking-tight text-zinc-900 dark:text-white leading-[0.95] mb-4 sm:mb-6">
+          <h1 className="font-display text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-bold tracking-tight text-white leading-[0.95] mb-4 sm:mb-6">
             Contact{" "}
             <span className="text-gradient">Us</span>
           </h1>
 
-          <p className="text-sm sm:text-lg md:text-xl text-zinc-500 dark:text-zinc-400 leading-relaxed max-w-2xl mx-auto">
+          <p className="text-sm sm:text-lg md:text-xl text-zinc-400 leading-relaxed max-w-2xl mx-auto">
             Have questions about The Integrity Man Network? Want to partner
             with us, attend an event, or simply connect? We&apos;d love to hear
             from you.
@@ -105,12 +105,12 @@ function ContactForm() {
         className="text-center py-16"
       >
         <div className="w-20 h-20 rounded-full bg-orange-500/10 border border-orange-500/20 flex items-center justify-center mx-auto mb-6">
-          <Send className="w-8 h-8 text-orange-500 dark:text-orange-400" />
+          <Send className="w-8 h-8 text-orange-400" />
         </div>
-        <h3 className="text-2xl font-bold text-zinc-900 dark:text-white font-display mb-3">
+        <h3 className="text-2xl font-bold text-white font-display mb-3">
           Message Sent!
         </h3>
-        <p className="text-zinc-500 dark:text-zinc-400 max-w-sm mx-auto">
+        <p className="text-zinc-400 max-w-sm mx-auto">
           Thank you for reaching out. We&apos;ll get back to you as soon as
           possible.
         </p>
@@ -131,7 +131,7 @@ function ContactForm() {
         <div className="space-y-1.5 sm:space-y-2">
           <label
             htmlFor="firstName"
-            className="text-xs sm:text-sm font-medium text-zinc-600 dark:text-zinc-300"
+            className="text-xs sm:text-sm font-medium text-zinc-300"
           >
             First Name
           </label>
@@ -145,7 +145,7 @@ function ContactForm() {
         <div className="space-y-1.5 sm:space-y-2">
           <label
             htmlFor="lastName"
-            className="text-xs sm:text-sm font-medium text-zinc-600 dark:text-zinc-300"
+            className="text-xs sm:text-sm font-medium text-zinc-300"
           >
             Last Name
           </label>
@@ -159,7 +159,7 @@ function ContactForm() {
       </div>
 
       <div className="space-y-1.5 sm:space-y-2">
-        <label htmlFor="email" className="text-xs sm:text-sm font-medium text-zinc-600 dark:text-zinc-300">
+        <label htmlFor="email" className="text-xs sm:text-sm font-medium text-zinc-300">
           Email Address
         </label>
         <Input
@@ -172,7 +172,7 @@ function ContactForm() {
       </div>
 
       <div className="space-y-1.5 sm:space-y-2">
-        <label htmlFor="subject" className="text-xs sm:text-sm font-medium text-zinc-600 dark:text-zinc-300">
+        <label htmlFor="subject" className="text-xs sm:text-sm font-medium text-zinc-300">
           Subject
         </label>
         <Input
@@ -186,7 +186,7 @@ function ContactForm() {
       <div className="space-y-1.5 sm:space-y-2">
         <label
           htmlFor="message"
-          className="text-xs sm:text-sm font-medium text-zinc-600 dark:text-zinc-300"
+          className="text-xs sm:text-sm font-medium text-zinc-300"
         >
           Message
         </label>
@@ -258,21 +258,21 @@ function ContactInfo() {
         <Card key={detail.title}>
           <CardContent className="p-4 sm:p-6 flex items-start gap-3 sm:gap-4">
             <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-lg sm:rounded-xl bg-linear-to-br from-orange-500/20 to-orange-600/10 border border-orange-500/20 flex items-center justify-center shrink-0">
-              <detail.icon className="w-4 h-4 sm:w-5 sm:h-5 text-orange-500 dark:text-orange-400" />
+              <detail.icon className="w-4 h-4 sm:w-5 sm:h-5 text-orange-400" />
             </div>
             <div>
-              <h3 className="text-sm font-semibold text-zinc-900 dark:text-white mb-1">
+              <h3 className="text-sm font-semibold text-white mb-1">
                 {detail.title}
               </h3>
               {detail.href ? (
                 <a
                   href={detail.href}
-                  className="text-zinc-500 dark:text-zinc-400 hover:text-orange-500 dark:hover:text-orange-400 transition-colors text-sm"
+                  className="text-zinc-400 hover:text-orange-400 transition-colors text-sm"
                 >
                   {detail.value}
                 </a>
               ) : (
-                <p className="text-zinc-500 dark:text-zinc-400 text-sm">{detail.value}</p>
+                <p className="text-zinc-400 text-sm">{detail.value}</p>
               )}
             </div>
           </CardContent>
@@ -282,14 +282,14 @@ function ContactInfo() {
       {/* Socials */}
       <Card>
         <CardContent className="p-4 sm:p-6">
-          <h3 className="text-xs sm:text-sm font-semibold text-zinc-900 dark:text-white mb-3 sm:mb-4">Follow Us</h3>
+          <h3 className="text-xs sm:text-sm font-semibold text-white mb-3 sm:mb-4">Follow Us</h3>
           <div className="flex gap-2 sm:gap-3">
             {socialLinks.map((social) => (
               <a
                 key={social.label}
                 href={social.href}
                 aria-label={social.label}
-                className="w-10 h-10 rounded-lg bg-zinc-100 dark:bg-zinc-800/50 border border-zinc-200 dark:border-zinc-700/50 flex items-center justify-center text-zinc-500 dark:text-zinc-400 hover:text-orange-500 dark:hover:text-orange-400 hover:border-orange-500/30 transition-all"
+                className="w-10 h-10 rounded-lg bg-zinc-800/50 border border-zinc-700/50 flex items-center justify-center text-zinc-400 hover:text-orange-400 hover:border-orange-500/30 transition-all"
               >
                 <social.icon className="w-4 h-4" />
               </a>
@@ -343,17 +343,17 @@ function FAQItem({
   onToggle: () => void;
 }) {
   return (
-    <div className="border-b border-zinc-200 dark:border-zinc-800/50 last:border-b-0">
+    <div className="border-b border-zinc-800/50 last:border-b-0">
       <button
         onClick={onToggle}
         className="w-full flex items-center justify-between py-5 text-left group"
       >
-        <span className="text-sm font-medium text-zinc-900 dark:text-white group-hover:text-orange-500 dark:group-hover:text-orange-400 transition-colors pr-4">
+        <span className="text-sm font-medium text-white group-hover:text-orange-400 transition-colors pr-4">
           {faq.question}
         </span>
         <ChevronDown
           className={`w-4 h-4 text-zinc-500 shrink-0 transition-transform duration-300 ${
-            isOpen ? "rotate-180 text-orange-500 dark:text-orange-400" : ""
+            isOpen ? "rotate-180 text-orange-400" : ""
           }`}
         />
       </button>
@@ -366,7 +366,7 @@ function FAQItem({
         transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
         className="overflow-hidden"
       >
-        <p className="pb-5 text-sm text-zinc-500 dark:text-zinc-400 leading-relaxed">
+        <p className="pb-5 text-sm text-zinc-400 leading-relaxed">
           {faq.answer}
         </p>
       </motion.div>
@@ -378,7 +378,7 @@ function FAQSection() {
   const [openIndex, setOpenIndex] = useState<number | null>(0);
 
   return (
-    <section className="section-padding bg-zinc-50 dark:bg-zinc-900/30">
+    <section className="section-padding bg-zinc-900/30">
       <div className="absolute inset-0 bg-radial-dark pointer-events-none" />
       <div className="container-wide relative z-10">
         <motion.div {...fadeInUp}>
@@ -449,16 +449,16 @@ export default function ContactPage() {
 
               {/* Contact image */}
               <motion.div {...fadeInUp} className="mt-4 sm:mt-6 hidden lg:block">
-                <div className="relative aspect-4/3 rounded-xl sm:rounded-2xl overflow-hidden border border-zinc-200 dark:border-zinc-800/50">
+                <div className="relative aspect-4/3 rounded-xl sm:rounded-2xl overflow-hidden border border-zinc-800/50">
                   <ProtectedImage
                     src="/images/community-2.jpg"
                     alt="Our Community"
                     fill
                     className="object-cover"
                   />
-                  <div className="absolute inset-0 bg-linear-to-t from-white/60 dark:from-zinc-950/60 to-transparent" />
+                  <div className="absolute inset-0 bg-linear-to-t from-zinc-950/60 to-transparent" />
                   <div className="absolute bottom-4 left-4 right-4">
-                    <p className="text-zinc-900 dark:text-white text-sm font-semibold">We&apos;d love to connect with you</p>
+                    <p className="text-white text-sm font-semibold">We&apos;d love to connect with you</p>
                   </div>
                 </div>
               </motion.div>

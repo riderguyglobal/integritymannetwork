@@ -63,7 +63,7 @@ function IntroSection() {
     <section className="section-padding">
       <div className="container-wide">
         <motion.div {...fadeInUp} className="max-w-3xl mx-auto text-center">
-          <p className="text-sm sm:text-base md:text-lg text-zinc-500 dark:text-zinc-400 leading-relaxed">
+          <p className="text-sm sm:text-base md:text-lg text-zinc-400 leading-relaxed">
             Our gatherings are not generic conferences. They are structured encounters where men are challenged, taught, mentored, activated, and sent out with greater clarity and conviction. Every gathering is designed to leave a lasting imprint on those who attend.
           </p>
         </motion.div>
@@ -84,7 +84,7 @@ function EventSection({ event, index }: { event: (typeof EVENTS_INFO)[number]; i
   const isReversed = index % 2 === 1;
 
   return (
-    <section className={`section-padding ${isReversed ? "bg-gray-50 dark:bg-zinc-900/30" : ""}`}>
+    <section className={`section-padding ${isReversed ? "bg-zinc-900/30" : ""}`}>
       {isReversed && <div className="absolute inset-0 bg-radial-dark pointer-events-none" />}
       <div className="container-wide relative z-10">
         <motion.div {...fadeInUp}>
@@ -93,22 +93,22 @@ function EventSection({ event, index }: { event: (typeof EVENTS_INFO)[number]; i
             <CardContent className="p-0">
               <div className="grid grid-cols-1 lg:grid-cols-5 gap-0">
                 {/* Left */}
-                <div className="lg:col-span-2 p-5 sm:p-8 md:p-12 flex flex-col items-start justify-center border-b lg:border-b-0 lg:border-r border-zinc-200 dark:border-zinc-800/50">
+                <div className="lg:col-span-2 p-5 sm:p-8 md:p-12 flex flex-col items-start justify-center border-b lg:border-b-0 lg:border-r border-zinc-800/50">
                   <div className="w-12 h-12 sm:w-16 sm:h-16 rounded-xl sm:rounded-2xl bg-linear-to-br from-orange-500/20 to-orange-600/10 border border-orange-500/20 flex items-center justify-center mb-4 sm:mb-6">
-                    <Icon className="w-5 h-5 sm:w-7 sm:h-7 text-orange-500 dark:text-orange-400" />
+                    <Icon className="w-5 h-5 sm:w-7 sm:h-7 text-orange-400" />
                   </div>
                   <Badge className="mb-2 sm:mb-3">{event.schedule}</Badge>
-                  <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-zinc-900 dark:text-white font-display mb-3 sm:mb-4">{event.name}</h2>
+                  <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-white font-display mb-3 sm:mb-4">{event.name}</h2>
                   <div className="mt-4 sm:mt-8 flex flex-wrap gap-3 sm:gap-4 text-xs text-zinc-500">
-                    <div className="flex items-center gap-1.5"><Users className="w-3.5 h-3.5 text-orange-500 dark:text-orange-400" /><span>Men of Purpose</span></div>
-                    <div className="flex items-center gap-1.5"><MapPin className="w-3.5 h-3.5 text-orange-500 dark:text-orange-400" /><span>See Schedule</span></div>
+                    <div className="flex items-center gap-1.5"><Users className="w-3.5 h-3.5 text-orange-400" /><span>Men of Purpose</span></div>
+                    <div className="flex items-center gap-1.5"><MapPin className="w-3.5 h-3.5 text-orange-400" /><span>See Schedule</span></div>
                   </div>
                 </div>
 
                 {/* Right */}
-                <div className="lg:col-span-3 p-5 sm:p-8 md:p-12 space-y-4 sm:space-y-5 text-sm sm:text-base text-zinc-500 dark:text-zinc-400 leading-relaxed">
+                <div className="lg:col-span-3 p-5 sm:p-8 md:p-12 space-y-4 sm:space-y-5 text-sm sm:text-base text-zinc-400 leading-relaxed">
                   <p>{event.description}</p>
-                  <p className="text-orange-500/80 dark:text-orange-400/80 italic font-medium text-base sm:text-lg border-l-2 border-orange-500/30 pl-4 sm:pl-6">{event.highlight}</p>
+                  <p className="text-orange-400/80 italic font-medium text-base sm:text-lg border-l-2 border-orange-500/30 pl-4 sm:pl-6">{event.highlight}</p>
                 </div>
               </div>
             </CardContent>

@@ -74,7 +74,7 @@ export default function AdminDonationsPage() {
     <div className="space-y-6">
       <div className="flex items-center justify-between">
         <div>
-          <h1 className="text-2xl font-bold text-zinc-900 dark:text-white font-display">Donations</h1>
+          <h1 className="text-2xl font-bold text-white font-display">Donations</h1>
           <p className="text-sm text-zinc-500 mt-1">Track donations, donors, and funding campaigns.</p>
         </div>
         <Button variant="outline" size="sm" onClick={() => fetchDonations()}>
@@ -92,11 +92,11 @@ export default function AdminDonationsPage() {
               <Card key={stat.label}>
                 <CardContent className="p-5 flex items-center gap-4">
                   <div className="w-10 h-10 rounded-lg bg-orange-500/10 border border-orange-500/20 flex items-center justify-center">
-                    <stat.icon className="w-5 h-5 text-orange-500 dark:text-orange-400" />
+                    <stat.icon className="w-5 h-5 text-orange-400" />
                   </div>
                   <div>
                     <p className="text-xs text-zinc-500">{stat.label}</p>
-                    <p className="text-lg font-bold text-zinc-900 dark:text-white">{stat.value}</p>
+                    <p className="text-lg font-bold text-white">{stat.value}</p>
                   </div>
                 </CardContent>
               </Card>
@@ -110,21 +110,21 @@ export default function AdminDonationsPage() {
               <div className="overflow-x-auto">
                 <table className="w-full">
                   <thead>
-                    <tr className="border-b border-zinc-200 dark:border-zinc-800/50">
-                      <th className="px-6 py-3 text-left text-xs font-medium text-zinc-500 dark:text-zinc-400 uppercase tracking-wider">Donor</th>
-                      <th className="px-6 py-3 text-left text-xs font-medium text-zinc-500 dark:text-zinc-400 uppercase tracking-wider">Amount</th>
-                      <th className="px-6 py-3 text-left text-xs font-medium text-zinc-500 dark:text-zinc-400 uppercase tracking-wider">Method</th>
-                      <th className="px-6 py-3 text-left text-xs font-medium text-zinc-500 dark:text-zinc-400 uppercase tracking-wider">Type</th>
-                      <th className="px-6 py-3 text-left text-xs font-medium text-zinc-500 dark:text-zinc-400 uppercase tracking-wider">Status</th>
-                      <th className="px-6 py-3 text-left text-xs font-medium text-zinc-500 dark:text-zinc-400 uppercase tracking-wider">Date</th>
+                    <tr className="border-b border-zinc-800/50">
+                      <th className="px-6 py-3 text-left text-xs font-medium text-zinc-400 uppercase tracking-wider">Donor</th>
+                      <th className="px-6 py-3 text-left text-xs font-medium text-zinc-400 uppercase tracking-wider">Amount</th>
+                      <th className="px-6 py-3 text-left text-xs font-medium text-zinc-400 uppercase tracking-wider">Method</th>
+                      <th className="px-6 py-3 text-left text-xs font-medium text-zinc-400 uppercase tracking-wider">Type</th>
+                      <th className="px-6 py-3 text-left text-xs font-medium text-zinc-400 uppercase tracking-wider">Status</th>
+                      <th className="px-6 py-3 text-left text-xs font-medium text-zinc-400 uppercase tracking-wider">Date</th>
                     </tr>
                   </thead>
-                  <tbody className="divide-y divide-zinc-100 dark:divide-zinc-800/30">
+                  <tbody className="divide-y divide-zinc-800/30">
                     {donations.map((donation) => (
-                      <tr key={donation.id} className="hover:bg-zinc-50 dark:hover:bg-zinc-800/20 transition-colors">
+                      <tr key={donation.id} className="hover:bg-zinc-800/20 transition-colors">
                         <td className="px-6 py-4">
                           <div>
-                            <p className="text-sm font-medium text-zinc-900 dark:text-white">
+                            <p className="text-sm font-medium text-white">
                               {donation.anonymous ? "Anonymous" : donation.user ? `${donation.user.firstName} ${donation.user.lastName}` : "Guest"}
                             </p>
                             {!donation.anonymous && donation.user && (
@@ -132,10 +132,10 @@ export default function AdminDonationsPage() {
                             )}
                           </div>
                         </td>
-                        <td className="px-6 py-4 text-sm text-zinc-900 dark:text-white font-semibold">
+                        <td className="px-6 py-4 text-sm text-white font-semibold">
                           {formatCurrency(Number(donation.amount) / 100, donation.currency)}
                         </td>
-                        <td className="px-6 py-4 text-sm text-zinc-500 dark:text-zinc-400">{donation.paymentMethod}</td>
+                        <td className="px-6 py-4 text-sm text-zinc-400">{donation.paymentMethod}</td>
                         <td className="px-6 py-4">
                           <Badge variant={donation.isRecurring ? "default" : "outline"}>
                             {donation.isRecurring ? "Recurring" : "One-time"}
@@ -146,7 +146,7 @@ export default function AdminDonationsPage() {
                             {donation.status}
                           </Badge>
                         </td>
-                        <td className="px-6 py-4 text-sm text-zinc-500 dark:text-zinc-400">
+                        <td className="px-6 py-4 text-sm text-zinc-400">
                           {new Date(donation.createdAt).toLocaleDateString("en-US", { month: "short", day: "numeric", year: "numeric" })}
                         </td>
                       </tr>
@@ -156,11 +156,11 @@ export default function AdminDonationsPage() {
               </div>
 
               {donations.length === 0 && (
-                <div className="text-center py-12"><Heart className="w-10 h-10 text-zinc-300 dark:text-zinc-700 mx-auto mb-3" /><p className="text-sm text-zinc-500">No donations yet.</p></div>
+                <div className="text-center py-12"><Heart className="w-10 h-10 text-zinc-700 mx-auto mb-3" /><p className="text-sm text-zinc-500">No donations yet.</p></div>
               )}
 
               {pagination.pages > 1 && (
-                <div className="flex items-center justify-between px-6 py-4 border-t border-zinc-200 dark:border-zinc-800/50">
+                <div className="flex items-center justify-between px-6 py-4 border-t border-zinc-800/50">
                   <p className="text-xs text-zinc-500">Page {pagination.page} of {pagination.pages}</p>
                   <div className="flex items-center gap-2">
                     <Button variant="outline" size="sm" disabled={pagination.page <= 1} onClick={() => fetchDonations(pagination.page - 1)}><ChevronLeft className="w-4 h-4" /></Button>

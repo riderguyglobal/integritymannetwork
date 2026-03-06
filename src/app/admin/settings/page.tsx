@@ -102,7 +102,7 @@ export default function AdminSettingsPage() {
     <div className="space-y-6 max-w-3xl">
       <div className="flex items-center justify-between">
         <div>
-          <h1 className="text-2xl font-bold text-zinc-900 dark:text-white font-display">Settings</h1>
+          <h1 className="text-2xl font-bold text-white font-display">Settings</h1>
           <p className="text-sm text-zinc-500 mt-1">Configure platform settings and preferences.</p>
         </div>
         <Button onClick={handleSave} disabled={saving}>
@@ -115,20 +115,20 @@ export default function AdminSettingsPage() {
       <Card>
         <CardHeader>
           <CardTitle className="text-lg flex items-center gap-2">
-            <Globe className="w-4 h-4 text-orange-500 dark:text-orange-400" />General
+            <Globe className="w-4 h-4 text-orange-400" />General
           </CardTitle>
         </CardHeader>
         <CardContent className="space-y-4">
           <div>
-            <label className="block text-sm text-zinc-500 dark:text-zinc-400 mb-1.5">Site Name</label>
+            <label className="block text-sm text-zinc-400 mb-1.5">Site Name</label>
             <Input value={siteName} onChange={(e) => setSiteName(e.target.value)} className="max-w-md" />
           </div>
           <div>
-            <label className="block text-sm text-zinc-500 dark:text-zinc-400 mb-1.5">Tagline</label>
+            <label className="block text-sm text-zinc-400 mb-1.5">Tagline</label>
             <Input value={tagline} onChange={(e) => setTagline(e.target.value)} className="max-w-md" />
           </div>
           <div>
-            <label className="block text-sm text-zinc-500 dark:text-zinc-400 mb-1.5">Site Description</label>
+            <label className="block text-sm text-zinc-400 mb-1.5">Site Description</label>
             <Textarea rows={3} value={siteDescription} onChange={(e) => setSiteDescription(e.target.value)} className="max-w-md" />
           </div>
         </CardContent>
@@ -138,20 +138,20 @@ export default function AdminSettingsPage() {
       <Card>
         <CardHeader>
           <CardTitle className="text-lg flex items-center gap-2">
-            <Mail className="w-4 h-4 text-orange-500 dark:text-orange-400" />Contact Information
+            <Mail className="w-4 h-4 text-orange-400" />Contact Information
           </CardTitle>
         </CardHeader>
         <CardContent className="space-y-4">
           <div>
-            <label className="block text-sm text-zinc-500 dark:text-zinc-400 mb-1.5">Admin Email</label>
+            <label className="block text-sm text-zinc-400 mb-1.5">Admin Email</label>
             <Input type="email" value={adminEmail} onChange={(e) => setAdminEmail(e.target.value)} className="max-w-md" placeholder="admin@integritymannetwork.org" />
           </div>
           <div>
-            <label className="block text-sm text-zinc-500 dark:text-zinc-400 mb-1.5">Phone Number</label>
+            <label className="block text-sm text-zinc-400 mb-1.5">Phone Number</label>
             <Input value={phone} onChange={(e) => setPhone(e.target.value)} className="max-w-md" placeholder="+234 812 345 6789" />
           </div>
           <div>
-            <label className="block text-sm text-zinc-500 dark:text-zinc-400 mb-1.5">Address</label>
+            <label className="block text-sm text-zinc-400 mb-1.5">Address</label>
             <Input value={address} onChange={(e) => setAddress(e.target.value)} className="max-w-md" placeholder="Lagos, Nigeria" />
           </div>
         </CardContent>
@@ -161,7 +161,7 @@ export default function AdminSettingsPage() {
       <Card>
         <CardHeader>
           <CardTitle className="text-lg flex items-center gap-2">
-            <Bell className="w-4 h-4 text-orange-500 dark:text-orange-400" />Notifications
+            <Bell className="w-4 h-4 text-orange-400" />Notifications
           </CardTitle>
         </CardHeader>
         <CardContent className="space-y-4">
@@ -173,8 +173,8 @@ export default function AdminSettingsPage() {
             { label: "Event registrations", value: notifyEvents, setter: setNotifyEvents },
           ].map((pref) => (
             <label key={pref.label} className="flex items-center gap-3 cursor-pointer group">
-              <input type="checkbox" checked={pref.value} onChange={(e) => pref.setter(e.target.checked)} className="w-4 h-4 rounded bg-white dark:bg-zinc-800 border-zinc-300 dark:border-zinc-700 text-orange-500 focus:ring-orange-500/20" />
-              <span className="text-sm text-zinc-600 dark:text-zinc-300 group-hover:text-zinc-900 dark:group-hover:text-white transition-colors">{pref.label}</span>
+              <input type="checkbox" checked={pref.value} onChange={(e) => pref.setter(e.target.checked)} className="w-4 h-4 rounded bg-zinc-800 border-zinc-700 text-orange-500 focus:ring-orange-500/20" />
+              <span className="text-sm text-zinc-300 group-hover:text-white transition-colors">{pref.label}</span>
             </label>
           ))}
         </CardContent>
@@ -184,22 +184,22 @@ export default function AdminSettingsPage() {
       <Card>
         <CardHeader>
           <CardTitle className="text-lg flex items-center gap-2">
-            <Shield className="w-4 h-4 text-orange-500 dark:text-orange-400" />Security
+            <Shield className="w-4 h-4 text-orange-400" />Security
           </CardTitle>
         </CardHeader>
         <CardContent className="space-y-4">
           <div>
-            <label className="block text-sm text-zinc-500 dark:text-zinc-400 mb-1.5">Maintenance Mode</label>
+            <label className="block text-sm text-zinc-400 mb-1.5">Maintenance Mode</label>
             <label className="flex items-center gap-3 cursor-pointer group">
-              <input type="checkbox" checked={maintenanceMode} onChange={(e) => setMaintenanceMode(e.target.checked)} className="w-4 h-4 rounded bg-white dark:bg-zinc-800 border-zinc-300 dark:border-zinc-700 text-orange-500 focus:ring-orange-500/20" />
-              <span className="text-sm text-zinc-600 dark:text-zinc-300 group-hover:text-zinc-900 dark:group-hover:text-white transition-colors">Enable maintenance mode (shows a maintenance page to visitors)</span>
+              <input type="checkbox" checked={maintenanceMode} onChange={(e) => setMaintenanceMode(e.target.checked)} className="w-4 h-4 rounded bg-zinc-800 border-zinc-700 text-orange-500 focus:ring-orange-500/20" />
+              <span className="text-sm text-zinc-300 group-hover:text-white transition-colors">Enable maintenance mode (shows a maintenance page to visitors)</span>
             </label>
           </div>
           <div>
-            <label className="block text-sm text-zinc-500 dark:text-zinc-400 mb-1.5">Registration</label>
+            <label className="block text-sm text-zinc-400 mb-1.5">Registration</label>
             <label className="flex items-center gap-3 cursor-pointer group">
-              <input type="checkbox" checked={allowRegistration} onChange={(e) => setAllowRegistration(e.target.checked)} className="w-4 h-4 rounded bg-white dark:bg-zinc-800 border-zinc-300 dark:border-zinc-700 text-orange-500 focus:ring-orange-500/20" />
-              <span className="text-sm text-zinc-600 dark:text-zinc-300 group-hover:text-zinc-900 dark:group-hover:text-white transition-colors">Allow public user registration</span>
+              <input type="checkbox" checked={allowRegistration} onChange={(e) => setAllowRegistration(e.target.checked)} className="w-4 h-4 rounded bg-zinc-800 border-zinc-700 text-orange-500 focus:ring-orange-500/20" />
+              <span className="text-sm text-zinc-300 group-hover:text-white transition-colors">Allow public user registration</span>
             </label>
           </div>
         </CardContent>
