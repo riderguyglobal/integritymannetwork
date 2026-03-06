@@ -119,7 +119,6 @@ export function BackgroundVideo({
         {...PROTECTED_VIDEO_ATTRS}
         className="absolute inset-0 w-full h-full object-cover pointer-events-none"
       >
-        <source src={src.replace(".mp4", ".webm")} type="video/webm" />
         <source src={src} type="video/mp4" />
       </video>
 
@@ -190,7 +189,6 @@ export function VideoPlayer({
           {...PROTECTED_VIDEO_ATTRS}
           className="absolute inset-0 w-full h-full object-cover pointer-events-none"
         >
-          <source src={loadedSrc.replace(".mp4", ".webm")} type="video/webm" />
           <source src={loadedSrc} type="video/mp4" />
         </video>
       )}

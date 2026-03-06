@@ -150,7 +150,7 @@ export function Header() {
 
               {/* Auth  desktop only */}
               <div className="hidden sm:flex items-center gap-2">
-                <Link href="/login">
+                <Link href="/auth/login">
                   <Button variant="ghost" size="sm" className="gap-2">
                     <LogIn className="w-4 h-4" />
                     Sign In
@@ -271,7 +271,7 @@ export function Header() {
 
               {/* Bottom Actions */}
               <div className="px-6 py-6 space-y-3">
-                <Link href="/login" className="block">
+                <Link href="/auth/login" className="block">
                   <Button variant="secondary" className="w-full justify-center h-12 text-base" size="lg">
                     <LogIn className="w-4 h-4" />
                     Sign In
