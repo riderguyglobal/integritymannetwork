@@ -1,0 +1,543 @@
+// Integrity Man Network — Database Schema
+// Powered by Neon (Serverless PostgreSQL) + Prisma ORM
+
+generator client {
+  provider        = "prisma-client-js"
+  previewFeatures = ["driverAdapters"]
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+// ═══════════════════════════════════════════════════════
+// AUTH & USERS
+// ═══════════════════════════════════════════════════════
+
+model User {
+  id              String    @id @default(cuid())
+  email           String    @unique
+  emailVerified   DateTime?
+  password        String?
+  firstName       String
+  lastName        String
+  displayName     String?
+  avatar          String?
+  phone           String?
+  bio             String?   @db.Text
+  role            Role      @default(MEMBER)
+  isActive        Boolean   @default(true)
+  createdAt       DateTime  @default(now())
+  updatedAt       DateTime  @updatedAt
+
+  accounts           Account[]
+  sessions           Session[]
+  orders             Order[]
+  donations          Donation[]
+  blogPosts          BlogPost[]
+  comments           Comment[]
+  chatMessages       ChatMessage[]
+  houseMembers       HouseMember[]
+  eventRegistrations EventRegistration[]
+  cartItems          CartItem[]
+  addresses          Address[]
+  notifications      Notification[]
+  channelMembers     ChannelMember[]
+}
+
+enum Role {
+  MEMBER
+  MODERATOR
+  ADMIN
+  SUPER_ADMIN
+}
+
+model Account {
+  id                String  @id @default(cuid())
+  userId            String
+  type              String
+  provider          String
+  providerAccountId String
+  refresh_token     String? @db.Text
+  access_token      String? @db.Text
+  expires_at        Int?
+  token_type        String?
+  scope             String?
+  id_token          String? @db.Text
+  session_state     String?
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@unique([provider, providerAccountId])
+}
+
+model Session {
+  id           String   @id @default(cuid())
+  sessionToken String   @unique
+  userId       String
+  expires      DateTime
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+}
+
+model VerificationToken {
+  identifier String
+  token      String   @unique
+  expires    DateTime
+
+  @@unique([identifier, token])
+}
+
+model Address {
+  id         String  @id @default(cuid())
+  userId     String
+  label      String?
+  line1      String
+  line2      String?
+  city       String
+  state      String
+  country    String
+  postalCode String
+  isDefault  Boolean @default(false)
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+}
+
+// ═══════════════════════════════════════════════════════
+// BLOG / RESOURCES
+// ═══════════════════════════════════════════════════════
+
+model BlogPost {
+  id          String     @id @default(cuid())
+  title       String
+  slug        String     @unique
+  excerpt     String?    @db.Text
+  content     String     @db.Text
+  coverImage  String?
+  authorId    String
+  categoryId  String?
+  status      PostStatus @default(DRAFT)
+  featured    Boolean    @default(false)
+  publishedAt DateTime?
+  createdAt   DateTime   @default(now())
+  updatedAt   DateTime   @updatedAt
+
+  author   User          @relation(fields: [authorId], references: [id])
+  category BlogCategory? @relation(fields: [categoryId], references: [id])
+  tags     BlogPostTag[]
+  comments Comment[]
+}
+
+enum PostStatus {
+  DRAFT
+  PUBLISHED
+  ARCHIVED
+}
+
+model BlogCategory {
+  id    String     @id @default(cuid())
+  name  String     @unique
+  slug  String     @unique
+  posts BlogPost[]
+}
+
+model BlogTag {
+  id    String        @id @default(cuid())
+  name  String        @unique
+  slug  String        @unique
+  posts BlogPostTag[]
+}
+
+model BlogPostTag {
+  postId String
+  tagId  String
+
+  post BlogPost @relation(fields: [postId], references: [id], onDelete: Cascade)
+  tag  BlogTag  @relation(fields: [tagId], references: [id], onDelete: Cascade)
+
+  @@id([postId, tagId])
+}
+
+model Comment {
+  id        String   @id @default(cuid())
+  content   String   @db.Text
+  postId    String
+  userId    String
+  parentId  String?
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  post    BlogPost  @relation(fields: [postId], references: [id], onDelete: Cascade)
+  user    User      @relation(fields: [userId], references: [id])
+  parent  Comment?  @relation("CommentReplies", fields: [parentId], references: [id])
+  replies Comment[] @relation("CommentReplies")
+}
+
+// ═══════════════════════════════════════════════════════
+// EVENTS
+// ═══════════════════════════════════════════════════════
+
+model Event {
+  id          String      @id @default(cuid())
+  title       String
+  slug        String      @unique
+  description String      @db.Text
+  summary     String?     @db.Text
+  coverImage  String?
+  type        EventType
+  location    String?
+  locationUrl String?
+  startDate   DateTime
+  endDate     DateTime?
+  capacity    Int?
+  price       Decimal?    @default(0) @db.Decimal(10, 2)
+  isFree      Boolean     @default(true)
+  status      EventStatus @default(UPCOMING)
+  createdAt   DateTime    @default(now())
+  updatedAt   DateTime    @updatedAt
+
+  registrations EventRegistration[]
+}
+
+enum EventType {
+  INTEGRITY_SUMMIT
+  MENS_RETREAT
+  CORPORATE_BREAKFAST
+  CORPORATE_LUNCH
+  WORKSHOP
+  OTHER
+}
+
+enum EventStatus {
+  UPCOMING
+  ONGOING
+  COMPLETED
+  CANCELLED
+}
+
+model EventRegistration {
+  id         String             @id @default(cuid())
+  eventId    String
+  userId     String
+  status     RegistrationStatus @default(REGISTERED)
+  paidAmount Decimal?           @default(0) @db.Decimal(10, 2)
+  createdAt  DateTime           @default(now())
+
+  event Event @relation(fields: [eventId], references: [id], onDelete: Cascade)
+  user  User  @relation(fields: [userId], references: [id])
+
+  @@unique([eventId, userId])
+}
+
+enum RegistrationStatus {
+  REGISTERED
+  WAITLISTED
+  CANCELLED
+  ATTENDED
+}
+
+// ═══════════════════════════════════════════════════════
+// E-COMMERCE / STORE
+// ═══════════════════════════════════════════════════════
+
+model ProductCategory {
+  id       String    @id @default(cuid())
+  name     String    @unique
+  slug     String    @unique
+  image    String?
+  products Product[]
+}
+
+model Product {
+  id           String   @id @default(cuid())
+  name         String
+  slug         String   @unique
+  description  String?  @db.Text
+  price        Decimal  @db.Decimal(10, 2)
+  comparePrice Decimal? @db.Decimal(10, 2)
+  images       String[]
+  categoryId   String?
+  sku          String?  @unique
+  stock        Int      @default(0)
+  isActive     Boolean  @default(true)
+  isFeatured   Boolean  @default(false)
+  weight       Decimal? @db.Decimal(10, 2)
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+
+  category   ProductCategory? @relation(fields: [categoryId], references: [id])
+  variants   ProductVariant[]
+  cartItems  CartItem[]
+  orderItems OrderItem[]
+}
+
+model ProductVariant {
+  id        String   @id @default(cuid())
+  productId String
+  name      String
+  value     String
+  price     Decimal? @db.Decimal(10, 2)
+  stock     Int      @default(0)
+  sku       String?  @unique
+
+  product Product @relation(fields: [productId], references: [id], onDelete: Cascade)
+}
+
+model CartItem {
+  id        String @id @default(cuid())
+  userId    String
+  productId String
+  variantId String?
+  quantity  Int    @default(1)
+
+  user    User    @relation(fields: [userId], references: [id], onDelete: Cascade)
+  product Product @relation(fields: [productId], references: [id], onDelete: Cascade)
+
+  @@unique([userId, productId, variantId])
+}
+
+model Order {
+  id              String        @id @default(cuid())
+  orderNumber     String        @unique
+  userId          String
+  status          OrderStatus   @default(PENDING)
+  subtotal        Decimal       @db.Decimal(10, 2)
+  tax             Decimal       @default(0) @db.Decimal(10, 2)
+  shippingCost    Decimal       @default(0) @db.Decimal(10, 2)
+  total           Decimal       @db.Decimal(10, 2)
+  paymentMethod   PaymentMethod
+  paymentId       String?
+  paymentStatus   PaymentStatus @default(PENDING)
+  shippingAddress Json?
+  billingAddress  Json?
+  notes           String?       @db.Text
+  createdAt       DateTime      @default(now())
+  updatedAt       DateTime      @updatedAt
+
+  user  User        @relation(fields: [userId], references: [id])
+  items OrderItem[]
+}
+
+enum OrderStatus {
+  PENDING
+  CONFIRMED
+  PROCESSING
+  SHIPPED
+  DELIVERED
+  CANCELLED
+  REFUNDED
+}
+
+enum PaymentMethod {
+  STRIPE
+  PAYPAL
+  PAYSTACK
+}
+
+enum PaymentStatus {
+  PENDING
+  PAID
+  FAILED
+  REFUNDED
+}
+
+model OrderItem {
+  id          String  @id @default(cuid())
+  orderId     String
+  productId   String
+  variantInfo String?
+  productName String
+  price       Decimal @db.Decimal(10, 2)
+  quantity    Int
+
+  order   Order   @relation(fields: [orderId], references: [id], onDelete: Cascade)
+  product Product @relation(fields: [productId], references: [id])
+}
+
+// ═══════════════════════════════════════════════════════
+// DONATIONS
+// ═══════════════════════════════════════════════════════
+
+model Donation {
+  id            String        @id @default(cuid())
+  userId        String?
+  amount        Decimal       @db.Decimal(10, 2)
+  currency      String        @default("USD")
+  paymentMethod PaymentMethod
+  paymentId     String?
+  status        PaymentStatus @default(PENDING)
+  isRecurring   Boolean       @default(false)
+  message       String?       @db.Text
+  anonymous     Boolean       @default(false)
+  campaignId    String?
+  createdAt     DateTime      @default(now())
+
+  user     User?             @relation(fields: [userId], references: [id])
+  campaign DonationCampaign? @relation(fields: [campaignId], references: [id])
+}
+
+model DonationCampaign {
+  id          String   @id @default(cuid())
+  title       String
+  description String?  @db.Text
+  goalAmount  Decimal? @db.Decimal(10, 2)
+  isActive    Boolean  @default(true)
+  createdAt   DateTime @default(now())
+
+  donations Donation[]
+}
+
+// ═══════════════════════════════════════════════════════
+// COMMUNITY CHAT
+// ═══════════════════════════════════════════════════════
+
+model ChatChannel {
+  id          String      @id @default(cuid())
+  name        String
+  slug        String      @unique
+  description String?
+  type        ChannelType @default(PUBLIC)
+  createdAt   DateTime    @default(now())
+
+  messages ChatMessage[]
+  members  ChannelMember[]
+}
+
+enum ChannelType {
+  PUBLIC
+  PRIVATE
+  HOUSE
+}
+
+model ChannelMember {
+  channelId  String
+  userId     String
+  role       ChannelRole @default(MEMBER)
+  joinedAt   DateTime    @default(now())
+  mutedUntil DateTime?
+
+  channel ChatChannel @relation(fields: [channelId], references: [id], onDelete: Cascade)
+  user    User        @relation(fields: [userId], references: [id])
+
+  @@id([channelId, userId])
+}
+
+enum ChannelRole {
+  MEMBER
+  MODERATOR
+  ADMIN
+}
+
+model ChatMessage {
+  id        String      @id @default(cuid())
+  channelId String
+  userId    String
+  content   String      @db.Text
+  type      MessageType @default(TEXT)
+  mediaUrl  String?
+  isEdited  Boolean     @default(false)
+  isDeleted Boolean     @default(false)
+  parentId  String?
+  createdAt DateTime    @default(now())
+  updatedAt DateTime    @updatedAt
+
+  channel ChatChannel @relation(fields: [channelId], references: [id], onDelete: Cascade)
+  user    User        @relation(fields: [userId], references: [id])
+}
+
+enum MessageType {
+  TEXT
+  IMAGE
+  FILE
+  SYSTEM
+}
+
+// ═══════════════════════════════════════════════════════
+// INTEGRITY HOUSES
+// ═══════════════════════════════════════════════════════
+
+model IntegrityHouse {
+  id            String   @id @default(cuid())
+  name          String
+  slug          String   @unique
+  description   String?  @db.Text
+  location      String?
+  coverImage    String?
+  leaderId      String?
+  maxMembers    Int?
+  isActive      Boolean  @default(true)
+  chatChannelId String?  @unique
+  createdAt     DateTime @default(now())
+  updatedAt     DateTime @updatedAt
+
+  members HouseMember[]
+}
+
+model HouseMember {
+  houseId  String
+  userId   String
+  role     HouseRole @default(MEMBER)
+  joinedAt DateTime  @default(now())
+
+  house IntegrityHouse @relation(fields: [houseId], references: [id], onDelete: Cascade)
+  user  User           @relation(fields: [userId], references: [id])
+
+  @@id([houseId, userId])
+}
+
+enum HouseRole {
+  MEMBER
+  ELDER
+  LEADER
+}
+
+// ═══════════════════════════════════════════════════════
+// MEDIA, NOTIFICATIONS & SETTINGS
+// ═══════════════════════════════════════════════════════
+
+model Media {
+  id        String    @id @default(cuid())
+  filename  String
+  url       String
+  type      MediaType
+  size      Int?
+  alt       String?
+  createdAt DateTime  @default(now())
+}
+
+enum MediaType {
+  IMAGE
+  VIDEO
+  DOCUMENT
+}
+
+model Notification {
+  id        String   @id @default(cuid())
+  userId    String
+  title     String
+  message   String
+  type      String
+  link      String?
+  isRead    Boolean  @default(false)
+  createdAt DateTime @default(now())
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+}
+
+model ContactMessage {
+  id        String    @id @default(cuid())
+  name      String
+  email     String
+  subject   String?
+  message   String    @db.Text
+  isRead    Boolean   @default(false)
+  repliedAt DateTime?
+  createdAt DateTime  @default(now())
+}
+
+model SiteSetting {
+  key   String @id
+  value String @db.Text
+  type  String @default("string")
+}
