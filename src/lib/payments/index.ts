@@ -2,7 +2,7 @@ export {
   createStripeCheckoutSession,
   createStripeDonationSession,
   verifyStripeWebhook,
-  stripe,
+  getStripe,
 } from "./stripe";
 
 export {

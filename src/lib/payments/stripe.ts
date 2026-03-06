@@ -4,14 +4,20 @@ import Stripe from "stripe";
 // STRIPE INTEGRATION
 // ═══════════════════════════════════════════════════════
 
-if (!process.env.STRIPE_SECRET_KEY) {
-  console.warn("Missing STRIPE_SECRET_KEY environment variable");
-}
+let _stripe: Stripe | null = null;
 
-export const stripe = new Stripe(process.env.STRIPE_SECRET_KEY || "", {
-  apiVersion: "2024-12-18.acacia" as Stripe.LatestApiVersion,
-  typescript: true,
-});
+export function getStripe(): Stripe {
+  if (!_stripe) {
+    if (!process.env.STRIPE_SECRET_KEY) {
+      throw new Error("Missing STRIPE_SECRET_KEY environment variable");
+    }
+    _stripe = new Stripe(process.env.STRIPE_SECRET_KEY, {
+      apiVersion: "2024-12-18.acacia" as Stripe.LatestApiVersion,
+      typescript: true,
+    });
+  }
+  return _stripe;
+}
 
 /**
  * Create a Stripe Checkout Session for store orders
@@ -29,7 +35,7 @@ export async function createStripeCheckoutSession({
   successUrl: string;
   cancelUrl: string;
 }) {
-  const session = await stripe.checkout.sessions.create({
+  const session = await getStripe().checkout.sessions.create({
     payment_method_types: ["card"],
     mode: "payment",
     customer_email: customerEmail,
@@ -70,7 +76,7 @@ export async function createStripeDonationSession({
   successUrl: string;
   cancelUrl: string;
 }) {
-  const session = await stripe.checkout.sessions.create({
+  const session = await getStripe().checkout.sessions.create({
     payment_method_types: ["card"],
     mode: recurring ? "subscription" : "payment",
     customer_email: donorEmail,
@@ -105,5 +111,5 @@ export function verifyStripeWebhook(
   const webhookSecret = process.env.STRIPE_WEBHOOK_SECRET;
   if (!webhookSecret) throw new Error("Missing STRIPE_WEBHOOK_SECRET");
 
-  return stripe.webhooks.constructEvent(payload, signature, webhookSecret);
+  return getStripe().webhooks.constructEvent(payload, signature, webhookSecret);
 }
