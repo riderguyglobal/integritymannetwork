@@ -60,8 +60,8 @@ function HeroSection() {
       <div className="relative z-10 container-wide text-center px-6">
         <motion.div initial={{ opacity: 0, y: 40 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 1, ease: [0.22, 1, 0.36, 1] }} className="max-w-5xl mx-auto">
           <motion.div initial={{ opacity: 0, scale: 0.8 }} animate={{ opacity: 1, scale: 1 }} transition={{ delay: 0.3, duration: 0.6 }} className="inline-flex items-center gap-2 px-4 sm:px-5 py-1.5 sm:py-2 rounded-full bg-orange-500/10 border border-orange-500/20 mb-6 sm:mb-10">
-            <Sparkles className="w-3 h-3 sm:w-3.5 sm:h-3.5 text-orange-400" />
-            <span className="text-[10px] sm:text-xs font-semibold tracking-wider uppercase text-orange-400">{SITE.scripture.reference}</span>
+            <Sparkles className="w-3 h-3 sm:w-3.5 sm:h-3.5 text-orange-600" />
+            <span className="text-[10px] sm:text-xs font-semibold tracking-wider uppercase text-orange-600">{SITE.scripture.reference}</span>
           </motion.div>
 
           <h1 className="font-display text-[2.75rem] sm:text-6xl md:text-7xl lg:text-8xl font-bold tracking-tight leading-[0.9] mb-5 sm:mb-8">
@@ -173,11 +173,11 @@ function DefinitionsSection() {
                 <Card className="group h-full p-5 sm:p-8 hover:border-orange-500/30 transition-all duration-500">
                   <div className="flex items-start gap-4 sm:gap-5">
                     <div className="shrink-0 w-11 h-11 sm:w-14 sm:h-14 rounded-xl bg-linear-to-br from-orange-500/20 to-orange-600/10 border border-orange-500/20 flex items-center justify-center group-hover:from-orange-500/30 group-hover:to-orange-600/20 transition-all duration-500">
-                      <Icon className="w-5 h-5 sm:w-6 sm:h-6 text-orange-400" />
+                      <Icon className="w-5 h-5 sm:w-6 sm:h-6 text-orange-600" />
                     </div>
                     <div>
-                      <h3 className="text-lg sm:text-xl font-bold text-white mb-2 sm:mb-3 font-display">{def.term}</h3>
-                      <p className="text-xs sm:text-sm text-zinc-400 leading-relaxed">{def.definition}</p>
+                      <h3 className="text-lg sm:text-xl font-bold text-zinc-900 mb-2 sm:mb-3 font-display">{def.term}</h3>
+                      <p className="text-xs sm:text-sm text-zinc-600 leading-relaxed">{def.definition}</p>
                     </div>
                   </div>
                 </Card>
@@ -208,12 +208,12 @@ function ChannelsPreview() {
                 <Link href={`/channels#${channel.id}`}>
                   <Card className="group h-full p-4 sm:p-6 hover:border-orange-500/30 cursor-pointer transition-all duration-500 hover:-translate-y-1">
                     <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-lg sm:rounded-xl bg-linear-to-br from-orange-500/20 to-orange-600/10 border border-orange-500/20 flex items-center justify-center mb-3 sm:mb-5 group-hover:from-orange-500/30 transition-all duration-500">
-                      <Icon className="w-4 h-4 sm:w-5 sm:h-5 text-orange-400" />
+                      <Icon className="w-4 h-4 sm:w-5 sm:h-5 text-orange-600" />
                     </div>
-                    <h3 className="text-sm sm:text-lg font-bold text-white mb-1 sm:mb-2">{channel.title}</h3>
-                    <p className="text-[10px] sm:text-xs text-orange-400/70 font-medium uppercase tracking-wider mb-2 sm:mb-3">{channel.subtitle}</p>
-                    <p className="text-xs sm:text-sm text-zinc-500 leading-relaxed line-clamp-2 sm:line-clamp-3 hidden sm:block">{channel.description}</p>
-                    <div className="mt-3 sm:mt-4 flex items-center gap-1 text-xs sm:text-sm text-orange-400 sm:opacity-0 sm:group-hover:opacity-100 transition-opacity duration-300">
+                    <h3 className="text-sm sm:text-lg font-bold text-zinc-900 mb-1 sm:mb-2">{channel.title}</h3>
+                    <p className="text-[10px] sm:text-xs text-orange-600/70 font-medium uppercase tracking-wider mb-2 sm:mb-3">{channel.subtitle}</p>
+                    <p className="text-xs sm:text-sm text-zinc-600 leading-relaxed line-clamp-2 sm:line-clamp-3 hidden sm:block">{channel.description}</p>
+                    <div className="mt-3 sm:mt-4 flex items-center gap-1 text-xs sm:text-sm text-orange-600 sm:opacity-0 sm:group-hover:opacity-100 transition-opacity duration-300">
                       Learn more <ChevronRight className="w-3 h-3 sm:w-4 sm:h-4" />
                     </div>
                   </Card>
@@ -255,14 +255,14 @@ function EventsPreview() {
                   <CardContent className="p-5 sm:p-8 flex-1 flex flex-col">
                     <div className="flex items-center gap-2.5 sm:gap-3 mb-4 sm:mb-6">
                       <div className="w-10 h-10 sm:w-11 sm:h-11 rounded-lg sm:rounded-xl bg-linear-to-br from-orange-500/20 to-orange-600/10 border border-orange-500/20 flex items-center justify-center">
-                        <Icon className="w-4 h-4 sm:w-5 sm:h-5 text-orange-400" />
+                        <Icon className="w-4 h-4 sm:w-5 sm:h-5 text-orange-600" />
                       </div>
                       <Badge>{event.schedule}</Badge>
                     </div>
-                    <h3 className="text-lg sm:text-xl font-bold text-white mb-2 sm:mb-3 font-display">{event.name}</h3>
-                    <p className="text-xs sm:text-sm text-zinc-400 leading-relaxed flex-1">{event.description}</p>
+                    <h3 className="text-lg sm:text-xl font-bold text-zinc-900 mb-2 sm:mb-3 font-display">{event.name}</h3>
+                    <p className="text-xs sm:text-sm text-zinc-600 leading-relaxed flex-1">{event.description}</p>
                     <div className="mt-4 sm:mt-6 pt-4 sm:pt-5 border-t border-zinc-800/50">
-                      <p className="text-xs sm:text-sm text-orange-400/80 italic font-medium">&ldquo;{event.highlight}&rdquo;</p>
+                      <p className="text-xs sm:text-sm text-orange-600 italic font-medium">&ldquo;{event.highlight}&rdquo;</p>
                     </div>
                   </CardContent>
                 </Card>
@@ -288,18 +288,18 @@ function EventsPreview() {
 function ScriptureBanner() {
   return (
     <section className="relative py-16 sm:py-20 md:py-28 overflow-hidden">
-      <div className="absolute inset-0 bg-linear-to-r from-orange-600 to-orange-700" />
-      <div className="absolute inset-0 bg-grid opacity-10" />
-      <div className="absolute top-0 left-0 right-0 h-px bg-linear-to-r from-transparent via-white/20 to-transparent" />
-      <div className="absolute bottom-0 left-0 right-0 h-px bg-linear-to-r from-transparent via-white/20 to-transparent" />
+      <div className="absolute inset-0 bg-white" />
+      <div className="absolute inset-0 bg-grid opacity-5" />
+      <div className="absolute top-0 left-0 right-0 h-px bg-linear-to-r from-transparent via-zinc-300 to-transparent" />
+      <div className="absolute bottom-0 left-0 right-0 h-px bg-linear-to-r from-transparent via-zinc-300 to-transparent" />
 
       <div className="container-wide relative z-10">
         <motion.div {...fadeInUp} className="max-w-4xl mx-auto text-center">
-          <Quote className="w-8 h-8 sm:w-10 sm:h-10 text-white/30 mx-auto mb-4 sm:mb-6" />
-          <blockquote className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-display font-bold text-white leading-snug mb-4 sm:mb-6 px-2">
+          <Quote className="w-8 h-8 sm:w-10 sm:h-10 text-zinc-900/20 mx-auto mb-4 sm:mb-6" />
+          <blockquote className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-display font-bold text-zinc-900 leading-snug mb-4 sm:mb-6 px-2">
             &ldquo;{SITE.scripture.text}&rdquo;
           </blockquote>
-          <cite className="text-base sm:text-lg text-white/70 font-medium not-italic"> {SITE.scripture.reference}</cite>
+          <cite className="text-base sm:text-lg text-zinc-600 font-medium not-italic"> {SITE.scripture.reference}</cite>
         </motion.div>
       </div>
     </section>
