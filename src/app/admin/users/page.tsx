@@ -167,7 +167,7 @@ export default function AdminUsersPage() {
                   <tr key={user.id} className="border-b border-zinc-800/50 hover:bg-zinc-800/30 transition-colors">
                     <td className="py-3 px-4">
                       <div className="flex items-center gap-3">
-                        <div className="w-8 h-8 rounded-full bg-orange-500/10 flex items-center justify-center text-xs font-bold text-orange-400">
+                        <div className="w-8 h-8 rounded-full bg-orange-500/10 flex items-center justify-center text-xs font-bold text-orange-500">
                           {getInitials(user.firstName || "", user.lastName || "")}
                         </div>
                         <span className="font-medium text-white truncate max-w-35">

@@ -75,7 +75,7 @@ export default function ProductPage() {
         <div className="container-wide relative z-10">
           <Link
             href="/store"
-            className="inline-flex items-center gap-2 text-sm text-zinc-400 hover:text-orange-400 transition-colors"
+            className="inline-flex items-center gap-2 text-sm text-zinc-400 hover:text-orange-500 transition-colors"
           >
             <ArrowLeft className="w-4 h-4" />
             Back to Store
@@ -142,7 +142,7 @@ export default function ProductPage() {
                         key={i}
                         className={`w-4 h-4 ${
                           i < Math.floor(product.rating)
-                            ? "text-orange-400 fill-orange-400"
+                            ? "text-orange-500 fill-orange-500"
                             : "text-zinc-700"
                         }`}
                       />
@@ -180,7 +180,7 @@ export default function ProductPage() {
                       key={feature}
                       className="flex items-center gap-2 text-sm text-zinc-400"
                     >
-                      <CheckCircle2 className="w-3.5 h-3.5 text-orange-400 shrink-0" />
+                      <CheckCircle2 className="w-3.5 h-3.5 text-orange-500 shrink-0" />
                       {feature}
                     </div>
                   ))}
@@ -236,7 +236,7 @@ export default function ProductPage() {
                     key={info.text}
                     className="flex items-center gap-3 text-sm text-zinc-400"
                   >
-                    <info.icon className="w-4 h-4 text-orange-400" />
+                    <info.icon className="w-4 h-4 text-orange-500" />
                     {info.text}
                   </div>
                 ))}

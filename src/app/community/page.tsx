@@ -150,7 +150,7 @@ export default function CommunityPage() {
         {/* Header */}
         <div className="p-4 border-b border-zinc-800/50">
           <div className="flex items-center gap-2 mb-3">
-            <Shield className="w-5 h-5 text-orange-400" />
+            <Shield className="w-5 h-5 text-orange-500" />
             <h2 className="text-sm font-bold text-white">TIMN Community</h2>
           </div>
           <div className="relative">
@@ -173,7 +173,7 @@ export default function CommunityPage() {
               onClick={() => setActiveChannel(channel.id)}
               className={`flex items-center justify-between w-full px-2.5 py-2 rounded-md text-sm transition-all ${
                 activeChannel === channel.id
-                  ? "bg-orange-500/10 text-orange-400"
+                  ? "bg-orange-500/10 text-orange-500"
                   : "text-zinc-400 hover:text-white hover:bg-zinc-800/30"
               }`}
             >
@@ -193,7 +193,7 @@ export default function CommunityPage() {
         {/* User Footer */}
         <div className="p-3 border-t border-zinc-800/50">
           <div className="flex items-center gap-2.5 px-2 py-1.5">
-            <div className="w-7 h-7 rounded-full bg-orange-500/20 border border-orange-500/30 flex items-center justify-center text-xs font-bold text-orange-400">
+            <div className="w-7 h-7 rounded-full bg-orange-500/20 border border-orange-500/30 flex items-center justify-center text-xs font-bold text-orange-500">
               Y
             </div>
             <div className="flex-1 min-w-0">
@@ -211,7 +211,7 @@ export default function CommunityPage() {
         <header className="px-6 py-3.5 border-b border-zinc-800/50 flex items-center justify-between bg-zinc-950/80 backdrop-blur-sm">
           <div>
             <div className="flex items-center gap-2">
-              <Hash className="w-4 h-4 text-orange-400" />
+              <Hash className="w-4 h-4 text-orange-500" />
               <h2 className="text-sm font-bold text-white">
                 {currentChannel?.name}
               </h2>
@@ -246,7 +246,7 @@ export default function CommunityPage() {
               animate={{ opacity: 1, y: 0 }}
               className="flex gap-3 group hover:bg-zinc-800/10 rounded-lg px-2 py-2 -mx-2 transition-colors"
             >
-              <div className="w-9 h-9 rounded-full bg-orange-500/10 border border-orange-500/20 flex items-center justify-center text-xs font-bold text-orange-400 shrink-0 mt-0.5">
+              <div className="w-9 h-9 rounded-full bg-orange-500/10 border border-orange-500/20 flex items-center justify-center text-xs font-bold text-orange-500 shrink-0 mt-0.5">
                 {msg.avatar}
               </div>
               <div className="flex-1 min-w-0">
@@ -258,7 +258,7 @@ export default function CommunityPage() {
                     <span
                       className={`text-[10px] px-1.5 py-0.5 rounded-full font-medium ${
                         msg.role === "Admin"
-                          ? "bg-orange-500/20 text-orange-400"
+                          ? "bg-orange-500/20 text-orange-500"
                           : "bg-blue-500/20 text-blue-400"
                       }`}
                     >

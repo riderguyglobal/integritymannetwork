@@ -92,7 +92,7 @@ export default function AdminDonationsPage() {
               <Card key={stat.label}>
                 <CardContent className="p-5 flex items-center gap-4">
                   <div className="w-10 h-10 rounded-lg bg-orange-500/10 border border-orange-500/20 flex items-center justify-center">
-                    <stat.icon className="w-5 h-5 text-orange-400" />
+                    <stat.icon className="w-5 h-5 text-orange-500" />
                   </div>
                   <div>
                     <p className="text-xs text-zinc-500">{stat.label}</p>

@@ -56,8 +56,8 @@ function ContactHero() {
           className="max-w-4xl mx-auto text-center"
         >
           <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-orange-500/10 border border-orange-500/20 mb-5 sm:mb-8">
-            <MessageSquare className="w-3.5 h-3.5 text-orange-400" />
-            <span className="text-[10px] sm:text-xs font-semibold tracking-wider uppercase text-orange-400">
+            <MessageSquare className="w-3.5 h-3.5 text-orange-500" />
+            <span className="text-[10px] sm:text-xs font-semibold tracking-wider uppercase text-orange-500">
               Get In Touch
             </span>
           </div>
@@ -105,7 +105,7 @@ function ContactForm() {
         className="text-center py-16"
       >
         <div className="w-20 h-20 rounded-full bg-orange-500/10 border border-orange-500/20 flex items-center justify-center mx-auto mb-6">
-          <Send className="w-8 h-8 text-orange-400" />
+          <Send className="w-8 h-8 text-orange-500" />
         </div>
         <h3 className="text-2xl font-bold text-white font-display mb-3">
           Message Sent!
@@ -258,7 +258,7 @@ function ContactInfo() {
         <Card key={detail.title}>
           <CardContent className="p-4 sm:p-6 flex items-start gap-3 sm:gap-4">
             <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-lg sm:rounded-xl bg-linear-to-br from-orange-500/20 to-orange-600/10 border border-orange-500/20 flex items-center justify-center shrink-0">
-              <detail.icon className="w-4 h-4 sm:w-5 sm:h-5 text-orange-400" />
+              <detail.icon className="w-4 h-4 sm:w-5 sm:h-5 text-orange-500" />
             </div>
             <div>
               <h3 className="text-sm font-semibold text-white mb-1">
@@ -267,7 +267,7 @@ function ContactInfo() {
               {detail.href ? (
                 <a
                   href={detail.href}
-                  className="text-zinc-400 hover:text-orange-400 transition-colors text-sm"
+                  className="text-zinc-400 hover:text-orange-500 transition-colors text-sm"
                 >
                   {detail.value}
                 </a>
@@ -289,7 +289,7 @@ function ContactInfo() {
                 key={social.label}
                 href={social.href}
                 aria-label={social.label}
-                className="w-10 h-10 rounded-lg bg-zinc-800/50 border border-zinc-700/50 flex items-center justify-center text-zinc-400 hover:text-orange-400 hover:border-orange-500/30 transition-all"
+                className="w-10 h-10 rounded-lg bg-zinc-800/50 border border-zinc-700/50 flex items-center justify-center text-zinc-400 hover:text-orange-500 hover:border-orange-500/30 transition-all"
               >
                 <social.icon className="w-4 h-4" />
               </a>
@@ -348,12 +348,12 @@ function FAQItem({
         onClick={onToggle}
         className="w-full flex items-center justify-between py-5 text-left group"
       >
-        <span className="text-sm font-medium text-white group-hover:text-orange-400 transition-colors pr-4">
+        <span className="text-sm font-medium text-white group-hover:text-orange-500 transition-colors pr-4">
           {faq.question}
         </span>
         <ChevronDown
           className={`w-4 h-4 text-zinc-500 shrink-0 transition-transform duration-300 ${
-            isOpen ? "rotate-180 text-orange-400" : ""
+            isOpen ? "rotate-180 text-orange-500" : ""
           }`}
         />
       </button>

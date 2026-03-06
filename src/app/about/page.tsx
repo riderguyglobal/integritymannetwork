@@ -49,7 +49,7 @@ function AboutHero() {
       <div className="container-wide relative z-10">
         <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }} className="max-w-4xl mx-auto text-center">
           <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-orange-500/10 border border-orange-500/20 mb-5 sm:mb-8">
-            <span className="text-[10px] sm:text-xs font-semibold tracking-wider uppercase text-orange-400">About Us</span>
+            <span className="text-[10px] sm:text-xs font-semibold tracking-wider uppercase text-orange-500">About Us</span>
           </div>
 
           <h1 className="font-display text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-bold tracking-tight text-white leading-[0.95] mb-4 sm:mb-6">
@@ -92,7 +92,7 @@ function ContentSection({
           <div className={`${reverse ? "lg:order-2" : ""} ${hasMedia ? "order-2 lg:order-0" : ""}`}>
             <motion.div {...fadeInUp} className="flex items-center gap-3 sm:gap-4 mb-6 sm:mb-10">
               <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-lg sm:rounded-xl bg-linear-to-br from-orange-500/20 to-orange-600/10 border border-orange-500/20 flex items-center justify-center">
-                <Icon className="w-4 h-4 sm:w-5 sm:h-5 text-orange-400" />
+                <Icon className="w-4 h-4 sm:w-5 sm:h-5 text-orange-500" />
               </div>
               <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-white font-display">{section.title}</h2>
             </motion.div>
@@ -138,7 +138,7 @@ function MethodSection() {
         <div className="max-w-4xl mx-auto">
           <motion.div {...fadeInUp} className="flex items-center gap-3 sm:gap-4 mb-4 sm:mb-6">
             <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-lg sm:rounded-xl bg-linear-to-br from-orange-500/20 to-orange-600/10 border border-orange-500/20 flex items-center justify-center">
-              <Map className="w-4 h-4 sm:w-5 sm:h-5 text-orange-400" />
+              <Map className="w-4 h-4 sm:w-5 sm:h-5 text-orange-500" />
             </div>
             <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-white font-display">{ABOUT_CONTENT.method.title}</h2>
           </motion.div>
@@ -159,10 +159,10 @@ function MethodSection() {
               <Link key={channel.id} href={`/channels#${channel.id}`}>
                 <Card className="group h-full p-4 sm:p-6 hover:border-orange-500/30 cursor-pointer transition-all duration-500 hover:-translate-y-1">
                   <div className="w-9 h-9 sm:w-11 sm:h-11 rounded-lg sm:rounded-xl bg-linear-to-br from-orange-500/20 to-orange-600/10 border border-orange-500/20 flex items-center justify-center mb-3 sm:mb-4">
-                    <Icon className="w-4 h-4 sm:w-5 sm:h-5 text-orange-400" />
+                    <Icon className="w-4 h-4 sm:w-5 sm:h-5 text-orange-500" />
                   </div>
                   <h3 className="text-sm sm:text-lg font-bold text-white mb-1 sm:mb-2">{channel.title}</h3>
-                  <p className="text-[10px] sm:text-xs text-orange-400/70 font-medium uppercase tracking-wider mb-1 sm:mb-2">{channel.subtitle}</p>
+                  <p className="text-[10px] sm:text-xs text-orange-500/70 font-medium uppercase tracking-wider mb-1 sm:mb-2">{channel.subtitle}</p>
                   <p className="text-xs sm:text-sm text-zinc-500 leading-relaxed line-clamp-2 sm:line-clamp-3 hidden sm:block">{channel.description}</p>
                 </Card>
               </Link>

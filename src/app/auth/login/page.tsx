@@ -85,7 +85,7 @@ export default function LoginPage() {
               className="w-12 h-12 object-contain group-hover:scale-105 transition-transform"
               priority
             />
-            <span className="font-display text-lg font-bold text-white group-hover:text-orange-400 transition-colors">
+            <span className="font-display text-lg font-bold text-white group-hover:text-orange-500 transition-colors">
               TIMN
             </span>
           </Link>
@@ -183,7 +183,7 @@ export default function LoginPage() {
                   </label>
                   <Link
                     href="/auth/forgot-password"
-                    className="text-xs text-orange-400 hover:text-orange-300 transition-colors"
+                    className="text-xs text-orange-500 hover:text-orange-400 transition-colors"
                   >
                     Forgot password?
                   </Link>
@@ -240,7 +240,7 @@ export default function LoginPage() {
           Don&apos;t have an account?{" "}
           <Link
             href="/auth/register"
-            className="text-orange-400 hover:text-orange-300 font-medium transition-colors"
+            className="text-orange-500 hover:text-orange-400 font-medium transition-colors"
           >
             Create one
           </Link>

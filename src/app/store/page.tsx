@@ -47,8 +47,8 @@ function StoreHero() {
       <div className="container-wide relative z-10">
         <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }} className="max-w-4xl mx-auto text-center">
           <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-orange-500/10 border border-orange-500/20 mb-8">
-            <ShoppingBag className="w-3.5 h-3.5 text-orange-400" />
-            <span className="text-xs font-semibold tracking-wider uppercase text-orange-400">Official Store</span>
+            <ShoppingBag className="w-3.5 h-3.5 text-orange-500" />
+            <span className="text-xs font-semibold tracking-wider uppercase text-orange-500">Official Store</span>
           </div>
 
           <h1 className="font-display text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight text-white leading-[0.95] mb-6">
@@ -82,12 +82,12 @@ function ProductCard({ product }: { product: (typeof SAMPLE_PRODUCTS)[0] }) {
 
         <CardContent className="p-5">
           <p className="text-[10px] text-zinc-500 uppercase tracking-wider mb-2">{product.category}</p>
-          <h3 className="text-base font-bold text-white font-display mb-2 line-clamp-1 group-hover:text-orange-400 transition-colors">{product.name}</h3>
+          <h3 className="text-base font-bold text-white font-display mb-2 line-clamp-1 group-hover:text-orange-500 transition-colors">{product.name}</h3>
           <p className="text-xs text-zinc-400 line-clamp-2 mb-3">{product.description}</p>
           <div className="flex items-center gap-1.5 mb-3">
             <div className="flex items-center">
               {Array.from({ length: 5 }).map((_, i) => (
-                <Star key={i} className={`w-3 h-3 ${i < Math.floor(product.rating) ? "text-orange-400 fill-orange-400" : "text-zinc-700"}`} />
+                <Star key={i} className={`w-3 h-3 ${i < Math.floor(product.rating) ? "text-orange-500 fill-orange-500" : "text-zinc-700"}`} />
               ))}
             </div>
             <span className="text-[10px] text-zinc-500">({product.reviews})</span>

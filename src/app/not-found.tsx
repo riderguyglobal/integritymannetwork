@@ -6,7 +6,7 @@ export default function NotFound() {
     <div className="min-h-screen flex items-center justify-center bg-zinc-950 px-6">
       <div className="text-center max-w-md">
         <div className="w-16 h-16 rounded-2xl bg-orange-500/10 border border-orange-500/20 flex items-center justify-center mx-auto mb-6">
-          <Shield className="w-8 h-8 text-orange-400" />
+          <Shield className="w-8 h-8 text-orange-500" />
         </div>
         <h1 className="text-5xl font-bold text-white font-display mb-4">404</h1>
         <p className="text-lg text-zinc-400 mb-8">

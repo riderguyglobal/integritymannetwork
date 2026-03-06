@@ -115,7 +115,7 @@ export default function RegisterPage() {
               className="w-12 h-12 object-contain group-hover:scale-105 transition-transform"
               priority
             />
-            <span className="font-display text-lg font-bold text-white group-hover:text-orange-400 transition-colors">
+            <span className="font-display text-lg font-bold text-white group-hover:text-orange-500 transition-colors">
               TIMN
             </span>
           </Link>
@@ -308,14 +308,14 @@ export default function RegisterPage() {
                   I agree to the{" "}
                   <Link
                     href="/terms"
-                    className="text-orange-400 hover:underline"
+                    className="text-orange-500 hover:underline"
                   >
                     Terms of Service
                   </Link>{" "}
                   and{" "}
                   <Link
                     href="/privacy"
-                    className="text-orange-400 hover:underline"
+                    className="text-orange-500 hover:underline"
                   >
                     Privacy Policy
                   </Link>
@@ -348,7 +348,7 @@ export default function RegisterPage() {
           Already have an account?{" "}
           <Link
             href="/auth/login"
-            className="text-orange-400 hover:text-orange-300 font-medium transition-colors"
+            className="text-orange-500 hover:text-orange-400 font-medium transition-colors"
           >
             Sign in
           </Link>

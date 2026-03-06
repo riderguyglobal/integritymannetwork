@@ -133,7 +133,7 @@ export default function AdminMessagesPage() {
           <h1 className="text-2xl font-bold text-white font-display">Messages</h1>
           <p className="text-sm text-zinc-500 mt-1">
             View and manage contact form submissions.
-            {unreadCount > 0 && <span className="text-orange-400 ml-2">({unreadCount} unread)</span>}
+            {unreadCount > 0 && <span className="text-orange-500 ml-2">({unreadCount} unread)</span>}
           </p>
         </div>
         <Button variant="outline" size="sm" onClick={() => fetchMessages()}>
@@ -226,7 +226,7 @@ export default function AdminMessagesPage() {
             <div className="space-y-4">
               <div className="grid grid-cols-2 gap-4">
                 <div><p className="text-xs text-zinc-500 mb-1">From</p><p className="text-sm text-white">{selectedMessage.name}</p></div>
-                <div><p className="text-xs text-zinc-500 mb-1">Email</p><p className="text-sm text-orange-400">{selectedMessage.email}</p></div>
+                <div><p className="text-xs text-zinc-500 mb-1">Email</p><p className="text-sm text-orange-500">{selectedMessage.email}</p></div>
               </div>
               <div><p className="text-xs text-zinc-500 mb-1">Subject</p><p className="text-sm text-white">{selectedMessage.subject || "(No subject)"}</p></div>
               <div>

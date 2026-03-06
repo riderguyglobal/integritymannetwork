@@ -233,7 +233,7 @@ export function VideoCard({
         rounded="xl"
         className="mb-4"
       />
-      <h3 className="text-lg font-bold text-white font-display mb-1 group-hover:text-orange-400 transition-colors">
+      <h3 className="text-lg font-bold text-white font-display mb-1 group-hover:text-orange-500 transition-colors">
         {title}
       </h3>
       {description && (

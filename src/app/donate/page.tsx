@@ -59,8 +59,8 @@ function DonateHero() {
           className="max-w-4xl mx-auto text-center"
         >
           <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-orange-500/10 border border-orange-500/20 mb-5 sm:mb-8">
-            <Heart className="w-3.5 h-3.5 text-orange-400" />
-            <span className="text-[10px] sm:text-xs font-semibold tracking-wider uppercase text-orange-400">
+            <Heart className="w-3.5 h-3.5 text-orange-500" />
+            <span className="text-[10px] sm:text-xs font-semibold tracking-wider uppercase text-orange-500">
               Support The Vision
             </span>
           </div>
@@ -140,7 +140,7 @@ function ImpactSection() {
               <Card className="h-full hover:border-orange-500/20 transition-colors">
                 <CardContent className="p-4 sm:p-6 flex items-start gap-3 sm:gap-4">
                   <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-lg sm:rounded-xl bg-linear-to-br from-orange-500/20 to-orange-600/10 border border-orange-500/20 flex items-center justify-center shrink-0">
-                    <area.icon className="w-4 h-4 sm:w-5 sm:h-5 text-orange-400" />
+                    <area.icon className="w-4 h-4 sm:w-5 sm:h-5 text-orange-500" />
                   </div>
                   <div>
                     <h3 className="text-base sm:text-lg font-bold text-white font-display mb-1 sm:mb-2">
@@ -218,7 +218,7 @@ function DonationForm() {
               }}
               className={`px-3 sm:px-4 py-3 rounded-lg text-xs sm:text-sm font-semibold transition-all border ${
                 selectedAmount === amount && !customAmount
-                  ? "bg-orange-500/10 border-orange-500/50 text-orange-400"
+                  ? "bg-orange-500/10 border-orange-500/50 text-orange-500"
                   : "bg-zinc-800/30 border-zinc-700/50 text-zinc-300 hover:border-orange-500/30"
               }`}>
               {formatCurrency(amount)}
@@ -288,9 +288,9 @@ function DonationForm() {
               className="p-4 rounded-lg bg-zinc-800/30 border border-zinc-700/50 hover:border-orange-500/30 transition-all text-left group"
             >
               <div className="flex items-center gap-3">
-                <CreditCard className="w-5 h-5 text-orange-400" />
+                <CreditCard className="w-5 h-5 text-orange-500" />
                 <div>
-                  <p className="text-sm font-semibold text-white group-hover:text-orange-400 transition-colors">
+                  <p className="text-sm font-semibold text-white group-hover:text-orange-500 transition-colors">
                     {method.name}
                   </p>
                   <p className="text-xs text-zinc-500">{method.desc}</p>

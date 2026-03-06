@@ -124,7 +124,7 @@ export default function AdminAnalyticsPage() {
           <Card key={metric.label}>
             <CardContent className="p-5">
               <div className="flex items-center justify-between mb-3">
-                <metric.icon className="w-5 h-5 text-orange-400" />
+                <metric.icon className="w-5 h-5 text-orange-500" />
                 <span className="flex items-center gap-0.5 text-xs text-green-400 font-medium">
                   <ArrowUpRight className="w-3 h-3" />{metric.change}
                 </span>
@@ -141,7 +141,7 @@ export default function AdminAnalyticsPage() {
         <Card className="lg:col-span-2">
           <CardHeader>
             <CardTitle className="text-lg flex items-center gap-2">
-              <BarChart3 className="w-4 h-4 text-orange-400" />
+              <BarChart3 className="w-4 h-4 text-orange-500" />
               Platform Overview
             </CardTitle>
           </CardHeader>

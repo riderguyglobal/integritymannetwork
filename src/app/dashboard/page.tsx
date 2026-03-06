@@ -87,7 +87,7 @@ export default function DashboardPage() {
                 whileHover={{ y: -2 }}
                 className="flex flex-col items-center gap-2 p-4 rounded-xl bg-zinc-900/50 border border-zinc-800/50 hover:border-orange-500/20 transition-all text-center"
               >
-                <link.icon className="w-5 h-5 text-orange-400" />
+                <link.icon className="w-5 h-5 text-orange-500" />
                 <span className="text-xs text-zinc-300">{link.label}</span>
               </motion.div>
             </Link>
@@ -181,7 +181,7 @@ export default function DashboardPage() {
           <CardContent className="p-6">
             <div className="flex items-center gap-5">
               <div className="w-16 h-16 rounded-full bg-orange-500/10 border-2 border-orange-500/30 flex items-center justify-center">
-                <User className="w-7 h-7 text-orange-400" />
+                <User className="w-7 h-7 text-orange-500" />
               </div>
               <div className="flex-1">
                 <h3 className="text-lg font-bold text-white">Your Profile</h3>

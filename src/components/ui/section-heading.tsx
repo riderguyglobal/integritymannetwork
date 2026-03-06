@@ -29,7 +29,7 @@ export function SectionHeading({
       {label && (
         <div className={cn("flex items-center gap-2.5 sm:gap-3 mb-3 sm:mb-4", align === "center" && "justify-center")}>
           <div className="h-px w-6 sm:w-8 bg-linear-to-r from-transparent to-orange-500/50" />
-          <span className="text-[10px] sm:text-xs font-semibold tracking-[0.2em] uppercase text-orange-600">
+          <span className="text-[10px] sm:text-xs font-semibold tracking-[0.2em] uppercase text-orange-500">
             {label}
           </span>
           <div className="h-px w-6 sm:w-8 bg-linear-to-l from-transparent to-orange-500/50" />

@@ -109,7 +109,7 @@ export function Header() {
                 <span className="text-base sm:text-lg font-bold tracking-tight text-white leading-none">
                   Integrity Man
                 </span>
-                <span className="text-[9px] sm:text-[10px] font-semibold tracking-[0.2em] uppercase text-orange-400/80 leading-none mt-0.5 sm:mt-1">
+                <span className="text-[9px] sm:text-[10px] font-semibold tracking-[0.2em] uppercase text-orange-500/80 leading-none mt-0.5 sm:mt-1">
                   Network
                 </span>
               </div>
@@ -126,7 +126,7 @@ export function Header() {
                     className={cn(
                       "relative px-4 py-2 text-sm font-medium transition-colors duration-200 rounded-lg",
                       isActive
-                        ? "text-orange-400"
+                        ? "text-orange-500"
                         : "text-zinc-400 hover:text-white"
                     )}
                   >
@@ -245,7 +245,7 @@ export function Header() {
                           className={cn(
                             "flex items-center gap-4 px-4 py-3.5 rounded-xl text-base font-medium transition-all duration-200",
                             isActive
-                              ? "bg-orange-500/10 text-orange-400 border border-orange-500/20"
+                              ? "bg-orange-500/10 text-orange-500 border border-orange-500/20"
                               : "text-zinc-300 hover:bg-zinc-900 active:bg-zinc-800"
                           )}
                         >
@@ -260,7 +260,7 @@ export function Header() {
                             <Icon
                               className={cn(
                                 "w-4 h-4",
-                                isActive ? "text-orange-400" : "text-zinc-500"
+                                isActive ? "text-orange-500" : "text-zinc-500"
                               )}
                             />
                           </div>

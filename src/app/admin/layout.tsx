@@ -132,19 +132,19 @@ export default function AdminLayout({
                 className={cn(
                   "flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm font-medium transition-all duration-200 group",
                   active
-                    ? "bg-orange-500/10 text-orange-400 border border-orange-500/20"
+                    ? "bg-orange-500/10 text-orange-500 border border-orange-500/20"
                     : "text-zinc-400 hover:text-white hover:bg-zinc-800/50"
                 )}
               >
                 <link.icon
                   className={cn(
                     "w-4 h-4 transition-colors",
-                    active ? "text-orange-400" : "text-zinc-500 group-hover:text-orange-400"
+                    active ? "text-orange-500" : "text-zinc-500 group-hover:text-orange-500"
                   )}
                 />
                 {link.label}
                 {active && (
-                  <ChevronRight className="w-3 h-3 ml-auto text-orange-400/60" />
+                  <ChevronRight className="w-3 h-3 ml-auto text-orange-500/60" />
                 )}
               </Link>
             );

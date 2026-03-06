@@ -26,7 +26,7 @@ export default function BlogPostPage() {
 
         <div className="container-wide relative z-10">
           <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }} className="max-w-3xl mx-auto">
-            <Link href="/blog" className="inline-flex items-center gap-2 text-sm text-zinc-400 hover:text-orange-400 transition-colors mb-8">
+            <Link href="/blog" className="inline-flex items-center gap-2 text-sm text-zinc-400 hover:text-orange-500 transition-colors mb-8">
               <ArrowLeft className="w-4 h-4" />
               Back to Blog
             </Link>
@@ -43,7 +43,7 @@ export default function BlogPostPage() {
             <div className="flex items-center gap-6 text-sm text-zinc-500">
               <span className="flex items-center gap-2">
                 <div className="w-8 h-8 rounded-full bg-orange-500/10 border border-orange-500/20 flex items-center justify-center">
-                  <User className="w-3.5 h-3.5 text-orange-400" />
+                  <User className="w-3.5 h-3.5 text-orange-500" />
                 </div>
                 TIMN Editorial
               </span>
@@ -80,7 +80,7 @@ export default function BlogPostPage() {
                   When a man understands eternal purpose, his definition of success shifts. Wealth becomes stewardship. Work becomes worship. Influence becomes responsibility. And integrity becomes non-negotiable.
                 </p>
 
-                <blockquote className="border-l-2 border-orange-500/50 pl-6 italic text-orange-400/80 font-medium text-lg my-8">
+                <blockquote className="border-l-2 border-orange-500/50 pl-6 italic text-orange-500/80 font-medium text-lg my-8">
                   &ldquo;But seek first the kingdom of God and his righteousness, and all these things will be added to you.&rdquo;  Matthew 6:33
                 </blockquote>
 

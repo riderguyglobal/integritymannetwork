@@ -115,7 +115,7 @@ export default function AdminSettingsPage() {
       <Card>
         <CardHeader>
           <CardTitle className="text-lg flex items-center gap-2">
-            <Globe className="w-4 h-4 text-orange-400" />General
+            <Globe className="w-4 h-4 text-orange-500" />General
           </CardTitle>
         </CardHeader>
         <CardContent className="space-y-4">
@@ -138,7 +138,7 @@ export default function AdminSettingsPage() {
       <Card>
         <CardHeader>
           <CardTitle className="text-lg flex items-center gap-2">
-            <Mail className="w-4 h-4 text-orange-400" />Contact Information
+            <Mail className="w-4 h-4 text-orange-500" />Contact Information
           </CardTitle>
         </CardHeader>
         <CardContent className="space-y-4">
@@ -161,7 +161,7 @@ export default function AdminSettingsPage() {
       <Card>
         <CardHeader>
           <CardTitle className="text-lg flex items-center gap-2">
-            <Bell className="w-4 h-4 text-orange-400" />Notifications
+            <Bell className="w-4 h-4 text-orange-500" />Notifications
           </CardTitle>
         </CardHeader>
         <CardContent className="space-y-4">
@@ -184,7 +184,7 @@ export default function AdminSettingsPage() {
       <Card>
         <CardHeader>
           <CardTitle className="text-lg flex items-center gap-2">
-            <Shield className="w-4 h-4 text-orange-400" />Security
+            <Shield className="w-4 h-4 text-orange-500" />Security
           </CardTitle>
         </CardHeader>
         <CardContent className="space-y-4">

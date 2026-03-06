@@ -40,8 +40,8 @@ function EventsHero() {
       <div className="container-wide relative z-10">
         <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }} className="max-w-4xl mx-auto text-center">
           <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-orange-500/10 border border-orange-500/20 mb-5 sm:mb-8">
-            <Calendar className="w-3.5 h-3.5 text-orange-400" />
-            <span className="text-[10px] sm:text-xs font-semibold tracking-wider uppercase text-orange-400">Our Gatherings</span>
+            <Calendar className="w-3.5 h-3.5 text-orange-500" />
+            <span className="text-[10px] sm:text-xs font-semibold tracking-wider uppercase text-orange-500">Our Gatherings</span>
           </div>
 
           <h1 className="font-display text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-bold tracking-tight text-white leading-[0.95] mb-4 sm:mb-6">
@@ -95,20 +95,20 @@ function EventSection({ event, index }: { event: (typeof EVENTS_INFO)[number]; i
                 {/* Left */}
                 <div className="lg:col-span-2 p-5 sm:p-8 md:p-12 flex flex-col items-start justify-center border-b lg:border-b-0 lg:border-r border-zinc-800/50">
                   <div className="w-12 h-12 sm:w-16 sm:h-16 rounded-xl sm:rounded-2xl bg-linear-to-br from-orange-500/20 to-orange-600/10 border border-orange-500/20 flex items-center justify-center mb-4 sm:mb-6">
-                    <Icon className="w-5 h-5 sm:w-7 sm:h-7 text-orange-400" />
+                    <Icon className="w-5 h-5 sm:w-7 sm:h-7 text-orange-500" />
                   </div>
                   <Badge className="mb-2 sm:mb-3">{event.schedule}</Badge>
                   <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-white font-display mb-3 sm:mb-4">{event.name}</h2>
                   <div className="mt-4 sm:mt-8 flex flex-wrap gap-3 sm:gap-4 text-xs text-zinc-500">
-                    <div className="flex items-center gap-1.5"><Users className="w-3.5 h-3.5 text-orange-400" /><span>Men of Purpose</span></div>
-                    <div className="flex items-center gap-1.5"><MapPin className="w-3.5 h-3.5 text-orange-400" /><span>See Schedule</span></div>
+                    <div className="flex items-center gap-1.5"><Users className="w-3.5 h-3.5 text-orange-500" /><span>Men of Purpose</span></div>
+                    <div className="flex items-center gap-1.5"><MapPin className="w-3.5 h-3.5 text-orange-500" /><span>See Schedule</span></div>
                   </div>
                 </div>
 
                 {/* Right */}
                 <div className="lg:col-span-3 p-5 sm:p-8 md:p-12 space-y-4 sm:space-y-5 text-sm sm:text-base text-zinc-400 leading-relaxed">
                   <p>{event.description}</p>
-                  <p className="text-orange-400/80 italic font-medium text-base sm:text-lg border-l-2 border-orange-500/30 pl-4 sm:pl-6">{event.highlight}</p>
+                  <p className="text-orange-500/80 italic font-medium text-base sm:text-lg border-l-2 border-orange-500/30 pl-4 sm:pl-6">{event.highlight}</p>
                 </div>
               </div>
             </CardContent>

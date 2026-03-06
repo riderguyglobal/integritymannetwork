@@ -85,7 +85,7 @@ export default function CheckoutPage() {
                 <div
                   className={`flex items-center gap-2 px-4 py-2 rounded-full text-sm transition-all ${
                     isActive
-                      ? "bg-orange-500/10 border border-orange-500/30 text-orange-400"
+                      ? "bg-orange-500/10 border border-orange-500/30 text-orange-500"
                       : isDone
                       ? "bg-green-500/10 border border-green-500/30 text-green-400"
                       : "bg-zinc-800/30 border border-zinc-800/50 text-zinc-500"
@@ -117,7 +117,7 @@ export default function CheckoutPage() {
                 className="bg-zinc-900/50 rounded-xl border border-zinc-800/50 p-6 space-y-5"
               >
                 <h2 className="text-lg font-bold text-white flex items-center gap-2">
-                  <Truck className="w-5 h-5 text-orange-400" />
+                  <Truck className="w-5 h-5 text-orange-500" />
                   Shipping Information
                 </h2>
 
@@ -194,7 +194,7 @@ export default function CheckoutPage() {
                 className="bg-zinc-900/50 rounded-xl border border-zinc-800/50 p-6 space-y-5"
               >
                 <h2 className="text-lg font-bold text-white flex items-center gap-2">
-                  <CreditCard className="w-5 h-5 text-orange-400" />
+                  <CreditCard className="w-5 h-5 text-orange-500" />
                   Payment Method
                 </h2>
 
@@ -264,7 +264,7 @@ export default function CheckoutPage() {
                 className="bg-zinc-900/50 rounded-xl border border-zinc-800/50 p-6 space-y-5"
               >
                 <h2 className="text-lg font-bold text-white flex items-center gap-2">
-                  <Check className="w-5 h-5 text-orange-400" />
+                  <Check className="w-5 h-5 text-orange-500" />
                   Order Review
                 </h2>
 
@@ -308,7 +308,7 @@ export default function CheckoutPage() {
                   </div>
                   <div className="flex justify-between text-base font-bold pt-2 border-t border-zinc-800/50">
                     <span className="text-white">Total</span>
-                    <span className="text-orange-400">
+                    <span className="text-orange-500">
                       {formatCurrency(total)}
                     </span>
                   </div>
@@ -373,7 +373,7 @@ export default function CheckoutPage() {
                 </div>
                 <div className="flex justify-between text-base font-bold pt-2 border-t border-zinc-800/50">
                   <span className="text-white">Total</span>
-                  <span className="text-orange-400">
+                  <span className="text-orange-500">
                     {formatCurrency(total)}
                   </span>
                 </div>

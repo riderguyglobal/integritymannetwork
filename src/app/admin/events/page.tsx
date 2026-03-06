@@ -213,7 +213,7 @@ export default function AdminEventsPage() {
                         </td>
                         <td className="px-6 py-4">
                           <span className="flex items-center gap-1.5 text-sm text-zinc-400">
-                            <Users className="w-3.5 h-3.5 text-orange-400" />{event._count.registrations}
+                            <Users className="w-3.5 h-3.5 text-orange-500" />{event._count.registrations}
                             {event.capacity && <span className="text-zinc-600">/ {event.capacity}</span>}
                           </span>
                         </td>

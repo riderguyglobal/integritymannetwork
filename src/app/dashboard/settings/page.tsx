@@ -37,7 +37,7 @@ export default function DashboardSettingsPage() {
           <Card>
             <CardHeader>
               <CardTitle className="text-lg flex items-center gap-2">
-                <User className="w-4 h-4 text-orange-400" />
+                <User className="w-4 h-4 text-orange-500" />
                 Profile Information
               </CardTitle>
             </CardHeader>
@@ -89,7 +89,7 @@ export default function DashboardSettingsPage() {
           <Card>
             <CardHeader>
               <CardTitle className="text-lg flex items-center gap-2">
-                <Lock className="w-4 h-4 text-orange-400" />
+                <Lock className="w-4 h-4 text-orange-500" />
                 Change Password
               </CardTitle>
             </CardHeader>
@@ -119,7 +119,7 @@ export default function DashboardSettingsPage() {
           <Card>
             <CardHeader>
               <CardTitle className="text-lg flex items-center gap-2">
-                <Bell className="w-4 h-4 text-orange-400" />
+                <Bell className="w-4 h-4 text-orange-500" />
                 Email Preferences
               </CardTitle>
             </CardHeader>

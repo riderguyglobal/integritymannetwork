@@ -92,7 +92,7 @@ export function Footer() {
                 <span className="text-sm sm:text-base font-bold tracking-tight text-white leading-none">
                   Integrity Man
                 </span>
-                <span className="text-[8px] sm:text-[9px] font-semibold tracking-[0.2em] uppercase text-orange-400/80 leading-none mt-1">
+                <span className="text-[8px] sm:text-[9px] font-semibold tracking-[0.2em] uppercase text-orange-500/80 leading-none mt-1">
                   Network
                 </span>
               </div>
@@ -105,7 +105,7 @@ export function Footer() {
                 <a
                   key={label}
                   href={href}
-                  className="w-9 h-9 rounded-lg bg-zinc-900 border border-zinc-800 flex items-center justify-center text-zinc-500 hover:text-orange-400 hover:border-orange-500/30 transition-all duration-200"
+                  className="w-9 h-9 rounded-lg bg-zinc-900 border border-zinc-800 flex items-center justify-center text-zinc-500 hover:text-orange-500 hover:border-orange-500/30 transition-all duration-200"
                   aria-label={label}
                 >
                   <Icon className="w-4 h-4" />
@@ -124,7 +124,7 @@ export function Footer() {
                 <li key={link.href}>
                   <Link
                     href={link.href}
-                    className="text-xs sm:text-sm text-zinc-400 hover:text-orange-400 transition-colors duration-200">
+                    className="text-xs sm:text-sm text-zinc-400 hover:text-orange-500 transition-colors duration-200">
                     {link.label}
                   </Link>
                 </li>
@@ -142,7 +142,7 @@ export function Footer() {
                 <li key={link.href}>
                   <Link
                     href={link.href}
-                    className="text-xs sm:text-sm text-zinc-400 hover:text-orange-400 transition-colors duration-200">
+                    className="text-xs sm:text-sm text-zinc-400 hover:text-orange-500 transition-colors duration-200">
                     {link.label}
                   </Link>
                 </li>
@@ -160,7 +160,7 @@ export function Footer() {
                 <li key={link.label}>
                   <Link
                     href={link.href}
-                    className="text-xs sm:text-sm text-zinc-400 hover:text-orange-400 transition-colors duration-200">
+                    className="text-xs sm:text-sm text-zinc-400 hover:text-orange-500 transition-colors duration-200">
                     {link.label}
                   </Link>
                 </li>

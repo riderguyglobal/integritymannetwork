@@ -42,7 +42,7 @@ export function CartDrawer() {
             {/* Header */}
             <div className="flex items-center justify-between px-6 py-5 border-b border-zinc-800/50">
               <div className="flex items-center gap-3">
-                <ShoppingBag className="w-5 h-5 text-orange-400" />
+                <ShoppingBag className="w-5 h-5 text-orange-500" />
                 <h2 className="text-lg font-bold text-white font-display">
                   Your Cart
                 </h2>
@@ -96,7 +96,7 @@ export function CartDrawer() {
                               {item.variant}
                             </p>
                           )}
-                          <p className="text-sm font-semibold text-orange-400 mt-1">
+                          <p className="text-sm font-semibold text-orange-500 mt-1">
                             {formatCurrency(effectivePrice)}
                           </p>
 

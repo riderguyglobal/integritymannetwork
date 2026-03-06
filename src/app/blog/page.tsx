@@ -107,8 +107,8 @@ function BlogHero() {
       <div className="container-wide relative z-10">
         <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }} className="max-w-4xl mx-auto text-center">
           <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-orange-500/10 border border-orange-500/20 mb-5 sm:mb-8">
-            <BookOpen className="w-3.5 h-3.5 text-orange-400" />
-            <span className="text-[10px] sm:text-xs font-semibold tracking-wider uppercase text-orange-400">Insights & Teachings</span>
+            <BookOpen className="w-3.5 h-3.5 text-orange-500" />
+            <span className="text-[10px] sm:text-xs font-semibold tracking-wider uppercase text-orange-500">Insights & Teachings</span>
           </div>
 
           <h1 className="font-display text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-bold tracking-tight text-white leading-[0.95] mb-4 sm:mb-6">
@@ -146,7 +146,7 @@ function FeaturedPost({ post }: { post: (typeof SAMPLE_POSTS)[0] }) {
                   <Badge variant="outline">Featured</Badge>
                 </div>
 
-                <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-white font-display mb-3 sm:mb-4 group-hover:text-orange-400 transition-colors">
+                <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-white font-display mb-3 sm:mb-4 group-hover:text-orange-500 transition-colors">
                   {post.title}
                 </h2>
 
@@ -161,7 +161,7 @@ function FeaturedPost({ post }: { post: (typeof SAMPLE_POSTS)[0] }) {
                 </div>
 
                 <div className="mt-4 sm:mt-6">
-                  <span className="inline-flex items-center gap-2 text-sm font-medium text-orange-400 group-hover:gap-3 transition-all">
+                  <span className="inline-flex items-center gap-2 text-sm font-medium text-orange-500 group-hover:gap-3 transition-all">
                     Read Article
                     <ArrowRight className="w-4 h-4" />
                   </span>
@@ -190,7 +190,7 @@ function PostCard({ post }: { post: (typeof SAMPLE_POSTS)[0] }) {
             <span className="text-[10px] text-zinc-500">{post.readTime}</span>
           </div>
 
-          <h3 className="text-base sm:text-lg font-bold text-white font-display mb-2 sm:mb-3 line-clamp-2 group-hover:text-orange-400 transition-colors">
+          <h3 className="text-base sm:text-lg font-bold text-white font-display mb-2 sm:mb-3 line-clamp-2 group-hover:text-orange-500 transition-colors">
             {post.title}
           </h3>
 

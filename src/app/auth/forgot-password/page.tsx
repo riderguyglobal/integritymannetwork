@@ -46,7 +46,7 @@ export default function ForgotPasswordPage() {
               className="w-12 h-12 object-contain group-hover:scale-105 transition-transform"
               priority
             />
-            <span className="font-display text-lg font-bold text-white group-hover:text-orange-400 transition-colors">
+            <span className="font-display text-lg font-bold text-white group-hover:text-orange-500 transition-colors">
               TIMN
             </span>
           </Link>
@@ -69,7 +69,7 @@ export default function ForgotPasswordPage() {
                 className="text-center py-4"
               >
                 <div className="w-16 h-16 rounded-full bg-orange-500/10 border border-orange-500/20 flex items-center justify-center mx-auto mb-6">
-                  <Mail className="w-7 h-7 text-orange-400" />
+                  <Mail className="w-7 h-7 text-orange-500" />
                 </div>
                 <p className="text-sm text-zinc-400 mb-6">
                   If an account exists with that email address, you&apos;ll
@@ -131,7 +131,7 @@ export default function ForgotPasswordPage() {
         <p className="text-center mt-6">
           <Link
             href="/auth/login"
-            className="inline-flex items-center gap-2 text-sm text-zinc-500 hover:text-orange-400 transition-colors"
+            className="inline-flex items-center gap-2 text-sm text-zinc-500 hover:text-orange-500 transition-colors"
           >
             <ArrowLeft className="w-3.5 h-3.5" />
             Back to Sign In

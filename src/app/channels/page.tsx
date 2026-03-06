@@ -50,7 +50,7 @@ function ChannelsHero() {
           className="max-w-4xl mx-auto text-center"
         >
           <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-orange-500/10 border border-orange-500/20 mb-6 sm:mb-8">
-            <span className="text-[10px] sm:text-xs font-semibold tracking-wider uppercase text-orange-400">
+            <span className="text-[10px] sm:text-xs font-semibold tracking-wider uppercase text-orange-500">
               Our Channels
             </span>
           </div>
@@ -112,13 +112,13 @@ function SchoolsSection() {
             <div className="p-5 sm:p-8 md:p-12 flex flex-col justify-center">
               <div className="flex items-center gap-3 sm:gap-4 mb-4 sm:mb-6">
                 <div className="w-11 h-11 sm:w-14 sm:h-14 rounded-xl bg-linear-to-br from-orange-500/20 to-orange-600/10 border border-orange-500/20 flex items-center justify-center">
-                  <BookOpen className="w-5 h-5 sm:w-6 sm:h-6 text-orange-400" />
+                  <BookOpen className="w-5 h-5 sm:w-6 sm:h-6 text-orange-500" />
                 </div>
                 <div>
                   <h3 className="text-lg sm:text-2xl font-bold text-white font-display">
                     School of Integrity
                   </h3>
-                  <p className="text-xs sm:text-sm text-orange-400/70 font-medium">
+                  <p className="text-xs sm:text-sm text-orange-500/70 font-medium">
                     Structured Formation Environment
                   </p>
                 </div>
@@ -139,7 +139,7 @@ function SchoolsSection() {
                   convictions, refining motives, strengthening discipline, and
                   aligning life with God&apos;s eternal purpose.
                 </p>
-                <p className="text-orange-400/80 italic font-medium text-lg border-l-2 border-orange-500/30 pl-6">
+                <p className="text-orange-500/80 italic font-medium text-lg border-l-2 border-orange-500/30 pl-6">
                   The School of Integrity is where men are prepared to be
                   trusted by God.
                 </p>
@@ -155,13 +155,13 @@ function SchoolsSection() {
             <CardContent className="p-5 sm:p-8 md:p-12">
               <div className="flex items-center gap-3 sm:gap-4 mb-5 sm:mb-8">
                 <div className="w-11 h-11 sm:w-14 sm:h-14 rounded-xl bg-linear-to-br from-orange-500/20 to-orange-600/10 border border-orange-500/20 flex items-center justify-center">
-                  <Baby className="w-5 h-5 sm:w-6 sm:h-6 text-orange-400" />
+                  <Baby className="w-5 h-5 sm:w-6 sm:h-6 text-orange-500" />
                 </div>
                 <div>
                   <h3 className="text-lg sm:text-2xl font-bold text-white font-display">
                     Purpose Centers
                   </h3>
-                  <p className="text-xs sm:text-sm text-orange-400/70 font-medium">
+                  <p className="text-xs sm:text-sm text-orange-500/70 font-medium">
                     Early Childhood & Primary Development
                   </p>
                 </div>
@@ -174,7 +174,7 @@ function SchoolsSection() {
                     nurture identity, moral clarity, and purpose awareness from
                     the earliest stages of life.
                   </p>
-                  <p className="text-orange-400/80 italic font-medium text-lg border-l-2 border-orange-500/30 pl-6">
+                  <p className="text-orange-500/80 italic font-medium text-lg border-l-2 border-orange-500/30 pl-6">
                     We believe destiny should be cultivated early, not repaired
                     later.
                   </p>
@@ -202,7 +202,7 @@ function SchoolsSection() {
                         key={aim}
                         className="flex items-center gap-3 px-4 py-3.5 rounded-xl bg-zinc-800/30 border border-zinc-800/50 hover:border-orange-500/20 transition-colors"
                       >
-                        <CheckCircle2 className="w-4 h-4 text-orange-400 shrink-0" />
+                        <CheckCircle2 className="w-4 h-4 text-orange-500 shrink-0" />
                         <span className="text-sm text-zinc-300">{aim}</span>
                       </div>
                     ))}
@@ -241,7 +241,7 @@ function OutreachSection() {
             <div className="p-5 sm:p-8 md:p-12 flex flex-col justify-center order-2 lg:order-1">
               <div className="flex items-center gap-3 sm:gap-4 mb-4 sm:mb-6">
                 <div className="w-11 h-11 sm:w-14 sm:h-14 rounded-xl bg-linear-to-br from-orange-500/20 to-orange-600/10 border border-orange-500/20 flex items-center justify-center">
-                  <Briefcase className="w-5 h-5 sm:w-6 sm:h-6 text-orange-400" />
+                  <Briefcase className="w-5 h-5 sm:w-6 sm:h-6 text-orange-500" />
                 </div>
                 <div>
                   <h3 className="text-lg sm:text-2xl font-bold text-white font-display">
@@ -264,7 +264,7 @@ function OutreachSection() {
                   divine purpose  it is a platform for stewardship, wealth
                   creation, societal transformation, and kingdom advancement.
                 </p>
-                <p className="text-orange-400/80 italic font-medium text-lg border-l-2 border-orange-500/30 pl-6">
+                <p className="text-orange-500/80 italic font-medium text-lg border-l-2 border-orange-500/30 pl-6">
                   We are raising men who succeed without corruption and
                   influence without compromise.
                 </p>
@@ -292,7 +292,7 @@ function OutreachSection() {
               <div className="max-w-3xl">
                 <div className="flex items-center gap-3 sm:gap-4 mb-4 sm:mb-6">
                   <div className="w-11 h-11 sm:w-14 sm:h-14 rounded-xl bg-linear-to-br from-orange-500/20 to-orange-600/10 border border-orange-500/20 flex items-center justify-center">
-                    <Users className="w-5 h-5 sm:w-6 sm:h-6 text-orange-400" />
+                    <Users className="w-5 h-5 sm:w-6 sm:h-6 text-orange-500" />
                   </div>
                   <div>
                     <h3 className="text-lg sm:text-2xl font-bold text-white font-display">
@@ -310,7 +310,7 @@ function OutreachSection() {
                     coaching sessions, we introduce purpose-driven living at
                     formative stages.
                   </p>
-                  <p className="text-orange-400/80 italic font-medium text-lg border-l-2 border-orange-500/30 pl-6">
+                  <p className="text-orange-500/80 italic font-medium text-lg border-l-2 border-orange-500/30 pl-6">
                     Our aim is prevention rather than correction  establishing
                     clarity before confusion takes root.
                   </p>
@@ -370,19 +370,19 @@ function IntegrityHousesSection() {
             <div className="p-5 sm:p-8 md:p-12 flex flex-col justify-center">
               <div className="flex items-center gap-3 sm:gap-4 mb-4 sm:mb-6">
                 <div className="w-11 h-11 sm:w-14 sm:h-14 rounded-xl bg-linear-to-br from-orange-500/20 to-orange-600/10 border border-orange-500/20 flex items-center justify-center">
-                  <Home className="w-5 h-5 sm:w-6 sm:h-6 text-orange-400" />
+                  <Home className="w-5 h-5 sm:w-6 sm:h-6 text-orange-500" />
                 </div>
                 <div>
                   <h3 className="text-lg sm:text-2xl font-bold text-white font-display">
                     Covenant Communities
                   </h3>
-                  <p className="text-xs sm:text-sm text-orange-400/70 font-medium">
+                  <p className="text-xs sm:text-sm text-orange-500/70 font-medium">
                     Networking & Strategic Community
                   </p>
                 </div>
               </div>
 
-              <p className="text-orange-400/80 italic font-medium text-sm sm:text-lg border-l-2 border-orange-500/30 pl-4 sm:pl-6 mb-4 sm:mb-6">
+              <p className="text-orange-500/80 italic font-medium text-sm sm:text-lg border-l-2 border-orange-500/30 pl-4 sm:pl-6 mb-4 sm:mb-6">
                 We believe isolation weakens men, but community strengthens destiny.
               </p>
 
@@ -401,7 +401,7 @@ function IntegrityHousesSection() {
                     className="flex items-center gap-3 px-4 py-3 rounded-xl bg-zinc-800/30 border border-zinc-800/50 hover:border-orange-500/20 transition-colors"
                   >
                     <div className="w-8 h-8 rounded-lg bg-orange-500/10 flex items-center justify-center shrink-0">
-                      <Icon className="w-4 h-4 text-orange-400" />
+                      <Icon className="w-4 h-4 text-orange-500" />
                     </div>
                     <span className="text-sm text-zinc-300">{text}</span>
                   </div>
@@ -480,13 +480,13 @@ function ManFoundationSection() {
               {/* Header */}
               <div className="flex items-center gap-3 sm:gap-5 mb-6 sm:mb-10">
                 <div className="w-12 h-12 sm:w-16 sm:h-16 rounded-xl sm:rounded-2xl bg-linear-to-br from-orange-500/20 to-orange-600/10 border border-orange-500/20 flex items-center justify-center">
-                  <Heart className="w-5 h-5 sm:w-7 sm:h-7 text-orange-400" />
+                  <Heart className="w-5 h-5 sm:w-7 sm:h-7 text-orange-500" />
                 </div>
                 <div>
                   <h3 className="text-xl sm:text-3xl font-bold text-white font-display">
                     Man Foundation
                   </h3>
-                  <p className="text-xs sm:text-base text-orange-400/70 font-medium mt-0.5 sm:mt-1">
+                  <p className="text-xs sm:text-base text-orange-500/70 font-medium mt-0.5 sm:mt-1">
                     Fundraising & Social Impact
                   </p>
                 </div>
@@ -495,7 +495,7 @@ function ManFoundationSection() {
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-12">
                 {/* Left  Content */}
                 <div className="space-y-4 sm:space-y-6 text-zinc-400 leading-relaxed text-sm sm:text-base">
-                  <p className="text-orange-400/80 italic font-medium text-xl border-l-3 border-orange-500/40 pl-6">
+                  <p className="text-orange-500/80 italic font-medium text-xl border-l-3 border-orange-500/40 pl-6">
                     Vision without provision remains limited.
                   </p>
                   <p>
@@ -505,7 +505,7 @@ function ManFoundationSection() {
                     strategic collaborations, we mobilize financial and material
                     support.
                   </p>
-                  <p className="text-orange-400/80 italic font-medium border-l-3 border-orange-500/40 pl-6">
+                  <p className="text-orange-500/80 italic font-medium border-l-3 border-orange-500/40 pl-6">
                     We believe generosity is not charity alone  it is strategic
                     investment in generational impact.
                   </p>
@@ -535,7 +535,7 @@ function ManFoundationSection() {
                       className="flex items-center gap-4 px-6 py-4 rounded-2xl bg-zinc-800/20 border border-zinc-800/40 hover:border-orange-500/20 transition-colors"
                     >
                       <div className="w-10 h-10 rounded-xl bg-orange-500/10 flex items-center justify-center shrink-0">
-                        <Icon className="w-5 h-5 text-orange-400" />
+                        <Icon className="w-5 h-5 text-orange-500" />
                       </div>
                       <span className="text-zinc-300">{text}</span>
                     </div>
