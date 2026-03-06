@@ -129,11 +129,11 @@ function FeaturedPost({ post }: { post: (typeof SAMPLE_POSTS)[0] }) {
   return (
     <motion.div {...fadeInUp}>
       <Link href={`/blog/${post.slug}`}>
-        <Card className="overflow-hidden group hover:border-orange-500/20 transition-all duration-500">
+        <Card variant="light" className="overflow-hidden group hover:border-orange-500/20 transition-all duration-500">
           <div className="h-1.5 bg-linear-to-r from-orange-500 via-orange-400 to-orange-600" />
           <CardContent className="p-0">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-0">
-              <div className="aspect-16/10 lg:aspect-auto bg-zinc-800/50 relative flex items-center justify-center border-b lg:border-b-0 lg:border-r border-zinc-800/50">
+              <div className="aspect-16/10 lg:aspect-auto bg-zinc-100 relative flex items-center justify-center border-b lg:border-b-0 lg:border-r border-zinc-200">
                 <div className="text-center">
                   <BookOpen className="w-12 h-12 text-zinc-700 mx-auto mb-3" />
                   <p className="text-xs text-zinc-600">Featured Article</p>
@@ -146,11 +146,11 @@ function FeaturedPost({ post }: { post: (typeof SAMPLE_POSTS)[0] }) {
                   <Badge variant="outline">Featured</Badge>
                 </div>
 
-                <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-white font-display mb-3 sm:mb-4 group-hover:text-orange-500 transition-colors">
+                <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-zinc-900 font-display mb-3 sm:mb-4 group-hover:text-orange-500 transition-colors">
                   {post.title}
                 </h2>
 
-                <p className="text-sm sm:text-base text-zinc-400 leading-relaxed mb-4 sm:mb-6">
+                <p className="text-sm sm:text-base text-zinc-600 leading-relaxed mb-4 sm:mb-6">
                   {post.excerpt}
                 </p>
 
@@ -179,8 +179,8 @@ function FeaturedPost({ post }: { post: (typeof SAMPLE_POSTS)[0] }) {
 function PostCard({ post }: { post: (typeof SAMPLE_POSTS)[0] }) {
   return (
     <Link href={`/blog/${post.slug}`}>
-      <Card className="h-full overflow-hidden group hover:border-orange-500/20 transition-all duration-300">
-        <div className="aspect-video bg-zinc-800/50 relative flex items-center justify-center">
+      <Card variant="light" className="h-full overflow-hidden group hover:border-orange-500/20 transition-all duration-300">
+        <div className="aspect-video bg-zinc-100 relative flex items-center justify-center">
           <BookOpen className="w-8 h-8 text-zinc-700" />
         </div>
 
@@ -190,11 +190,11 @@ function PostCard({ post }: { post: (typeof SAMPLE_POSTS)[0] }) {
             <span className="text-[10px] text-zinc-500">{post.readTime}</span>
           </div>
 
-          <h3 className="text-base sm:text-lg font-bold text-white font-display mb-2 sm:mb-3 line-clamp-2 group-hover:text-orange-500 transition-colors">
+          <h3 className="text-base sm:text-lg font-bold text-zinc-900 font-display mb-2 sm:mb-3 line-clamp-2 group-hover:text-orange-500 transition-colors">
             {post.title}
           </h3>
 
-          <p className="text-xs sm:text-sm text-zinc-400 leading-relaxed line-clamp-2 sm:line-clamp-3 mb-3 sm:mb-4">
+          <p className="text-xs sm:text-sm text-zinc-600 leading-relaxed line-clamp-2 sm:line-clamp-3 mb-3 sm:mb-4">
             {post.excerpt}
           </p>
 

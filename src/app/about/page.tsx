@@ -157,13 +157,13 @@ function MethodSection() {
             const Icon = CHANNEL_ICONS[channel.id];
             return (
               <Link key={channel.id} href={`/channels#${channel.id}`}>
-                <Card className="group h-full p-4 sm:p-6 hover:border-orange-500/30 cursor-pointer transition-all duration-500 hover:-translate-y-1">
+                <Card variant="light" className="group h-full p-4 sm:p-6 hover:border-orange-500/30 cursor-pointer transition-all duration-500 hover:-translate-y-1">
                   <div className="w-9 h-9 sm:w-11 sm:h-11 rounded-lg sm:rounded-xl bg-linear-to-br from-orange-500/20 to-orange-600/10 border border-orange-500/20 flex items-center justify-center mb-3 sm:mb-4">
                     <Icon className="w-4 h-4 sm:w-5 sm:h-5 text-orange-500" />
                   </div>
-                  <h3 className="text-sm sm:text-lg font-bold text-white mb-1 sm:mb-2">{channel.title}</h3>
+                  <h3 className="text-sm sm:text-lg font-bold text-zinc-900 mb-1 sm:mb-2">{channel.title}</h3>
                   <p className="text-[10px] sm:text-xs text-orange-500/70 font-medium uppercase tracking-wider mb-1 sm:mb-2">{channel.subtitle}</p>
-                  <p className="text-xs sm:text-sm text-zinc-500 leading-relaxed line-clamp-2 sm:line-clamp-3 hidden sm:block">{channel.description}</p>
+                  <p className="text-xs sm:text-sm text-zinc-600 leading-relaxed line-clamp-2 sm:line-clamp-3 hidden sm:block">{channel.description}</p>
                 </Card>
               </Link>
             );

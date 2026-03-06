@@ -1,15 +1,20 @@
 import { cn } from "@/lib/utils";
 
+const cardVariants = {
+  default:
+    "rounded-2xl border border-zinc-800/80 bg-zinc-900/60 backdrop-blur-sm shadow-lg shadow-black/20 transition-all duration-300 hover:border-zinc-700/80 text-zinc-100",
+  light:
+    "rounded-2xl bg-white border border-zinc-200/60 shadow-xl shadow-black/10 transition-all duration-300 hover:shadow-2xl hover:shadow-black/15 hover:-translate-y-0.5 text-zinc-900",
+};
+
 function Card({
   className,
+  variant = "default",
   ...props
-}: React.HTMLAttributes<HTMLDivElement>) {
+}: React.HTMLAttributes<HTMLDivElement> & { variant?: "default" | "light" }) {
   return (
     <div
-      className={cn(
-        "rounded-2xl border border-zinc-800/80 bg-zinc-900/60 backdrop-blur-sm shadow-lg shadow-black/20 transition-all duration-300 hover:border-zinc-700/80",
-        className
-      )}
+      className={cn(cardVariants[variant], className)}
       {...props}
     />
   );
@@ -34,7 +39,7 @@ function CardTitle({
   return (
     <h3
       className={cn(
-        "text-xl font-bold leading-tight tracking-tight text-white",
+        "text-xl font-bold leading-tight tracking-tight",
         className
       )}
       {...props}
@@ -48,7 +53,7 @@ function CardDescription({
 }: React.HTMLAttributes<HTMLParagraphElement>) {
   return (
     <p
-      className={cn("text-sm text-zinc-400 leading-relaxed", className)}
+      className={cn("text-sm leading-relaxed", className)}
       {...props}
     />
   );

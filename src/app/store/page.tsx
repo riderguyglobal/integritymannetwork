@@ -68,8 +68,8 @@ function StoreHero() {
 function ProductCard({ product }: { product: (typeof SAMPLE_PRODUCTS)[0] }) {
   return (
     <Link href={`/store/${product.slug}`}>
-      <Card className="h-full overflow-hidden group hover:border-orange-500/20 transition-all duration-300">
-        <div className="aspect-square bg-zinc-800/50 relative flex items-center justify-center overflow-hidden">
+      <Card variant="light" className="h-full overflow-hidden group hover:border-orange-500/20 transition-all duration-300">
+        <div className="aspect-square bg-zinc-100 relative flex items-center justify-center overflow-hidden">
           <ShoppingBag className="w-10 h-10 text-zinc-700" />
           <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center gap-3">
             <Button size="sm" className="shadow-xl"><Eye className="w-4 h-4" />View</Button>
@@ -82,8 +82,8 @@ function ProductCard({ product }: { product: (typeof SAMPLE_PRODUCTS)[0] }) {
 
         <CardContent className="p-5">
           <p className="text-[10px] text-zinc-500 uppercase tracking-wider mb-2">{product.category}</p>
-          <h3 className="text-base font-bold text-white font-display mb-2 line-clamp-1 group-hover:text-orange-500 transition-colors">{product.name}</h3>
-          <p className="text-xs text-zinc-400 line-clamp-2 mb-3">{product.description}</p>
+          <h3 className="text-base font-bold text-zinc-900 font-display mb-2 line-clamp-1 group-hover:text-orange-500 transition-colors">{product.name}</h3>
+          <p className="text-xs text-zinc-600 line-clamp-2 mb-3">{product.description}</p>
           <div className="flex items-center gap-1.5 mb-3">
             <div className="flex items-center">
               {Array.from({ length: 5 }).map((_, i) => (
@@ -93,7 +93,7 @@ function ProductCard({ product }: { product: (typeof SAMPLE_PRODUCTS)[0] }) {
             <span className="text-[10px] text-zinc-500">({product.reviews})</span>
           </div>
           <div className="flex items-center gap-2">
-            <span className="text-lg font-bold text-white">{formatCurrency(product.price)}</span>
+            <span className="text-lg font-bold text-zinc-900">{formatCurrency(product.price)}</span>
             {product.comparePrice && <span className="text-sm text-zinc-500 line-through">{formatCurrency(product.comparePrice)}</span>}
           </div>
         </CardContent>

@@ -174,7 +174,7 @@ function DefinitionsSection() {
             const Icon = ICON_MAP[def.icon];
             return (
               <motion.div key={def.term} {...fadeInUp}>
-                <Card className="group h-full p-5 sm:p-8 hover:border-orange-500/30 transition-all duration-500">
+                <Card variant="light" className="group h-full p-5 sm:p-8 hover:border-orange-500/30 transition-all duration-500">
                   <div className="flex items-start gap-4 sm:gap-5">
                     <div className="shrink-0 w-11 h-11 sm:w-14 sm:h-14 rounded-xl bg-linear-to-br from-orange-500/20 to-orange-600/10 border border-orange-500/20 flex items-center justify-center group-hover:from-orange-500/30 group-hover:to-orange-600/20 transition-all duration-500">
                       <Icon className="w-5 h-5 sm:w-6 sm:h-6 text-orange-500" />
@@ -227,7 +227,7 @@ function ChannelsPreview() {
                 return (
                   <div key={channel.id} className="pl-4 sm:pl-6 min-w-0 flex-[0_0_85%] sm:flex-[0_0_60%] md:flex-[0_0_45%] lg:flex-[0_0_35%]">
                     <Link href={`/channels#${channel.id}`}>
-                      <Card className={cn(
+                      <Card variant="light" className={cn(
                         "group h-full p-6 sm:p-8 cursor-pointer transition-all duration-500 hover:-translate-y-1",
                         selectedIndex === i
                           ? "border-orange-500/40 shadow-lg shadow-orange-500/5"
@@ -313,7 +313,7 @@ function EventsPreview() {
             const Icon = ICON_MAP[event.icon];
             return (
               <motion.div key={event.name} {...fadeInUp}>
-                <Card className="group h-full flex flex-col overflow-hidden hover:border-orange-500/30 transition-all duration-500">
+                <Card variant="light" className="group h-full flex flex-col overflow-hidden hover:border-orange-500/30 transition-all duration-500">
                   <div className="h-1 bg-linear-to-r from-orange-500 to-orange-600 opacity-60 group-hover:opacity-100 transition-opacity" />
                   <CardContent className="p-5 sm:p-8 flex-1 flex flex-col">
                     <div className="flex items-center gap-2.5 sm:gap-3 mb-4 sm:mb-6">
@@ -324,7 +324,7 @@ function EventsPreview() {
                     </div>
                     <h3 className="text-lg sm:text-xl font-bold text-zinc-900 mb-2 sm:mb-3 font-display">{event.name}</h3>
                     <p className="text-xs sm:text-sm text-zinc-600 leading-relaxed flex-1">{event.description}</p>
-                    <div className="mt-4 sm:mt-6 pt-4 sm:pt-5 border-t border-zinc-800/50">
+                    <div className="mt-4 sm:mt-6 pt-4 sm:pt-5 border-t border-zinc-200">
                       <p className="text-xs sm:text-sm text-orange-500 italic font-medium">&ldquo;{event.highlight}&rdquo;</p>
                     </div>
                   </CardContent>

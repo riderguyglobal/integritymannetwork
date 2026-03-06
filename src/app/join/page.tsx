@@ -153,15 +153,15 @@ function BenefitsSection() {
                 ease: [0.22, 1, 0.36, 1],
               }}
             >
-              <Card className="h-full hover:border-orange-500/20 transition-colors">
+              <Card variant="light" className="h-full hover:border-orange-500/20 transition-colors">
                 <CardContent className="p-4 sm:p-6">
                   <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-lg sm:rounded-xl bg-linear-to-br from-orange-500/20 to-orange-600/10 border border-orange-500/20 flex items-center justify-center mb-3 sm:mb-4">
                     <benefit.icon className="w-4 h-4 sm:w-5 sm:h-5 text-orange-500" />
                   </div>
-                  <h3 className="text-base sm:text-lg font-bold text-white font-display mb-1 sm:mb-2">
+                  <h3 className="text-base sm:text-lg font-bold text-zinc-900 font-display mb-1 sm:mb-2">
                     {benefit.title}
                   </h3>
-                  <p className="text-xs sm:text-sm text-zinc-400 leading-relaxed">
+                  <p className="text-xs sm:text-sm text-zinc-600 leading-relaxed">
                     {benefit.description}
                   </p>
                 </CardContent>
