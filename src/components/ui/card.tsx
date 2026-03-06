@@ -7,7 +7,7 @@ function Card({
   return (
     <div
       className={cn(
-        "rounded-2xl border border-zinc-200/80 bg-white shadow-md transition-all duration-300 hover:border-zinc-300 hover:shadow-lg",
+        "rounded-2xl border border-zinc-800/80 bg-zinc-900/60 backdrop-blur-sm shadow-lg shadow-black/20 transition-all duration-300 hover:border-zinc-700/80",
         className
       )}
       {...props}
@@ -34,7 +34,7 @@ function CardTitle({
   return (
     <h3
       className={cn(
-        "text-xl font-bold leading-tight tracking-tight text-zinc-900",
+        "text-xl font-bold leading-tight tracking-tight text-white",
         className
       )}
       {...props}
@@ -48,7 +48,7 @@ function CardDescription({
 }: React.HTMLAttributes<HTMLParagraphElement>) {
   return (
     <p
-      className={cn("text-sm text-zinc-600 leading-relaxed", className)}
+      className={cn("text-sm text-zinc-400 leading-relaxed", className)}
       {...props}
     />
   );
