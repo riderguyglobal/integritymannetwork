@@ -1,7 +1,10 @@
 "use client";
 
+import React from "react";
 import { motion } from "framer-motion";
 import Link from "next/link";
+import useEmblaCarousel from "embla-carousel-react";
+import EmblaAutoplay from "embla-carousel-autoplay";
 import { ProtectedImage } from "@/components/ui/video-player";
 import {
   ArrowRight,
@@ -29,6 +32,7 @@ import { Badge } from "@/components/ui/badge";
 import { SectionHeading } from "@/components/ui/section-heading";
 import { BackgroundVideo, VideoPlayer } from "@/components/ui/video-player";
 import { SITE, KEY_DEFINITIONS, CHANNELS, EVENTS_INFO } from "@/lib/constants";
+import { cn } from "@/lib/utils";
 
 // Animation Variants
 const fadeInUp = {
@@ -190,8 +194,22 @@ function DefinitionsSection() {
   );
 }
 
-//  CHANNELS PREVIEW 
+//  CHANNELS PREVIEW — CAROUSEL 
 function ChannelsPreview() {
+  const [emblaRef, emblaApi] = useEmblaCarousel(
+    { loop: true, align: "center", skipSnaps: false },
+    [EmblaAutoplay({ delay: 4000, stopOnInteraction: true, stopOnMouseEnter: true })]
+  );
+  const [selectedIndex, setSelectedIndex] = React.useState(0);
+
+  React.useEffect(() => {
+    if (!emblaApi) return;
+    const onSelect = () => setSelectedIndex(emblaApi.selectedScrollSnap());
+    emblaApi.on("select", onSelect);
+    onSelect();
+    return () => { emblaApi.off("select", onSelect); };
+  }, [emblaApi]);
+
   return (
     <section className="section-padding relative overflow-hidden">
       <div className="absolute inset-0 bg-radial-dark" />
@@ -200,27 +218,72 @@ function ChannelsPreview() {
           <SectionHeading label="Our Channels" title="How We Advance The Mandate" description="Strategic channels designed to form, equip, deploy, and support men across every stage of life and calling." />
         </motion.div>
 
-        <motion.div {...stagger} className="mt-10 sm:mt-16 grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-6">
-          {CHANNELS.map((channel) => {
-            const Icon = ICON_MAP[channel.icon];
-            return (
-              <motion.div key={channel.id} {...fadeInUp}>
-                <Link href={`/channels#${channel.id}`}>
-                  <Card className="group h-full p-4 sm:p-6 hover:border-orange-500/30 cursor-pointer transition-all duration-500 hover:-translate-y-1">
-                    <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-lg sm:rounded-xl bg-linear-to-br from-orange-500/20 to-orange-600/10 border border-orange-500/20 flex items-center justify-center mb-3 sm:mb-5 group-hover:from-orange-500/30 transition-all duration-500">
-                      <Icon className="w-4 h-4 sm:w-5 sm:h-5 text-orange-600" />
-                    </div>
-                    <h3 className="text-sm sm:text-lg font-bold text-zinc-900 mb-1 sm:mb-2">{channel.title}</h3>
-                    <p className="text-[10px] sm:text-xs text-orange-600/70 font-medium uppercase tracking-wider mb-2 sm:mb-3">{channel.subtitle}</p>
-                    <p className="text-xs sm:text-sm text-zinc-600 leading-relaxed line-clamp-2 sm:line-clamp-3 hidden sm:block">{channel.description}</p>
-                    <div className="mt-3 sm:mt-4 flex items-center gap-1 text-xs sm:text-sm text-orange-600 sm:opacity-0 sm:group-hover:opacity-100 transition-opacity duration-300">
-                      Learn more <ChevronRight className="w-3 h-3 sm:w-4 sm:h-4" />
-                    </div>
-                  </Card>
-                </Link>
-              </motion.div>
-            );
-          })}
+        {/* Carousel */}
+        <motion.div {...fadeInUp} className="mt-10 sm:mt-16">
+          <div className="overflow-hidden" ref={emblaRef}>
+            <div className="flex -ml-4 sm:-ml-6">
+              {CHANNELS.map((channel, i) => {
+                const Icon = ICON_MAP[channel.icon];
+                return (
+                  <div key={channel.id} className="pl-4 sm:pl-6 min-w-0 flex-[0_0_85%] sm:flex-[0_0_60%] md:flex-[0_0_45%] lg:flex-[0_0_35%]">
+                    <Link href={`/channels#${channel.id}`}>
+                      <Card className={cn(
+                        "group h-full p-6 sm:p-8 cursor-pointer transition-all duration-500 hover:-translate-y-1",
+                        selectedIndex === i
+                          ? "border-orange-500/40 shadow-lg shadow-orange-500/5"
+                          : "hover:border-orange-500/30"
+                      )}>
+                        <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-xl bg-linear-to-br from-orange-500/20 to-orange-600/10 border border-orange-500/20 flex items-center justify-center mb-5 sm:mb-6 group-hover:from-orange-500/30 transition-all duration-500">
+                          <Icon className="w-5 h-5 sm:w-6 sm:h-6 text-orange-600" />
+                        </div>
+                        <h3 className="text-lg sm:text-xl font-bold text-zinc-900 mb-2">{channel.title}</h3>
+                        <p className="text-[10px] sm:text-xs text-orange-600/70 font-medium uppercase tracking-wider mb-3 sm:mb-4">{channel.subtitle}</p>
+                        <p className="text-sm text-zinc-600 leading-relaxed line-clamp-3">{channel.description}</p>
+                        <div className="mt-5 flex items-center gap-1 text-sm text-orange-600 font-medium">
+                          Learn more <ChevronRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                        </div>
+                      </Card>
+                    </Link>
+                  </div>
+                );
+              })}
+            </div>
+          </div>
+
+          {/* Dots + Arrows */}
+          <div className="flex items-center justify-center gap-6 mt-8">
+            <button
+              onClick={() => emblaApi?.scrollPrev()}
+              className="w-10 h-10 rounded-full border border-zinc-700 flex items-center justify-center text-zinc-400 hover:text-white hover:border-orange-500 transition-colors"
+              aria-label="Previous channel"
+            >
+              <ChevronRight className="w-4 h-4 rotate-180" />
+            </button>
+
+            <div className="flex items-center gap-2">
+              {CHANNELS.map((_, i) => (
+                <button
+                  key={i}
+                  onClick={() => emblaApi?.scrollTo(i)}
+                  className={cn(
+                    "h-2 rounded-full transition-all duration-300",
+                    selectedIndex === i
+                      ? "w-8 bg-orange-500"
+                      : "w-2 bg-zinc-700 hover:bg-zinc-500"
+                  )}
+                  aria-label={`Go to channel ${i + 1}`}
+                />
+              ))}
+            </div>
+
+            <button
+              onClick={() => emblaApi?.scrollNext()}
+              className="w-10 h-10 rounded-full border border-zinc-700 flex items-center justify-center text-zinc-400 hover:text-white hover:border-orange-500 transition-colors"
+              aria-label="Next channel"
+            >
+              <ChevronRight className="w-4 h-4" />
+            </button>
+          </div>
         </motion.div>
 
         <motion.div {...fadeInUp} className="mt-8 sm:mt-12 text-center">
