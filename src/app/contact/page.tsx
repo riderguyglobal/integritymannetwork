@@ -60,7 +60,7 @@ function ContactHero() {
         <div className="absolute inset-0 bg-linear-to-b from-zinc-950/40 via-zinc-950/70 to-zinc-950" />
       </div>
       {/* Decorative glow */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-orange-500/5 rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-150 h-150 bg-orange-500/5 rounded-full blur-3xl pointer-events-none" />
       <div className="absolute inset-0 bg-grid opacity-30" />
 
       <div className="container-wide relative z-10">
@@ -130,7 +130,7 @@ function ContactForm() {
         animate={{ opacity: 1, scale: 1 }}
         className="text-center py-16 sm:py-20"
       >
-        <div className="w-20 h-20 rounded-full bg-gradient-to-br from-orange-500/20 to-orange-600/10 border border-orange-500/30 flex items-center justify-center mx-auto mb-6">
+        <div className="w-20 h-20 rounded-full bg-linear-to-br from-orange-500/20 to-orange-600/10 border border-orange-500/30 flex items-center justify-center mx-auto mb-6">
           <Send className="w-8 h-8 text-orange-500" />
         </div>
         <h3 className="text-2xl sm:text-3xl font-bold text-white font-display mb-3">
@@ -249,9 +249,9 @@ function ContactSidebar() {
             className="group relative rounded-xl border border-zinc-800/80 bg-zinc-900/60 backdrop-blur-sm p-4 sm:p-5 hover:border-orange-500/30 transition-all duration-300"
           >
             {/* Subtle gradient glow on hover */}
-            <div className="absolute inset-0 rounded-xl bg-gradient-to-br from-orange-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+            <div className="absolute inset-0 rounded-xl bg-linear-to-br from-orange-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
             <div className="relative flex items-center gap-4">
-              <div className={`w-11 h-11 sm:w-12 sm:h-12 rounded-xl bg-gradient-to-br ${detail.color} p-[1px] shrink-0`}>
+              <div className={`w-11 h-11 sm:w-12 sm:h-12 rounded-xl bg-linear-to-br ${detail.color} p-px shrink-0`}>
                 <div className="w-full h-full rounded-xl bg-zinc-950 flex items-center justify-center">
                   <detail.icon className="w-4 h-4 sm:w-5 sm:h-5 text-orange-500" />
                 </div>
@@ -300,14 +300,14 @@ function ContactSidebar() {
 
       {/* Decorative image panel */}
       <motion.div {...fadeInUp} className="hidden lg:block">
-        <div className="relative aspect-[4/3] rounded-xl overflow-hidden border border-zinc-800/50 group">
+        <div className="relative aspect-4/3 rounded-xl overflow-hidden border border-zinc-800/50 group">
           <ProtectedImage
             src="/images/community-2.jpg"
             alt="Our Community"
             fill
             className="object-cover group-hover:scale-105 transition-transform duration-700"
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-zinc-950/80 via-zinc-950/20 to-transparent" />
+          <div className="absolute inset-0 bg-linear-to-t from-zinc-950/80 via-zinc-950/20 to-transparent" />
           <div className="absolute bottom-0 left-0 right-0 p-5">
             <p className="text-white text-sm font-bold font-display">We&apos;d love to connect with you</p>
             <p className="text-zinc-400 text-xs mt-1">Join a community of men living with purpose</p>
@@ -394,7 +394,7 @@ function FAQItem({
         transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
         className="overflow-hidden"
       >
-        <p className="px-4 sm:px-5 pb-4 sm:pb-5 pl-16 sm:pl-[4.5rem] text-sm text-zinc-400 leading-relaxed">
+        <p className="px-4 sm:px-5 pb-4 sm:pb-5 pl-16 sm:pl-18 text-sm text-zinc-400 leading-relaxed">
           {faq.answer}
         </p>
       </motion.div>
@@ -409,7 +409,7 @@ function FAQSection() {
     <section className="section-padding relative">
       <div className="absolute inset-0 bg-zinc-950" />
       {/* Background glow */}
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[500px] h-[300px] bg-orange-500/5 rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-125 h-75 bg-orange-500/5 rounded-full blur-3xl pointer-events-none" />
       <div className="container-wide relative z-10">
         <motion.div {...fadeInUp}>
           <SectionHeading
@@ -463,8 +463,8 @@ export default function ContactPage() {
       <section className="section-padding relative">
         <div className="absolute inset-0 bg-zinc-950" />
         {/* Subtle ambient glow */}
-        <div className="absolute top-20 right-0 w-[400px] h-[400px] bg-orange-500/3 rounded-full blur-3xl pointer-events-none" />
-        <div className="absolute bottom-20 left-0 w-[300px] h-[300px] bg-orange-500/3 rounded-full blur-3xl pointer-events-none" />
+        <div className="absolute top-20 right-0 w-100 h-100 bg-orange-500/3 rounded-full blur-3xl pointer-events-none" />
+        <div className="absolute bottom-20 left-0 w-75 h-75 bg-orange-500/3 rounded-full blur-3xl pointer-events-none" />
 
         <div className="container-wide relative z-10">
           <motion.div {...fadeInUp}>
@@ -480,7 +480,7 @@ export default function ContactPage() {
             <motion.div {...fadeInUp} className="lg:col-span-3">
               <div className="rounded-2xl border border-zinc-800/80 bg-zinc-900/40 backdrop-blur-sm p-5 sm:p-8 md:p-10">
                 <div className="flex items-center gap-3 mb-6 sm:mb-8">
-                  <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-orange-500 to-amber-500 p-[1px]">
+                  <div className="w-10 h-10 rounded-xl bg-linear-to-br from-orange-500 to-amber-500 p-px">
                     <div className="w-full h-full rounded-xl bg-zinc-950 flex items-center justify-center">
                       <Send className="w-4 h-4 text-orange-500" />
                     </div>
