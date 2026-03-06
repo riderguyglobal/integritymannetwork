@@ -25,6 +25,7 @@ import {
   ArrowUpRight,
   Quote,
   Users,
+  BookOpen,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
@@ -63,9 +64,9 @@ function HeroSection() {
 
       <div className="relative z-10 container-wide text-center px-6">
         <motion.div initial={{ opacity: 0, y: 40 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 1, ease: [0.22, 1, 0.36, 1] }} className="max-w-5xl mx-auto">
-          <motion.div initial={{ opacity: 0, scale: 0.8 }} animate={{ opacity: 1, scale: 1 }} transition={{ delay: 0.3, duration: 0.6 }} className="inline-flex items-center gap-2 px-4 sm:px-5 py-1.5 sm:py-2 rounded-full bg-orange-500/10 border border-orange-500/20 mb-6 sm:mb-10">
-            <Sparkles className="w-3 h-3 sm:w-3.5 sm:h-3.5 text-orange-500" />
-            <span className="text-[10px] sm:text-xs font-semibold tracking-wider uppercase text-orange-500">{SITE.scripture.reference}</span>
+          <motion.div initial={{ opacity: 0, scale: 0.8 }} animate={{ opacity: 1, scale: 1 }} transition={{ delay: 0.3, duration: 0.6 }} className="inline-flex items-center gap-2 px-4 sm:px-5 py-1.5 sm:py-2 rounded-full bg-white shadow-lg shadow-black/10 mb-6 sm:mb-10">
+            <BookOpen className="w-3 h-3 sm:w-3.5 sm:h-3.5 text-orange-500" />
+            <span className="text-[10px] sm:text-xs font-semibold tracking-wider uppercase text-zinc-900">{SITE.scripture.reference}</span>
           </motion.div>
 
           <h1 className="font-display text-[2.75rem] sm:text-6xl md:text-7xl lg:text-8xl font-bold tracking-tight leading-[0.9] mb-5 sm:mb-8">
@@ -198,7 +199,7 @@ function DefinitionsSection() {
 function ChannelsPreview() {
   const [emblaRef, emblaApi] = useEmblaCarousel(
     { loop: true, align: "center", skipSnaps: false },
-    [EmblaAutoplay({ delay: 4000, stopOnInteraction: true, stopOnMouseEnter: true })]
+    [EmblaAutoplay({ delay: 4000, stopOnInteraction: false, stopOnMouseEnter: true })]
   );
   const [selectedIndex, setSelectedIndex] = React.useState(0);
 
