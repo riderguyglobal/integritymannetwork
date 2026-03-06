@@ -175,7 +175,7 @@ export default function AdminBlogPage() {
                     <td className="py-3 px-4">
                       <div className="flex items-center gap-2">
                         {post.featured && <Star className="w-3.5 h-3.5 text-yellow-500 fill-yellow-500 shrink-0" />}
-                        <span className="font-medium text-white truncate max-w-[250px]">{post.title}</span>
+                        <span className="font-medium text-white truncate max-w-62.5">{post.title}</span>
                       </div>
                     </td>
                     <td className="py-3 px-4 text-zinc-500 hidden sm:table-cell">

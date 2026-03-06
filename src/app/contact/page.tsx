@@ -44,7 +44,7 @@ function ContactHero() {
           className="object-cover opacity-15"
           priority
         />
-        <div className="absolute inset-0 bg-linear-to-b from-white/50 via-white/80 to-white from-zinc-950/50 via-zinc-950/80 to-zinc-950" />
+        <div className="absolute inset-0 bg-linear-to-b from-zinc-950/50 via-zinc-950/80 to-zinc-950" />
       </div>
       <div className="absolute inset-0 bg-grid opacity-30" />
 

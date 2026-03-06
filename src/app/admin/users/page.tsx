@@ -170,12 +170,12 @@ export default function AdminUsersPage() {
                         <div className="w-8 h-8 rounded-full bg-orange-500/10 flex items-center justify-center text-xs font-bold text-orange-400">
                           {getInitials(user.firstName || "", user.lastName || "")}
                         </div>
-                        <span className="font-medium text-white truncate max-w-[140px]">
+                        <span className="font-medium text-white truncate max-w-35">
                           {user.firstName || ""} {user.lastName || "Unnamed"}
                         </span>
                       </div>
                     </td>
-                    <td className="py-3 px-4 text-zinc-500 hidden sm:table-cell truncate max-w-[200px]">{user.email}</td>
+                    <td className="py-3 px-4 text-zinc-500 hidden sm:table-cell truncate max-w-50">{user.email}</td>
                     <td className="py-3 px-4">{roleBadge(user.role)}</td>
                     <td className="py-3 px-4 hidden md:table-cell">
                       <Badge variant={user.isActive ? "success" : "destructive"}>

@@ -125,7 +125,7 @@ export default function AdminLayout({
                   "flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm font-medium transition-all duration-200 group",
                   active
                     ? "bg-orange-500/10 text-orange-400 border border-orange-500/20"
-                    : "text-zinc-500 hover:text-zinc-900 hover:bg-zinc-100 text-zinc-400 hover:text-white hover:bg-zinc-800/50"
+                    : "text-zinc-400 hover:text-white hover:bg-zinc-800/50"
                 )}
               >
                 <link.icon
@@ -147,7 +147,7 @@ export default function AdminLayout({
         <div className="absolute bottom-0 left-0 right-0 border-t border-zinc-800/50 p-3 space-y-1">
           <Link
             href="/"
-            className="flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm text-zinc-500 hover:text-zinc-900 hover:bg-zinc-100 hover:text-white hover:bg-zinc-800/50 transition-all"
+            className="flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm text-zinc-400 hover:text-white hover:bg-zinc-800/50 transition-all"
           >
             <LogOut className="w-4 h-4" />
             Back to Site
