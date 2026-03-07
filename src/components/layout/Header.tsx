@@ -134,7 +134,7 @@ export function Header() {
                     {isActive && (
                       <motion.div
                         layoutId="activeNav"
-                        className="absolute inset-0 bg-orange-500/10 rounded-lg border border-orange-500/20"
+                        className="absolute inset-0 bg-white/15 rounded-lg border border-white/20"
                         transition={{ type: "spring", bounce: 0.2, duration: 0.6 }}
                       />
                     )}
@@ -245,7 +245,7 @@ export function Header() {
                           className={cn(
                             "flex items-center gap-4 px-4 py-3.5 rounded-xl text-base font-medium transition-all duration-200",
                             isActive
-                              ? "bg-orange-500/10 text-orange-500 border border-orange-500/20"
+                              ? "bg-white/15 text-orange-500 border border-white/20"
                               : "text-zinc-300 hover:bg-zinc-900 active:bg-zinc-800"
                           )}
                         >
@@ -253,7 +253,7 @@ export function Header() {
                             className={cn(
                               "w-9 h-9 rounded-lg flex items-center justify-center shrink-0",
                               isActive
-                                ? "bg-orange-500/20"
+                                ? "bg-white/20"
                                 : "bg-zinc-800/50"
                             )}
                           >

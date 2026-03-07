@@ -68,7 +68,7 @@ function StatCard({
             <p className="text-sm text-zinc-500 mb-1">{label}</p>
             <p className="text-2xl font-bold text-white font-display">{value}</p>
           </div>
-          <div className="w-10 h-10 rounded-lg bg-orange-500/10 border border-orange-500/20 flex items-center justify-center">
+          <div className="w-10 h-10 rounded-lg bg-white flex items-center justify-center">
             <Icon className="w-5 h-5 text-orange-500" />
           </div>
         </div>
@@ -204,7 +204,7 @@ export default function AdminDashboardPage() {
               <div className="space-y-3">
                 {activity.map((item, i) => (
                   <div key={i} className="flex items-start gap-3 py-2 border-b border-zinc-800/50 last:border-0">
-                    <div className="w-8 h-8 rounded-full bg-orange-500/10 flex items-center justify-center shrink-0 mt-0.5">
+                    <div className="w-8 h-8 rounded-full bg-white flex items-center justify-center shrink-0 mt-0.5">
                       <span className="text-[10px] font-bold text-orange-500 uppercase">{item.type.slice(0, 2)}</span>
                     </div>
                     <div className="min-w-0">

@@ -111,7 +111,7 @@ function SchoolsSection() {
             {/* Right  Content */}
             <div className="p-5 sm:p-8 md:p-12 flex flex-col justify-center">
               <div className="flex items-center gap-3 sm:gap-4 mb-4 sm:mb-6">
-                <div className="w-11 h-11 sm:w-14 sm:h-14 rounded-xl bg-linear-to-br from-orange-500/20 to-orange-600/10 border border-orange-500/20 flex items-center justify-center">
+                <div className="w-11 h-11 sm:w-14 sm:h-14 rounded-xl bg-white flex items-center justify-center">
                   <BookOpen className="w-5 h-5 sm:w-6 sm:h-6 text-orange-500" />
                 </div>
                 <div>
@@ -154,7 +154,7 @@ function SchoolsSection() {
             <div className="h-1 bg-linear-to-r from-orange-500 to-orange-600" />
             <CardContent className="p-5 sm:p-8 md:p-12">
               <div className="flex items-center gap-3 sm:gap-4 mb-5 sm:mb-8">
-                <div className="w-11 h-11 sm:w-14 sm:h-14 rounded-xl bg-linear-to-br from-orange-500/20 to-orange-600/10 border border-orange-500/20 flex items-center justify-center">
+                <div className="w-11 h-11 sm:w-14 sm:h-14 rounded-xl bg-white flex items-center justify-center">
                   <Baby className="w-5 h-5 sm:w-6 sm:h-6 text-orange-500" />
                 </div>
                 <div>
@@ -240,7 +240,7 @@ function OutreachSection() {
             {/* Left  Content */}
             <div className="p-5 sm:p-8 md:p-12 flex flex-col justify-center order-2 lg:order-1">
               <div className="flex items-center gap-3 sm:gap-4 mb-4 sm:mb-6">
-                <div className="w-11 h-11 sm:w-14 sm:h-14 rounded-xl bg-linear-to-br from-orange-500/20 to-orange-600/10 border border-orange-500/20 flex items-center justify-center">
+                <div className="w-11 h-11 sm:w-14 sm:h-14 rounded-xl bg-white flex items-center justify-center">
                   <Briefcase className="w-5 h-5 sm:w-6 sm:h-6 text-orange-500" />
                 </div>
                 <div>
@@ -291,7 +291,7 @@ function OutreachSection() {
             <CardContent className="p-5 sm:p-8 md:p-12">
               <div className="max-w-3xl">
                 <div className="flex items-center gap-3 sm:gap-4 mb-4 sm:mb-6">
-                  <div className="w-11 h-11 sm:w-14 sm:h-14 rounded-xl bg-linear-to-br from-orange-500/20 to-orange-600/10 border border-orange-500/20 flex items-center justify-center">
+                  <div className="w-11 h-11 sm:w-14 sm:h-14 rounded-xl bg-white flex items-center justify-center">
                     <Users className="w-5 h-5 sm:w-6 sm:h-6 text-orange-500" />
                   </div>
                   <div>
@@ -329,7 +329,7 @@ function OutreachSection() {
 }
 
 // 
-// INTEGRITY HOUSES
+// NETWORKING
 // 
 
 function IntegrityHousesSection() {
@@ -347,7 +347,7 @@ function IntegrityHousesSection() {
         <motion.div {...fadeInUp}>
           <SectionHeading
             label="Community"
-            title="Integrity Houses"
+            title="Networking"
             description="Relational hubs where men grow through accountability, brotherhood, and shared purpose."
           />
         </motion.div>
@@ -369,7 +369,7 @@ function IntegrityHousesSection() {
             {/* Right  Content */}
             <div className="p-5 sm:p-8 md:p-12 flex flex-col justify-center">
               <div className="flex items-center gap-3 sm:gap-4 mb-4 sm:mb-6">
-                <div className="w-11 h-11 sm:w-14 sm:h-14 rounded-xl bg-linear-to-br from-orange-500/20 to-orange-600/10 border border-orange-500/20 flex items-center justify-center">
+                <div className="w-11 h-11 sm:w-14 sm:h-14 rounded-xl bg-white flex items-center justify-center">
                   <Home className="w-5 h-5 sm:w-6 sm:h-6 text-orange-500" />
                 </div>
                 <div>
@@ -400,7 +400,7 @@ function IntegrityHousesSection() {
                     key={text}
                     className="flex items-center gap-3 px-4 py-3 rounded-xl bg-zinc-800/30 border border-zinc-800/50 hover:border-orange-500/20 transition-colors"
                   >
-                    <div className="w-8 h-8 rounded-lg bg-orange-500/10 flex items-center justify-center shrink-0">
+                    <div className="w-8 h-8 rounded-lg bg-white flex items-center justify-center shrink-0">
                       <Icon className="w-4 h-4 text-orange-500" />
                     </div>
                     <span className="text-sm text-zinc-300">{text}</span>
@@ -420,7 +420,7 @@ function IntegrityHousesSection() {
                 Brother&apos;s Brother Initiative
               </h3>
               <p className="text-zinc-400 leading-relaxed mb-4 sm:mb-6 text-sm sm:text-base">
-                A relational framework within the Integrity Houses where men are
+                A relational framework within the Networking channel where men are
                 intentionally paired and grouped for deeper accountability, prayer
                 partnership, and mutual support. No man walks alone.
               </p>
@@ -450,7 +450,7 @@ function IntegrityHousesSection() {
 }
 
 // 
-// MAN FOUNDATION
+// SUPPORT & CHARITY
 // 
 
 function ManFoundationSection() {
@@ -468,7 +468,7 @@ function ManFoundationSection() {
         <motion.div {...fadeInUp}>
           <SectionHeading
             label="Sustainability"
-            title="Man Foundation"
+            title="Support & Charity"
             description="The resource mobilization and social impact arm that fuels sustainable transformation."
           />
         </motion.div>
@@ -479,12 +479,12 @@ function ManFoundationSection() {
             <div className="p-5 sm:p-8 md:p-12 lg:p-16">
               {/* Header */}
               <div className="flex items-center gap-3 sm:gap-5 mb-6 sm:mb-10">
-                <div className="w-12 h-12 sm:w-16 sm:h-16 rounded-xl sm:rounded-2xl bg-linear-to-br from-orange-500/20 to-orange-600/10 border border-orange-500/20 flex items-center justify-center">
+                <div className="w-12 h-12 sm:w-16 sm:h-16 rounded-xl sm:rounded-2xl bg-white flex items-center justify-center">
                   <Heart className="w-5 h-5 sm:w-7 sm:h-7 text-orange-500" />
                 </div>
                 <div>
                   <h3 className="text-xl sm:text-3xl font-bold text-white font-display">
-                    Man Foundation
+                    Support & Charity
                   </h3>
                   <p className="text-xs sm:text-base text-orange-500/70 font-medium mt-0.5 sm:mt-1">
                     Fundraising & Social Impact
@@ -499,7 +499,7 @@ function ManFoundationSection() {
                     Vision without provision remains limited.
                   </p>
                   <p>
-                    Man Foundation exists to ensure that purpose-driven
+                    Support & Charity exists to ensure that purpose-driven
                     initiatives are resourced, scaled, and sustained. Through
                     partnerships, fundraising campaigns, donor networks, and
                     strategic collaborations, we mobilize financial and material
@@ -510,7 +510,7 @@ function ManFoundationSection() {
                     investment in generational impact.
                   </p>
                   <p>
-                    Man Foundation ensures that transformation is not temporary,
+                    Support & Charity ensures that transformation is not temporary,
                     but institutionalized and enduring.
                   </p>
 
@@ -534,7 +534,7 @@ function ManFoundationSection() {
                       key={text}
                       className="flex items-center gap-4 px-6 py-4 rounded-2xl bg-zinc-800/20 border border-zinc-800/40 hover:border-orange-500/20 transition-colors"
                     >
-                      <div className="w-10 h-10 rounded-xl bg-orange-500/10 flex items-center justify-center shrink-0">
+                      <div className="w-10 h-10 rounded-xl bg-white flex items-center justify-center shrink-0">
                         <Icon className="w-5 h-5 text-orange-500" />
                       </div>
                       <span className="text-zinc-300">{text}</span>

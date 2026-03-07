@@ -3,8 +3,6 @@
 import React from "react";
 import { motion } from "framer-motion";
 import Link from "next/link";
-import useEmblaCarousel from "embla-carousel-react";
-import EmblaAutoplay from "embla-carousel-autoplay";
 import { ProtectedImage } from "@/components/ui/video-player";
 import {
   ArrowRight,
@@ -161,8 +159,10 @@ function WelcomeSection() {
   );
 }
 
-//  KEY DEFINITIONS 
+//  KEY DEFINITIONS — INTERACTIVE ACCORDION 
 function DefinitionsSection() {
+  const [openIndex, setOpenIndex] = React.useState(0);
+
   return (
     <section className="section-padding relative">
       <div className="container-wide">
@@ -170,46 +170,66 @@ function DefinitionsSection() {
           <SectionHeading label="Foundations" title="Definition of Key Words" description="Understanding the pillars upon which this movement stands" />
         </motion.div>
 
-        <motion.div {...stagger} className="mt-16 grid grid-cols-1 md:grid-cols-2 gap-6">
-          {KEY_DEFINITIONS.map((def) => {
-            const Icon = ICON_MAP[def.icon];
-            return (
-              <motion.div key={def.term} {...fadeInUp}>
-                <Card variant="light" className="group h-full p-5 sm:p-8 hover:border-orange-500/30 transition-all duration-500">
-                  <div className="flex items-start gap-4 sm:gap-5">
-                    <div className="shrink-0 w-11 h-11 sm:w-14 sm:h-14 rounded-xl bg-linear-to-br from-orange-500/20 to-orange-600/10 border border-orange-500/20 flex items-center justify-center group-hover:from-orange-500/30 group-hover:to-orange-600/20 transition-all duration-500">
-                      <Icon className="w-5 h-5 sm:w-6 sm:h-6 text-orange-500" />
+        <motion.div {...fadeInUp} className="mt-10 sm:mt-16 max-w-4xl mx-auto">
+          <div className="space-y-0 rounded-2xl overflow-hidden border border-zinc-800/50">
+            {KEY_DEFINITIONS.map((def, i) => {
+              const Icon = ICON_MAP[def.icon];
+              const isOpen = openIndex === i;
+              return (
+                <div key={def.term} className={cn("border-b border-zinc-800/50 last:border-b-0 transition-colors duration-300", isOpen ? "bg-white" : "bg-zinc-900/40 hover:bg-zinc-800/40")}>
+                  <button
+                    onClick={() => setOpenIndex(isOpen ? -1 : i)}
+                    className="w-full flex items-center gap-4 sm:gap-5 px-5 sm:px-8 py-5 sm:py-6 text-left cursor-pointer"
+                  >
+                    <div className={cn(
+                      "shrink-0 w-10 h-10 sm:w-12 sm:h-12 rounded-xl flex items-center justify-center transition-all duration-500",
+                      isOpen ? "bg-orange-500 shadow-lg shadow-orange-500/30" : "bg-white"
+                    )}>
+                      <Icon className={cn("w-5 h-5 sm:w-6 sm:h-6 transition-colors", isOpen ? "text-white" : "text-orange-500")} />
                     </div>
-                    <div>
-                      <h3 className="text-lg sm:text-xl font-bold text-white mb-2 sm:mb-3 font-display">{def.term}</h3>
-                      <p className="text-xs sm:text-sm text-zinc-400 leading-relaxed">{def.definition}</p>
+                    <h3 className={cn(
+                      "flex-1 text-lg sm:text-xl font-bold font-display transition-colors",
+                      isOpen ? "text-zinc-900" : "text-white"
+                    )}>
+                      {def.term}
+                    </h3>
+                    <div className={cn(
+                      "w-8 h-8 rounded-full flex items-center justify-center transition-all duration-300",
+                      isOpen ? "bg-orange-500/10 rotate-45" : "bg-zinc-800"
+                    )}>
+                      <ArrowRight className={cn("w-4 h-4 transition-colors -rotate-45", isOpen ? "text-orange-500" : "text-zinc-400")} />
                     </div>
-                  </div>
-                </Card>
-              </motion.div>
-            );
-          })}
+                  </button>
+
+                  <motion.div
+                    initial={false}
+                    animate={{ height: isOpen ? "auto" : 0, opacity: isOpen ? 1 : 0 }}
+                    transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
+                    className="overflow-hidden"
+                  >
+                    <div className="px-5 sm:px-8 pb-6 sm:pb-8 pl-17 sm:pl-21">
+                      <p className="text-sm sm:text-base text-zinc-600 leading-relaxed">{def.definition}</p>
+                    </div>
+                  </motion.div>
+                </div>
+              );
+            })}
+          </div>
         </motion.div>
       </div>
     </section>
   );
 }
 
-//  CHANNELS PREVIEW — CAROUSEL 
+//  CHANNELS PREVIEW — BENTO GRID 
 function ChannelsPreview() {
-  const [emblaRef, emblaApi] = useEmblaCarousel(
-    { loop: true, align: "center", skipSnaps: false },
-    [EmblaAutoplay({ delay: 4000, stopOnInteraction: false, stopOnMouseEnter: true })]
-  );
-  const [selectedIndex, setSelectedIndex] = React.useState(0);
-
-  React.useEffect(() => {
-    if (!emblaApi) return;
-    const onSelect = () => setSelectedIndex(emblaApi.selectedScrollSnap());
-    emblaApi.on("select", onSelect);
-    onSelect();
-    return () => { emblaApi.off("select", onSelect); };
-  }, [emblaApi]);
+  // Layout config: first item spans 2 cols on desktop
+  const gridClasses = [
+    "md:col-span-2 md:row-span-1", // Schools — hero tile
+    "md:col-span-1",               // Outreach
+    "md:col-span-1",               // Networking
+    "md:col-span-2",               // Support & Charity — wide bottom
+  ];
 
   return (
     <section className="section-padding relative overflow-hidden">
@@ -219,71 +239,72 @@ function ChannelsPreview() {
           <SectionHeading label="Our Channels" title="How We Advance The Mandate" description="Strategic channels designed to form, equip, deploy, and support men across every stage of life and calling." />
         </motion.div>
 
-        {/* Carousel */}
-        <motion.div {...fadeInUp} className="mt-10 sm:mt-16">
-          <div className="overflow-hidden" ref={emblaRef}>
-            <div className="flex -ml-4 sm:-ml-6">
-              {CHANNELS.map((channel, i) => {
-                const Icon = ICON_MAP[channel.icon];
-                return (
-                  <div key={channel.id} className="pl-4 sm:pl-6 min-w-0 flex-[0_0_85%] sm:flex-[0_0_60%] md:flex-[0_0_45%] lg:flex-[0_0_35%]">
-                    <Link href={`/channels#${channel.id}`}>
-                      <Card variant="light" className={cn(
-                        "group h-full p-6 sm:p-8 cursor-pointer transition-all duration-500 hover:-translate-y-1",
-                        selectedIndex === i
-                          ? "border-orange-500/40 shadow-lg shadow-orange-500/5"
-                          : "hover:border-orange-500/30"
-                      )}>
-                        <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-xl bg-linear-to-br from-orange-500/20 to-orange-600/10 border border-orange-500/20 flex items-center justify-center mb-5 sm:mb-6 group-hover:from-orange-500/30 transition-all duration-500">
-                          <Icon className="w-5 h-5 sm:w-6 sm:h-6 text-orange-500" />
+        <motion.div {...stagger} className="mt-10 sm:mt-16">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-5">
+            {CHANNELS.map((channel, i) => {
+              const Icon = ICON_MAP[channel.icon];
+              const isHero = i === 0;
+              const isWide = i === 3;
+              return (
+                <motion.div key={channel.id} {...fadeInUp} className={gridClasses[i]}>
+                  <Link href={`/channels#${channel.id}`} className="block h-full">
+                    <div className={cn(
+                      "group relative h-full rounded-2xl overflow-hidden border border-zinc-800/50 transition-all duration-500 hover:border-orange-500/30 hover:-translate-y-1",
+                      isHero || isWide ? "bg-white" : "bg-zinc-900/60 hover:bg-zinc-800/60"
+                    )}>
+                      {/* Orange accent line */}
+                      <div className="absolute top-0 left-0 right-0 h-1 bg-linear-to-r from-orange-500 to-orange-600 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+
+                      <div className={cn("p-6 sm:p-8", isHero && "md:p-10", isWide && "md:flex md:items-center md:gap-10 md:p-10")}>
+                        <div className={cn(isWide && "md:shrink-0")}>
+                          <div className={cn(
+                            "rounded-xl flex items-center justify-center mb-4 sm:mb-5 transition-all duration-500",
+                            isHero || isWide
+                              ? "w-14 h-14 sm:w-16 sm:h-16 bg-orange-500 shadow-lg shadow-orange-500/20 group-hover:shadow-orange-500/40"
+                              : "w-11 h-11 sm:w-12 sm:h-12 bg-white"
+                          )}>
+                            <Icon className={cn(
+                              "w-6 h-6 sm:w-7 sm:h-7 transition-colors",
+                              isHero || isWide ? "text-white" : "text-orange-500"
+                            )} />
+                          </div>
+
+                          <p className={cn(
+                            "text-[10px] sm:text-xs font-semibold uppercase tracking-wider mb-2",
+                            isHero || isWide ? "text-orange-500" : "text-orange-500/60"
+                          )}>
+                            {channel.subtitle}
+                          </p>
+
+                          <h3 className={cn(
+                            "font-bold font-display mb-3",
+                            isHero ? "text-2xl sm:text-3xl text-zinc-900" : isWide ? "text-xl sm:text-2xl text-zinc-900" : "text-lg sm:text-xl text-white"
+                          )}>
+                            {channel.title}
+                          </h3>
                         </div>
-                        <h3 className="text-lg sm:text-xl font-bold text-white mb-2">{channel.title}</h3>
-                        <p className="text-[10px] sm:text-xs text-orange-500/70 font-medium uppercase tracking-wider mb-3 sm:mb-4">{channel.subtitle}</p>
-                        <p className="text-sm text-zinc-400 leading-relaxed line-clamp-3">{channel.description}</p>
-                        <div className="mt-5 flex items-center gap-1 text-sm text-orange-500 font-medium">
-                          Learn more <ChevronRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+
+                        <div className="flex-1">
+                          <p className={cn(
+                            "leading-relaxed",
+                            isHero ? "text-sm sm:text-base text-zinc-600" : isWide ? "text-sm text-zinc-600" : "text-xs sm:text-sm text-zinc-400"
+                          )}>
+                            {channel.description}
+                          </p>
+
+                          <div className={cn(
+                            "mt-4 sm:mt-5 flex items-center gap-2 font-semibold text-sm",
+                            isHero || isWide ? "text-orange-500" : "text-orange-500/80"
+                          )}>
+                            Learn more <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                          </div>
                         </div>
-                      </Card>
-                    </Link>
-                  </div>
-                );
-              })}
-            </div>
-          </div>
-
-          {/* Dots + Arrows */}
-          <div className="flex items-center justify-center gap-6 mt-8">
-            <button
-              onClick={() => emblaApi?.scrollPrev()}
-              className="w-10 h-10 rounded-full border border-zinc-700 flex items-center justify-center text-zinc-400 hover:text-white hover:border-orange-500 transition-colors"
-              aria-label="Previous channel"
-            >
-              <ChevronRight className="w-4 h-4 rotate-180" />
-            </button>
-
-            <div className="flex items-center gap-2">
-              {CHANNELS.map((_, i) => (
-                <button
-                  key={i}
-                  onClick={() => emblaApi?.scrollTo(i)}
-                  className={cn(
-                    "h-2 rounded-full transition-all duration-300",
-                    selectedIndex === i
-                      ? "w-8 bg-orange-500"
-                      : "w-2 bg-zinc-700 hover:bg-zinc-500"
-                  )}
-                  aria-label={`Go to channel ${i + 1}`}
-                />
-              ))}
-            </div>
-
-            <button
-              onClick={() => emblaApi?.scrollNext()}
-              className="w-10 h-10 rounded-full border border-zinc-700 flex items-center justify-center text-zinc-400 hover:text-white hover:border-orange-500 transition-colors"
-              aria-label="Next channel"
-            >
-              <ChevronRight className="w-4 h-4" />
-            </button>
+                      </div>
+                    </div>
+                  </Link>
+                </motion.div>
+              );
+            })}
           </div>
         </motion.div>
 
@@ -300,36 +321,80 @@ function ChannelsPreview() {
   );
 }
 
-//  EVENTS PREVIEW 
+//  EVENTS PREVIEW — FULL-WIDTH STACKED PANELS 
 function EventsPreview() {
   return (
     <section className="section-padding relative">
       <div className="container-wide">
         <motion.div {...fadeInUp}>
-          <SectionHeading label="Gatherings" title="Our Events" description="Intentional convergence points  spaces where conviction is strengthened, brotherhood is deepened, and men are realigned with purpose." />
+          <SectionHeading label="Gatherings" title="Our Events" description="Intentional convergence points — spaces where conviction is strengthened, brotherhood is deepened, and men are realigned with purpose." />
         </motion.div>
 
-        <motion.div {...stagger} className="mt-10 sm:mt-16 grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-6">
-          {EVENTS_INFO.map((event) => {
+        <motion.div {...stagger} className="mt-10 sm:mt-16 space-y-4 sm:space-y-5">
+          {EVENTS_INFO.map((event, i) => {
             const Icon = ICON_MAP[event.icon];
+            const isEven = i % 2 === 0;
             return (
               <motion.div key={event.name} {...fadeInUp}>
-                <Card variant="light" className="group h-full flex flex-col overflow-hidden hover:border-orange-500/30 transition-all duration-500">
-                  <div className="h-1 bg-linear-to-r from-orange-500 to-orange-600 opacity-60 group-hover:opacity-100 transition-opacity" />
-                  <CardContent className="p-5 sm:p-8 flex-1 flex flex-col">
-                    <div className="flex items-center gap-2.5 sm:gap-3 mb-4 sm:mb-6">
-                      <div className="w-10 h-10 sm:w-11 sm:h-11 rounded-lg sm:rounded-xl bg-linear-to-br from-orange-500/20 to-orange-600/10 border border-orange-500/20 flex items-center justify-center">
-                        <Icon className="w-4 h-4 sm:w-5 sm:h-5 text-orange-500" />
+                <div className={cn(
+                  "group relative rounded-2xl overflow-hidden border transition-all duration-500 hover:-translate-y-0.5",
+                  isEven
+                    ? "bg-white border-zinc-200 hover:border-orange-500/30 hover:shadow-xl hover:shadow-orange-500/5"
+                    : "bg-zinc-900/60 border-zinc-800/50 hover:border-orange-500/30"
+                )}>
+                  {/* Accent bar */}
+                  <div className="absolute top-0 left-0 bottom-0 w-1 bg-linear-to-b from-orange-500 to-orange-600 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+
+                  <div className={cn(
+                    "flex flex-col md:flex-row md:items-center gap-5 sm:gap-8 p-5 sm:p-8 md:p-10",
+                    !isEven && "md:flex-row-reverse"
+                  )}>
+                    {/* Left — Icon + Schedule */}
+                    <div className="flex items-center gap-4 md:flex-col md:items-center md:text-center md:w-40 md:shrink-0">
+                      <div className={cn(
+                        "w-14 h-14 sm:w-16 sm:h-16 rounded-2xl flex items-center justify-center transition-all duration-500",
+                        isEven
+                          ? "bg-orange-500 shadow-lg shadow-orange-500/20 group-hover:shadow-orange-500/40"
+                          : "bg-white"
+                      )}>
+                        <Icon className={cn("w-6 h-6 sm:w-7 sm:h-7", isEven ? "text-white" : "text-orange-500")} />
                       </div>
-                      <Badge>{event.schedule}</Badge>
+                      <div className="md:mt-3">
+                        <p className={cn(
+                          "text-xs sm:text-sm font-bold uppercase tracking-wider",
+                          isEven ? "text-orange-500" : "text-orange-500/80"
+                        )}>
+                          {event.schedule}
+                        </p>
+                      </div>
                     </div>
-                    <h3 className="text-lg sm:text-xl font-bold text-white mb-2 sm:mb-3 font-display">{event.name}</h3>
-                    <p className="text-xs sm:text-sm text-zinc-400 leading-relaxed flex-1">{event.description}</p>
-                    <div className="mt-4 sm:mt-6 pt-4 sm:pt-5 border-t border-white/10">
-                      <p className="text-xs sm:text-sm text-orange-500 italic font-medium">&ldquo;{event.highlight}&rdquo;</p>
+
+                    {/* Divider */}
+                    <div className={cn(
+                      "hidden md:block w-px self-stretch",
+                      isEven ? "bg-zinc-200" : "bg-zinc-800"
+                    )} />
+
+                    {/* Right — Content */}
+                    <div className="flex-1 min-w-0">
+                      <h3 className={cn(
+                        "text-xl sm:text-2xl md:text-3xl font-bold font-display mb-3",
+                        isEven ? "text-zinc-900" : "text-white"
+                      )}>
+                        {event.name}
+                      </h3>
+                      <p className={cn(
+                        "text-sm sm:text-base leading-relaxed mb-4",
+                        isEven ? "text-zinc-600" : "text-zinc-400"
+                      )}>
+                        {event.description}
+                      </p>
+                      <p className="text-sm sm:text-base text-orange-500 italic font-medium">
+                        &ldquo;{event.highlight}&rdquo;
+                      </p>
                     </div>
-                  </CardContent>
-                </Card>
+                  </div>
+                </div>
               </motion.div>
             );
           })}

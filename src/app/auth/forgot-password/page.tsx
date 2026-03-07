@@ -68,7 +68,7 @@ export default function ForgotPasswordPage() {
                 animate={{ opacity: 1 }}
                 className="text-center py-4"
               >
-                <div className="w-16 h-16 rounded-full bg-orange-500/10 border border-orange-500/20 flex items-center justify-center mx-auto mb-6">
+                <div className="w-16 h-16 rounded-full bg-white flex items-center justify-center mx-auto mb-6">
                   <Mail className="w-7 h-7 text-orange-500" />
                 </div>
                 <p className="text-sm text-zinc-400 mb-6">

@@ -4,7 +4,7 @@ const cardVariants = {
   default:
     "rounded-2xl border border-zinc-800/80 bg-zinc-900/60 backdrop-blur-sm shadow-lg shadow-black/20 transition-all duration-300 hover:border-zinc-700/80 text-zinc-100",
   light:
-    "rounded-2xl bg-white/15 backdrop-blur-xl border border-white/20 shadow-xl shadow-black/10 transition-all duration-300 hover:bg-white/20 hover:shadow-2xl hover:shadow-black/15 hover:-translate-y-0.5 text-white",
+    "rounded-2xl bg-white shadow-xl shadow-black/10 transition-all duration-300 hover:shadow-2xl hover:shadow-black/15 hover:-translate-y-0.5 text-zinc-900",
 };
 
 function Card({

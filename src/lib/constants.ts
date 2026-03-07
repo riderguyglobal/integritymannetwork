@@ -86,13 +86,13 @@ export const CHANNELS = [
   },
   {
     id: "houses",
-    title: "Integrity Houses",
+    title: "Networking",
     subtitle: "Networking & Strategic Community",
     description:
       "Relational hubs where men grow through accountability, brotherhood, and shared purpose. An Integrity House is more than a networking space — it is a covenant community.",
     items: [
       {
-        name: "Integrity Houses",
+        name: "Networking",
         description:
           "Structured environments where men connect meaningfully, sharpen one another, share opportunities, pray together, solve problems, and walk through life's seasons with support and spiritual alignment.",
       },
@@ -101,13 +101,13 @@ export const CHANNELS = [
   },
   {
     id: "foundation",
-    title: "Man Foundation",
+    title: "Support & Charity",
     subtitle: "Fundraising & Social Impact",
     description:
       "The resource mobilization and social impact arm that fuels sustainable transformation. Vision without provision remains limited.",
     items: [
       {
-        name: "Man Foundation",
+        name: "Support & Charity",
         description:
           "Through partnerships, fundraising campaigns, donor networks, and strategic collaborations, we mobilize financial and material support for schools, youth outreach, community interventions, and men-focused development projects.",
       },

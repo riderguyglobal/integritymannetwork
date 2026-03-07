@@ -155,13 +155,13 @@ function BenefitsSection() {
             >
               <Card variant="light" className="h-full hover:border-orange-500/20 transition-colors">
                 <CardContent className="p-4 sm:p-6">
-                  <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-lg sm:rounded-xl bg-linear-to-br from-orange-500/20 to-orange-600/10 border border-orange-500/20 flex items-center justify-center mb-3 sm:mb-4">
+                  <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-lg sm:rounded-xl bg-white flex items-center justify-center mb-3 sm:mb-4">
                     <benefit.icon className="w-4 h-4 sm:w-5 sm:h-5 text-orange-500" />
                   </div>
-                  <h3 className="text-base sm:text-lg font-bold text-white font-display mb-1 sm:mb-2">
+                  <h3 className="text-base sm:text-lg font-bold text-zinc-900 font-display mb-1 sm:mb-2">
                     {benefit.title}
                   </h3>
-                  <p className="text-xs sm:text-sm text-zinc-400 leading-relaxed">
+                  <p className="text-xs sm:text-sm text-zinc-600 leading-relaxed">
                     {benefit.description}
                   </p>
                 </CardContent>
@@ -197,7 +197,7 @@ function RegistrationForm() {
         animate={{ opacity: 1, scale: 1 }}
         className="text-center py-16"
       >
-        <div className="w-20 h-20 rounded-full bg-orange-500/10 border border-orange-500/20 flex items-center justify-center mx-auto mb-6">
+        <div className="w-20 h-20 rounded-full bg-white flex items-center justify-center mx-auto mb-6">
           <CheckCircle2 className="w-8 h-8 text-orange-500" />
         </div>
         <h3 className="text-2xl font-bold text-white font-display mb-3">

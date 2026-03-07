@@ -24,7 +24,7 @@ const FOOTER_LINKS = {
   ],
   community: [
     { label: "Join The Network", href: "/join" },
-    { label: "Integrity Houses", href: "/community/houses" },
+    { label: "Networking", href: "/community/houses" },
     { label: "Community Chat", href: "/community/chat" },
     { label: "Partner With Us", href: "/join" },
     { label: "Donate", href: "/donate" },
@@ -34,7 +34,7 @@ const FOOTER_LINKS = {
     { label: "Purpose Centers", href: "/channels#schools" },
     { label: "Campus Campaign", href: "/channels#outreach" },
     { label: "Corporate Outreach", href: "/channels#outreach" },
-    { label: "Man Foundation", href: "/channels#foundation" },
+    { label: "Support & Charity", href: "/channels#foundation" },
   ],
 };
 

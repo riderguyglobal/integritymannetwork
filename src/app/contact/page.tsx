@@ -130,7 +130,7 @@ function ContactForm() {
         animate={{ opacity: 1, scale: 1 }}
         className="text-center py-16 sm:py-20"
       >
-        <div className="w-20 h-20 rounded-full bg-linear-to-br from-orange-500/20 to-orange-600/10 border border-orange-500/30 flex items-center justify-center mx-auto mb-6">
+        <div className="w-20 h-20 rounded-full bg-white flex items-center justify-center mx-auto mb-6">
           <Send className="w-8 h-8 text-orange-500" />
         </div>
         <h3 className="text-2xl sm:text-3xl font-bold text-white font-display mb-3">

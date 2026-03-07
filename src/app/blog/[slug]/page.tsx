@@ -42,7 +42,7 @@ export default function BlogPostPage() {
 
             <div className="flex items-center gap-6 text-sm text-zinc-500">
               <span className="flex items-center gap-2">
-                <div className="w-8 h-8 rounded-full bg-orange-500/10 border border-orange-500/20 flex items-center justify-center">
+                <div className="w-8 h-8 rounded-full bg-white flex items-center justify-center">
                   <User className="w-3.5 h-3.5 text-orange-500" />
                 </div>
                 TIMN Editorial
@@ -97,7 +97,7 @@ export default function BlogPostPage() {
                 <h2 className="text-2xl font-bold text-white font-display mt-12 mb-4">How The Network Helps</h2>
 
                 <p>
-                  Through the School of Integrity, Integrity Houses, events, and community platforms, we create environments where men can discover, develop, and deploy their God-given purpose. Every initiative is designed to move men from confusion to clarity, from compromise to conviction.
+                  Through the School of Integrity, Networking, events, and community platforms, we create environments where men can discover, develop, and deploy their God-given purpose. Every initiative is designed to move men from confusion to clarity, from compromise to conviction.
                 </p>
 
                 <p>

@@ -180,7 +180,7 @@ export default function DashboardPage() {
         <Card className="mt-6">
           <CardContent className="p-6">
             <div className="flex items-center gap-5">
-              <div className="w-16 h-16 rounded-full bg-orange-500/10 border-2 border-orange-500/30 flex items-center justify-center">
+              <div className="w-16 h-16 rounded-full bg-white flex items-center justify-center">
                 <User className="w-7 h-7 text-orange-500" />
               </div>
               <div className="flex-1">

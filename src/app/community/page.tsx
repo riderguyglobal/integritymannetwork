@@ -57,7 +57,7 @@ const channels = [
   },
   {
     id: "integrity-house",
-    name: "Integrity Houses",
+    name: "Networking",
     icon: Home,
     unread: 0,
     description: "Local chapter discussions",
@@ -246,7 +246,7 @@ export default function CommunityPage() {
               animate={{ opacity: 1, y: 0 }}
               className="flex gap-3 group hover:bg-zinc-800/10 rounded-lg px-2 py-2 -mx-2 transition-colors"
             >
-              <div className="w-9 h-9 rounded-full bg-orange-500/10 border border-orange-500/20 flex items-center justify-center text-xs font-bold text-orange-500 shrink-0 mt-0.5">
+              <div className="w-9 h-9 rounded-full bg-white flex items-center justify-center text-xs font-bold text-orange-500 shrink-0 mt-0.5">
                 {msg.avatar}
               </div>
               <div className="flex-1 min-w-0">
