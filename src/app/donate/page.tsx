@@ -1,27 +1,26 @@
 "use client";
 
 import { useState } from "react";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import { ProtectedImage } from "@/components/ui/video-player";
 import {
   Heart,
-  Gift,
-  CreditCard,
-  Building2,
   ArrowRight,
-  CheckCircle2,
-  DollarSign,
-  Globe,
+  Check,
+  Lock,
   Shield,
+  Globe,
+  Building2,
   Users,
+  Zap,
+  Sparkles,
 } from "lucide-react";
-import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { SectionHeading } from "@/components/ui/section-heading";
 import { formatCurrency } from "@/lib/utils";
+import { cn } from "@/lib/utils";
 
 const fadeInUp = {
   initial: { opacity: 0, y: 30 },
@@ -30,60 +29,93 @@ const fadeInUp = {
   transition: { duration: 0.7, ease: [0.22, 1, 0.36, 1] },
 };
 
-// 
-// HERO
-// 
+// ──────────────────────────────────────────
+// HERO — Cinematic full-width
+// ──────────────────────────────────────────
 
 function DonateHero() {
   return (
-    <section className="relative hero-padding overflow-hidden">
+    <section className="relative min-h-[70svh] sm:min-h-[80svh] flex items-center justify-center overflow-hidden">
       <div className="absolute inset-0 bg-zinc-950" />
-      {/* Background image */}
       <div className="absolute inset-0">
         <ProtectedImage
           src="/images/man-integrity.jpg"
           alt="Man of Integrity"
           fill
-          className="object-cover opacity-15"
+          className="object-cover opacity-[0.12]"
           priority
         />
-        <div className="absolute inset-0 bg-linear-to-b from-zinc-950/50 via-zinc-950/80 to-zinc-950" />
+        <div className="absolute inset-0 bg-linear-to-b from-zinc-950/40 via-zinc-950/70 to-zinc-950" />
       </div>
-      <div className="absolute inset-0 bg-grid opacity-30" />
+      <div className="absolute inset-0 bg-grid opacity-20" />
+
+      {/* Floating ambient glows */}
+      <div className="hidden sm:block absolute top-1/3 left-1/4 w-125 h-125 bg-orange-500/4 rounded-full blur-3xl animate-float" />
+      <div className="hidden sm:block absolute bottom-1/4 right-1/5 w-100 h-100 bg-orange-600/3 rounded-full blur-3xl animate-float" style={{ animationDelay: "3s" }} />
 
       <div className="container-wide relative z-10">
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
+          initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
+          transition={{ duration: 1, ease: [0.22, 1, 0.36, 1] }}
           className="max-w-4xl mx-auto text-center"
         >
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-orange-500/10 border border-orange-500/20 mb-5 sm:mb-8">
+          <motion.div
+            initial={{ opacity: 0, scale: 0.8 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ delay: 0.3, duration: 0.6 }}
+            className="inline-flex items-center gap-2 px-5 py-2 rounded-full bg-white/5 border border-white/10 backdrop-blur-sm mb-6 sm:mb-10"
+          >
             <Heart className="w-3.5 h-3.5 text-orange-500" />
-            <span className="text-[10px] sm:text-xs font-semibold tracking-wider uppercase text-orange-500">
+            <span className="text-[10px] sm:text-xs font-semibold tracking-[0.2em] uppercase text-orange-400">
               Support The Vision
             </span>
-          </div>
+          </motion.div>
 
-          <h1 className="font-display text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-bold tracking-tight text-white leading-[0.95] mb-4 sm:mb-6">
-            Partner With{" "}
-            <span className="text-gradient">Us</span>
+          <h1 className="font-display text-[2.5rem] sm:text-5xl md:text-6xl lg:text-8xl font-bold tracking-tight text-white leading-[0.9] mb-5 sm:mb-8">
+            Fuel The{" "}
+            <span className="text-gradient">Mission</span>
           </h1>
 
-          <p className="text-sm sm:text-lg md:text-xl text-zinc-400 leading-relaxed max-w-3xl mx-auto">
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.4, duration: 0.8 }}
+            className="text-sm sm:text-lg md:text-xl text-zinc-400 leading-relaxed max-w-2xl mx-auto mb-8 sm:mb-12"
+          >
             Your generosity fuels the formation of men, the expansion of
-            communities, and the advancement of purpose-driven impact across
-            nations.
-          </p>
+            communities, and purpose-driven impact across nations.
+          </motion.p>
+
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.6, duration: 0.6 }}
+            className="flex items-center justify-center gap-6 sm:gap-10 text-zinc-500"
+          >
+            {[
+              { icon: Lock, text: "Secure Payments" },
+              { icon: Globe, text: "Give From Anywhere" },
+              { icon: Shield, text: "Tax-Deductible" },
+            ].map((item) => (
+              <div key={item.text} className="flex items-center gap-2">
+                <item.icon className="w-3.5 h-3.5 text-orange-500/60" />
+                <span className="text-[10px] sm:text-xs font-medium">{item.text}</span>
+              </div>
+            ))}
+          </motion.div>
         </motion.div>
       </div>
+
+      {/* Bottom gradient fade */}
+      <div className="absolute bottom-0 left-0 right-0 h-32 bg-linear-to-t from-zinc-950 to-transparent" />
     </section>
   );
 }
 
-// 
-// IMPACT AREAS
-// 
+// ──────────────────────────────────────────
+// IMPACT AREAS — Bento-style grid
+// ──────────────────────────────────────────
 
 const impactAreas = [
   {
@@ -91,31 +123,36 @@ const impactAreas = [
     title: "Schools & Training",
     description:
       "Fund the School of Integrity and Purpose Centers that form men and children with clarity and conviction.",
+    accent: "from-orange-500/20 to-orange-600/5",
   },
   {
     icon: Users,
     title: "Youth & Campus Outreach",
     description:
       "Support outreach programs that reach young men in schools and universities before compromise defines them.",
+    accent: "from-amber-500/20 to-amber-600/5",
   },
   {
     icon: Globe,
     title: "Community Interventions",
     description:
       "Help fund community-focused initiatives that address social challenges through a purpose-driven approach.",
+    accent: "from-orange-400/20 to-orange-500/5",
   },
   {
     icon: Shield,
     title: "Network Operations",
     description:
       "Support the infrastructure, technology, events, and operations that keep the network running globally.",
+    accent: "from-yellow-500/20 to-yellow-600/5",
   },
 ];
 
 function ImpactSection() {
   return (
-    <section className="section-padding">
-      <div className="container-wide">
+    <section className="section-padding relative">
+      <div className="absolute inset-0 bg-radial-dark pointer-events-none" />
+      <div className="container-wide relative z-10">
         <motion.div {...fadeInUp}>
           <SectionHeading
             label="Your Impact"
@@ -124,7 +161,7 @@ function ImpactSection() {
           />
         </motion.div>
 
-        <div className="mt-8 sm:mt-12 grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
+        <div className="mt-10 sm:mt-16 grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-5 max-w-4xl mx-auto">
           {impactAreas.map((area, index) => (
             <motion.div
               key={area.title}
@@ -136,22 +173,27 @@ function ImpactSection() {
                 delay: index * 0.1,
                 ease: [0.22, 1, 0.36, 1],
               }}
+              className="group"
             >
-              <Card variant="light" className="h-full hover:border-orange-500/20 transition-colors">
-                <CardContent className="p-4 sm:p-6 flex items-start gap-3 sm:gap-4">
-                  <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-lg sm:rounded-xl bg-white flex items-center justify-center shrink-0">
-                    <area.icon className="w-4 h-4 sm:w-5 sm:h-5 text-orange-500" />
+              <div className="relative h-full rounded-2xl border border-zinc-800/80 bg-zinc-900/60 backdrop-blur-sm p-5 sm:p-7 transition-all duration-500 hover:border-orange-500/20 hover:bg-zinc-900/80 overflow-hidden">
+                {/* Subtle gradient bg on hover */}
+                <div className={cn(
+                  "absolute inset-0 bg-linear-to-br opacity-0 group-hover:opacity-100 transition-opacity duration-500",
+                  area.accent
+                )} />
+
+                <div className="relative z-10">
+                  <div className="w-11 h-11 sm:w-13 sm:h-13 rounded-xl bg-orange-500/10 border border-orange-500/20 flex items-center justify-center mb-4 sm:mb-5 group-hover:bg-orange-500/15 transition-colors">
+                    <area.icon className="w-5 h-5 sm:w-6 sm:h-6 text-orange-500" />
                   </div>
-                  <div>
-                    <h3 className="text-base sm:text-lg font-bold text-zinc-900 font-display mb-1 sm:mb-2">
-                      {area.title}
-                    </h3>
-                    <p className="text-xs sm:text-sm text-zinc-600 leading-relaxed">
-                      {area.description}
-                    </p>
-                  </div>
-                </CardContent>
-              </Card>
+                  <h3 className="text-base sm:text-lg font-bold text-white font-display mb-2">
+                    {area.title}
+                  </h3>
+                  <p className="text-xs sm:text-sm text-zinc-400 leading-relaxed">
+                    {area.description}
+                  </p>
+                </div>
+              </div>
             </motion.div>
           ))}
         </div>
@@ -160,189 +202,340 @@ function ImpactSection() {
   );
 }
 
-// 
-// DONATION FORM
-// 
+// ──────────────────────────────────────────
+// DONATION FORM — Premium payment experience
+// ──────────────────────────────────────────
 
-const presetAmounts = [5000, 10000, 25000, 50000, 100000, 250000];
+const presetAmounts = [
+  { value: 5000, label: "₦5,000" },
+  { value: 10000, label: "₦10,000" },
+  { value: 25000, label: "₦25,000" },
+  { value: 50000, label: "₦50,000" },
+  { value: 100000, label: "₦100,000" },
+  { value: 250000, label: "₦250,000" },
+];
+
+type PaymentMethod = "paystack" | "stripe" | "paypal";
+
+const paymentMethods: {
+  id: PaymentMethod;
+  name: string;
+  description: string;
+  regions: string;
+}[] = [
+  {
+    id: "paystack",
+    name: "Paystack",
+    description: "Cards, Bank Transfer, USSD",
+    regions: "Nigeria & Africa",
+  },
+  {
+    id: "stripe",
+    name: "Stripe",
+    description: "Cards, Apple Pay, Google Pay",
+    regions: "International",
+  },
+  {
+    id: "paypal",
+    name: "PayPal",
+    description: "PayPal Balance & Cards",
+    regions: "International",
+  },
+];
 
 function DonationForm() {
   const [selectedAmount, setSelectedAmount] = useState<number | null>(25000);
   const [customAmount, setCustomAmount] = useState<string>("");
-  const [donationType, setDonationType] = useState<"one-time" | "monthly">(
-    "one-time"
-  );
+  const [donationType, setDonationType] = useState<"one-time" | "monthly">("one-time");
+  const [selectedPayment, setSelectedPayment] = useState<PaymentMethod>("paystack");
+  const [isProcessing, setIsProcessing] = useState(false);
 
-  const currentAmount = customAmount
-    ? parseInt(customAmount, 10)
-    : selectedAmount;
+  const currentAmount = customAmount ? parseInt(customAmount, 10) : selectedAmount;
+  const isValid = currentAmount && currentAmount >= 500;
+
+  const handleDonate = async () => {
+    if (!isValid) return;
+    setIsProcessing(true);
+    // Payment processing will be handled by the API routes
+    setTimeout(() => setIsProcessing(false), 2000);
+  };
 
   return (
-    <div className="space-y-8">
-      {/* Donation Type Toggle */}
-      <div className="flex gap-2 p-1 rounded-lg bg-zinc-800/50 border border-zinc-700/50 w-fit">
-        <button
-          onClick={() => setDonationType("one-time")}
-          className={`px-5 py-2 rounded-md text-sm font-medium transition-all ${
-            donationType === "one-time"
-              ? "bg-orange-500 text-white shadow-lg shadow-orange-500/20"
-              : "text-zinc-400 hover:text-white"
-          }`}
-        >
-          One-Time
-        </button>
-        <button
-          onClick={() => setDonationType("monthly")}
-          className={`px-5 py-2 rounded-md text-sm font-medium transition-all ${
-            donationType === "monthly"
-              ? "bg-orange-500 text-white shadow-lg shadow-orange-500/20"
-              : "text-zinc-400 hover:text-white"
-          }`}
-        >
-          Monthly
-        </button>
+    <div className="space-y-6 sm:space-y-8">
+      {/* ── Step 1: Frequency ── */}
+      <div>
+        <div className="flex items-center gap-2 mb-3 sm:mb-4">
+          <div className="w-6 h-6 rounded-full bg-orange-500 flex items-center justify-center">
+            <span className="text-[10px] font-bold text-white">1</span>
+          </div>
+          <span className="text-xs sm:text-sm font-semibold text-white tracking-wide">Choose Frequency</span>
+        </div>
+        <div className="flex gap-1.5 p-1 rounded-xl bg-zinc-800/60 border border-zinc-700/40 w-full sm:w-fit">
+          {(["one-time", "monthly"] as const).map((type) => (
+            <button
+              key={type}
+              onClick={() => setDonationType(type)}
+              className={cn(
+                "flex-1 sm:flex-none px-5 sm:px-8 py-2.5 rounded-lg text-xs sm:text-sm font-semibold transition-all duration-300 relative",
+                donationType === type
+                  ? "text-white"
+                  : "text-zinc-500 hover:text-zinc-300"
+              )}
+            >
+              {donationType === type && (
+                <motion.div
+                  layoutId="frequency-bg"
+                  className="absolute inset-0 bg-linear-to-r from-orange-500 to-orange-600 rounded-lg shadow-lg shadow-orange-500/25"
+                  transition={{ type: "spring", bounce: 0.2, duration: 0.6 }}
+                />
+              )}
+              <span className="relative z-10 flex items-center gap-1.5">
+                {type === "monthly" && <Zap className="w-3 h-3" />}
+                {type === "one-time" ? "One-Time" : "Monthly"}
+              </span>
+            </button>
+          ))}
+        </div>
+        {donationType === "monthly" && (
+          <motion.p
+            initial={{ opacity: 0, height: 0 }}
+            animate={{ opacity: 1, height: "auto" }}
+            className="text-[10px] sm:text-xs text-orange-400/80 mt-2 flex items-center gap-1.5"
+          >
+            <Sparkles className="w-3 h-3" />
+            Monthly giving creates sustained, lasting impact
+          </motion.p>
+        )}
       </div>
 
-      {/* Preset Amounts */}
+      {/* ── Step 2: Amount ── */}
       <div>
-        <label className="text-xs sm:text-sm font-medium text-zinc-300 mb-2 sm:mb-3 block">
-          Select Amount (NGN)
-        </label>
-        <div className="grid grid-cols-2 sm:grid-cols-3 gap-2 sm:gap-3">
-          {presetAmounts.map((amount) => (
-            <button
-              key={amount}
+        <div className="flex items-center gap-2 mb-3 sm:mb-4">
+          <div className="w-6 h-6 rounded-full bg-orange-500 flex items-center justify-center">
+            <span className="text-[10px] font-bold text-white">2</span>
+          </div>
+          <span className="text-xs sm:text-sm font-semibold text-white tracking-wide">Select Amount</span>
+        </div>
+
+        <div className="grid grid-cols-3 gap-2 sm:gap-3">
+          {presetAmounts.map(({ value, label }) => (
+            <motion.button
+              key={value}
+              whileTap={{ scale: 0.97 }}
               onClick={() => {
-                setSelectedAmount(amount);
+                setSelectedAmount(value);
                 setCustomAmount("");
               }}
-              className={`px-3 sm:px-4 py-3 rounded-lg text-xs sm:text-sm font-semibold transition-all border ${
-                selectedAmount === amount && !customAmount
-                  ? "bg-orange-500/10 border-orange-500/50 text-orange-500"
-                  : "bg-zinc-800/30 border-zinc-700/50 text-zinc-300 hover:border-orange-500/30"
-              }`}>
-              {formatCurrency(amount)}
-            </button>
+              className={cn(
+                "relative py-3.5 sm:py-4 rounded-xl text-sm sm:text-base font-bold transition-all duration-300 border overflow-hidden",
+                selectedAmount === value && !customAmount
+                  ? "border-orange-500/60 text-orange-500 bg-orange-500/8"
+                  : "border-zinc-700/50 text-zinc-300 bg-zinc-800/30 hover:border-zinc-600/60 hover:bg-zinc-800/50"
+              )}
+            >
+              {selectedAmount === value && !customAmount && (
+                <motion.div
+                  layoutId="amount-ring"
+                  className="absolute inset-0 rounded-xl ring-1 ring-orange-500/40"
+                  transition={{ type: "spring", bounce: 0.15, duration: 0.5 }}
+                />
+              )}
+              <span className="relative z-10">{label}</span>
+            </motion.button>
           ))}
         </div>
-      </div>
 
-      {/* Custom Amount */}
-      <div className="space-y-1.5 sm:space-y-2">
-        <label className="text-xs sm:text-sm font-medium text-zinc-300">
-          Or Enter Custom Amount (NGN)
-        </label>
-        <div className="relative">
-          <DollarSign className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-zinc-500" />
-          <Input
-            type="number"
-            placeholder="Enter amount"
-            value={customAmount}
-            onChange={(e) => {
-              setCustomAmount(e.target.value);
-              setSelectedAmount(null);
-            }}
-            className="pl-10"
-          />
+        {/* Custom amount */}
+        <div className="mt-3 sm:mt-4">
+          <div className="relative">
+            <span className="absolute left-4 top-1/2 -translate-y-1/2 text-sm font-bold text-zinc-500">₦</span>
+            <Input
+              type="number"
+              placeholder="Enter custom amount"
+              value={customAmount}
+              onChange={(e) => {
+                setCustomAmount(e.target.value);
+                setSelectedAmount(null);
+              }}
+              className="pl-9 h-12 sm:h-13 text-base bg-zinc-800/30 border-zinc-700/40 focus:border-orange-500/50 rounded-xl"
+            />
+          </div>
+          <p className="text-[10px] text-zinc-600 mt-1.5">Minimum donation: ₦500</p>
         </div>
       </div>
 
-      {/* Summary */}
-      {currentAmount && currentAmount > 0 && (
-        <motion.div
-          initial={{ opacity: 0, y: 10 }}
-          animate={{ opacity: 1, y: 0 }}
-          className="p-4 rounded-lg bg-orange-500/5 border border-orange-500/20"
-        >
-          <div className="flex items-center justify-between">
-            <div>
-              <p className="text-sm text-zinc-400">
-                {donationType === "monthly"
-                  ? "Monthly Donation"
-                  : "One-Time Donation"}
-              </p>
-              <p className="text-2xl font-bold text-white font-display mt-1">
-                {formatCurrency(currentAmount)}
-              </p>
-            </div>
-            <Badge variant="success">
-              {donationType === "monthly" ? "Recurring" : "Single Gift"}
-            </Badge>
+      {/* ── Step 3: Payment Method ── */}
+      <div>
+        <div className="flex items-center gap-2 mb-3 sm:mb-4">
+          <div className="w-6 h-6 rounded-full bg-orange-500 flex items-center justify-center">
+            <span className="text-[10px] font-bold text-white">3</span>
           </div>
-        </motion.div>
-      )}
+          <span className="text-xs sm:text-sm font-semibold text-white tracking-wide">Payment Method</span>
+        </div>
 
-      {/* Payment Methods */}
-      <div className="space-y-2 sm:space-y-3">
-        <label className="text-xs sm:text-sm font-medium text-zinc-300 block">
-          Payment Method
-        </label>
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-2 sm:gap-3">
-          {[
-            { name: "Paystack", desc: "Cards, Bank, USSD" },
-            { name: "PayPal", desc: "International" },
-            { name: "Stripe", desc: "Cards, Apple Pay" },
-          ].map((method) => (
-            <button
-              key={method.name}
-              className="p-4 rounded-lg bg-zinc-800/30 border border-zinc-700/50 hover:border-orange-500/30 transition-all text-left group"
+        <div className="space-y-2 sm:space-y-2.5">
+          {paymentMethods.map((method) => (
+            <motion.button
+              key={method.id}
+              whileTap={{ scale: 0.99 }}
+              onClick={() => setSelectedPayment(method.id)}
+              className={cn(
+                "w-full p-3.5 sm:p-4 rounded-xl border transition-all duration-300 text-left flex items-center gap-3 sm:gap-4",
+                selectedPayment === method.id
+                  ? "border-orange-500/50 bg-orange-500/6"
+                  : "border-zinc-700/40 bg-zinc-800/20 hover:border-zinc-600/50"
+              )}
             >
-              <div className="flex items-center gap-3">
-                <CreditCard className="w-5 h-5 text-orange-500" />
-                <div>
-                  <p className="text-sm font-semibold text-white group-hover:text-orange-500 transition-colors">
+              {/* Radio indicator */}
+              <div className={cn(
+                "w-5 h-5 rounded-full border-2 flex items-center justify-center shrink-0 transition-all",
+                selectedPayment === method.id
+                  ? "border-orange-500 bg-orange-500"
+                  : "border-zinc-600"
+              )}>
+                {selectedPayment === method.id && (
+                  <motion.div
+                    initial={{ scale: 0 }}
+                    animate={{ scale: 1 }}
+                    transition={{ type: "spring", bounce: 0.3 }}
+                  >
+                    <Check className="w-3 h-3 text-white" />
+                  </motion.div>
+                )}
+              </div>
+
+              <div className="flex-1 min-w-0">
+                <div className="flex items-center gap-2">
+                  <p className="text-sm sm:text-base font-bold text-white">
                     {method.name}
                   </p>
-                  <p className="text-xs text-zinc-500">{method.desc}</p>
+                  <span className="text-[9px] sm:text-[10px] font-medium text-zinc-500 bg-zinc-800 px-2 py-0.5 rounded-full">
+                    {method.regions}
+                  </span>
                 </div>
+                <p className="text-[10px] sm:text-xs text-zinc-500 mt-0.5">{method.description}</p>
               </div>
-            </button>
+            </motion.button>
           ))}
         </div>
       </div>
 
-      {/* CTA */}
-      <Button size="xl" className="w-full">
-        Donate {currentAmount && currentAmount > 0 && formatCurrency(currentAmount)}
-        <ArrowRight className="w-4 h-4" />
-      </Button>
+      {/* ── Summary & CTA ── */}
+      <AnimatePresence mode="wait">
+        {isValid && (
+          <motion.div
+            initial={{ opacity: 0, y: 10, height: 0 }}
+            animate={{ opacity: 1, y: 0, height: "auto" }}
+            exit={{ opacity: 0, y: -10, height: 0 }}
+            className="overflow-hidden"
+          >
+            <div className="rounded-xl bg-linear-to-r from-orange-500/8 to-orange-600/4 border border-orange-500/20 p-4 sm:p-5">
+              <div className="flex items-center justify-between">
+                <div>
+                  <p className="text-[10px] sm:text-xs text-zinc-400 uppercase tracking-wider font-medium">
+                    {donationType === "monthly" ? "Monthly Donation" : "One-Time Donation"}
+                  </p>
+                  <p className="text-2xl sm:text-3xl font-bold text-white font-display mt-1">
+                    {formatCurrency(currentAmount || 0)}
+                  </p>
+                </div>
+                <div className="text-right">
+                  <Badge
+                    variant="success"
+                    className="mb-1"
+                  >
+                    {donationType === "monthly" ? "Recurring" : "Single Gift"}
+                  </Badge>
+                  <p className="text-[10px] text-zinc-500">
+                    via {paymentMethods.find((m) => m.id === selectedPayment)?.name}
+                  </p>
+                </div>
+              </div>
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
 
-      <p className="text-xs text-zinc-500 text-center">
-        All donations are securely processed. You will receive a receipt via
-        email.
-      </p>
+      <div className="space-y-3">
+        <Button
+          size="xl"
+          className="w-full group relative overflow-hidden"
+          onClick={handleDonate}
+          disabled={!isValid || isProcessing}
+        >
+          <span className="relative z-10 flex items-center gap-2">
+            {isProcessing ? (
+              <>
+                <motion.div
+                  animate={{ rotate: 360 }}
+                  transition={{ duration: 1, repeat: Infinity, ease: "linear" }}
+                  className="w-5 h-5 border-2 border-white/30 border-t-white rounded-full"
+                />
+                Processing...
+              </>
+            ) : (
+              <>
+                <Heart className="w-4 h-4 sm:w-5 sm:h-5" />
+                {isValid
+                  ? `Donate ${formatCurrency(currentAmount || 0)}`
+                  : "Select an Amount"}
+                <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+              </>
+            )}
+          </span>
+        </Button>
+
+        {/* Trust signals */}
+        <div className="flex items-center justify-center gap-1.5 text-zinc-600">
+          <Lock className="w-3 h-3" />
+          <span className="text-[10px] sm:text-xs">
+            256-bit SSL encrypted &middot; Secure payment processing
+          </span>
+        </div>
+      </div>
     </div>
   );
 }
 
-// 
-// SCRIPTURE BANNER
-// 
+// ──────────────────────────────────────────
+// SCRIPTURE BANNER — Elevated design
+// ──────────────────────────────────────────
 
 function ScriptureBanner() {
   return (
-    <section className="section-padding bg-linear-to-br from-orange-600 via-orange-500 to-orange-700 relative overflow-hidden">
+    <section className="py-16 sm:py-24 md:py-32 bg-linear-to-br from-orange-600 via-orange-500 to-orange-700 relative overflow-hidden">
       <div className="absolute inset-0">
-        <div className="absolute top-0 right-0 w-96 h-96 bg-white/5 rounded-full -translate-y-1/2 translate-x-1/2 blur-3xl" />
-        <div className="absolute bottom-0 left-0 w-96 h-96 bg-white/5 rounded-full translate-y-1/2 -translate-x-1/2 blur-3xl" />
+        <div className="absolute top-0 right-0 w-125 h-125 bg-white/6 rounded-full -translate-y-1/2 translate-x-1/2 blur-3xl" />
+        <div className="absolute bottom-0 left-0 w-125 h-125 bg-white/6 rounded-full translate-y-1/2 -translate-x-1/2 blur-3xl" />
+        <div className="absolute inset-0 bg-[url('/images/man-integrity.jpg')] bg-cover bg-center opacity-[0.06] mix-blend-overlay" />
       </div>
       <div className="container-wide relative z-10 text-center">
         <motion.div {...fadeInUp}>
-          <p className="text-xl sm:text-xl md:text-2xl lg:text-3xl font-display font-bold text-white leading-relaxed max-w-3xl mx-auto">
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/10 border border-white/20 backdrop-blur-sm mb-6 sm:mb-8">
+            <Heart className="w-3 h-3 text-white" />
+            <span className="text-[10px] sm:text-xs font-semibold tracking-[0.2em] uppercase text-white/90">
+              The Word
+            </span>
+          </div>
+          <p className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-display font-bold text-white leading-relaxed max-w-3xl mx-auto">
             &ldquo;Give, and it will be given to you. A good measure, pressed
             down, shaken together and running over, will be poured into your
             lap.&rdquo;
           </p>
-          <p className="text-orange-100/70 mt-4 font-medium"> Luke 6:38</p>
+          <div className="mt-6 sm:mt-8 inline-flex items-center gap-3">
+            <div className="h-px w-8 bg-white/30" />
+            <p className="text-white/70 font-medium text-sm sm:text-base">Luke 6:38</p>
+            <div className="h-px w-8 bg-white/30" />
+          </div>
         </motion.div>
       </div>
     </section>
   );
 }
 
-// 
-// PAGE
-// 
+// ──────────────────────────────────────────
+// PAGE COMPOSITION
+// ──────────────────────────────────────────
 
 export default function DonatePage() {
   return (
@@ -352,60 +545,104 @@ export default function DonatePage() {
       <ImpactSection />
       <div className="divider-gradient" />
 
-      {/* Donation Form Section */}
-      <section className="section-padding bg-zinc-900/30">
+      {/* ── Donation Form Section ── */}
+      <section className="section-padding relative overflow-hidden">
         <div className="absolute inset-0 bg-radial-dark pointer-events-none" />
+        <div className="absolute inset-0 bg-grid opacity-10" />
+
         <div className="container-wide relative z-10">
           <motion.div {...fadeInUp}>
             <SectionHeading
               label="Give"
-              title="Make a Donation"
-              description="Choose your donation amount and preferred payment method."
+              title="Make Your Donation"
+              description="Choose your amount, frequency, and preferred payment method to support the vision."
             />
           </motion.div>
 
-          <div className="mt-8 sm:mt-12 grid grid-cols-1 lg:grid-cols-5 gap-8 sm:gap-10 max-w-5xl mx-auto">
-            <motion.div {...fadeInUp} className="lg:col-span-3">
-              <Card>
-                <CardContent className="p-4 sm:p-6 md:p-10">
+          <div className="mt-10 sm:mt-14 grid grid-cols-1 lg:grid-cols-12 gap-8 sm:gap-10 max-w-6xl mx-auto">
+            {/* Form — takes majority of space */}
+            <motion.div {...fadeInUp} className="lg:col-span-7">
+              <div className="rounded-2xl border border-zinc-800/80 bg-zinc-900/60 backdrop-blur-sm shadow-2xl shadow-black/40 overflow-hidden">
+                {/* Form header */}
+                <div className="px-5 sm:px-8 pt-6 sm:pt-8 pb-4 sm:pb-5 border-b border-zinc-800/60">
+                  <div className="flex items-center gap-3">
+                    <div className="w-10 h-10 rounded-xl bg-orange-500/10 border border-orange-500/20 flex items-center justify-center">
+                      <Heart className="w-5 h-5 text-orange-500" />
+                    </div>
+                    <div>
+                      <h3 className="text-base sm:text-lg font-bold text-white font-display">
+                        Partner With Us
+                      </h3>
+                      <p className="text-[10px] sm:text-xs text-zinc-500">
+                        Every gift makes a difference
+                      </p>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Form body */}
+                <div className="p-5 sm:p-8">
                   <DonationForm />
-                </CardContent>
-              </Card>
+                </div>
+              </div>
             </motion.div>
 
+            {/* Side panel — imagery + extra info */}
             <motion.div
               initial={{ opacity: 0, x: 30 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.8 }}
-              className="lg:col-span-2 space-y-4 sm:space-y-6 hidden lg:block"
+              transition={{ duration: 0.8, delay: 0.2 }}
+              className="lg:col-span-5 space-y-5 hidden lg:flex lg:flex-col"
             >
-              <div className="relative aspect-3/4 rounded-xl sm:rounded-2xl overflow-hidden border border-zinc-800/50">
+              {/* Main image */}
+              <div className="relative flex-1 min-h-80 rounded-2xl overflow-hidden border border-zinc-800/60">
                 <ProtectedImage
                   src="/images/man-5.jpg"
                   alt="Support the Vision"
                   fill
                   className="object-cover"
                 />
-                <div className="absolute inset-0 bg-linear-to-t from-zinc-950/70 to-transparent" />
-                <div className="absolute bottom-6 left-6 right-6">
+                <div className="absolute inset-0 bg-linear-to-t from-zinc-950/90 via-zinc-950/30 to-transparent" />
+                <div className="absolute bottom-0 left-0 right-0 p-6">
                   <p className="text-white font-display text-xl font-bold mb-2">
                     Your Gift Matters
                   </p>
-                  <p className="text-zinc-300 text-sm">
-                    Every contribution fuels the formation of men and the expansion
-                    of purpose across nations.
+                  <p className="text-zinc-300 text-sm leading-relaxed">
+                    Every contribution fuels the formation of men and the
+                    expansion of purpose across nations.
                   </p>
                 </div>
               </div>
-              <div className="relative aspect-video rounded-xl sm:rounded-2xl overflow-hidden border border-zinc-800/50">
+
+              {/* Trust bar */}
+              <div className="rounded-2xl border border-zinc-800/60 bg-zinc-900/60 backdrop-blur-sm p-5">
+                <div className="grid grid-cols-2 gap-4">
+                  {[
+                    { icon: Shield, label: "Verified Ministry" },
+                    { icon: Lock, label: "Data Protected" },
+                    { icon: Globe, label: "Global Reach" },
+                    { icon: Heart, label: "100% To Mission" },
+                  ].map((item) => (
+                    <div key={item.label} className="flex items-center gap-2.5">
+                      <div className="w-8 h-8 rounded-lg bg-orange-500/10 flex items-center justify-center shrink-0">
+                        <item.icon className="w-3.5 h-3.5 text-orange-500" />
+                      </div>
+                      <span className="text-[11px] font-medium text-zinc-400">{item.label}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              {/* Secondary image */}
+              <div className="relative h-40 rounded-2xl overflow-hidden border border-zinc-800/60">
                 <ProtectedImage
                   src="/images/hero-alt.jpg"
                   alt="Integrity Man Network"
                   fill
                   className="object-cover"
                 />
-                <div className="absolute inset-0 bg-linear-to-t from-zinc-950/50 to-transparent" />
+                <div className="absolute inset-0 bg-linear-to-t from-zinc-950/60 to-transparent" />
               </div>
             </motion.div>
           </div>
