@@ -132,7 +132,7 @@ function EventsCTA() {
       <div className="container-wide relative z-10 text-center">
         <motion.div {...fadeInUp} className="max-w-2xl mx-auto">
           <h2 className="font-display text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4 sm:mb-6">Ready to Attend?</h2>
-          <p className="text-orange-100/80 text-sm sm:text-lg mb-8 sm:mb-10 leading-relaxed">
+          <p className="text-zinc-900 text-sm sm:text-lg mb-8 sm:mb-10 leading-relaxed">
             Stay connected for upcoming event announcements, early registrations, and exclusive access to our gatherings.
           </p>
           <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center">
