@@ -96,7 +96,7 @@ export function Header() {
             <Link href="/" className="flex items-center gap-2.5 sm:gap-3 group">
               <div className="relative">
                 <Image
-                  src="/images/IntegrityMan Logo.png"
+                  src="/images/Integrity Man Official Logo.png"
                   alt="Integrity Man Network"
                   width={44}
                   height={44}
@@ -211,7 +211,7 @@ export function Header() {
               <div className="flex items-center justify-between px-6 py-5 border-b border-zinc-800/50">
                 <div className="flex items-center gap-2.5">
                   <Image
-                    src="/images/IntegrityMan Logo.png"
+                    src="/images/Integrity Man Official Logo.png"
                     alt="Integrity Man Network"
                     width={32}
                     height={32}

@@ -108,7 +108,7 @@ export default function RegisterPage() {
         <div className="text-center mb-8">
           <Link href="/" className="inline-flex items-center gap-3 group mb-6">
             <Image
-              src="/images/IntegrityMan Logo.png"
+              src="/images/Integrity Man Official Logo.png"
               alt="Integrity Man Network"
               width={48}
               height={48}

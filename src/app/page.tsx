@@ -183,7 +183,7 @@ function DefinitionsSection() {
                   >
                     <div className={cn(
                       "shrink-0 w-10 h-10 sm:w-12 sm:h-12 rounded-xl flex items-center justify-center transition-all duration-500",
-                      isOpen ? "bg-orange-500 shadow-lg shadow-orange-500/30" : "bg-white"
+                      isOpen ? "bg-orange-500 shadow-lg shadow-orange-500/30" : "bg-transparent"
                     )}>
                       <Icon className={cn("w-5 h-5 sm:w-6 sm:h-6 transition-colors", isOpen ? "text-white" : "text-orange-500")} />
                     </div>
@@ -221,92 +221,94 @@ function DefinitionsSection() {
   );
 }
 
-//  CHANNELS PREVIEW — BENTO GRID 
+//  CHANNELS PREVIEW — AUTO-SCROLLING MARQUEE 
 function ChannelsPreview() {
-  // Layout config: first item spans 2 cols on desktop
-  const gridClasses = [
-    "md:col-span-2 md:row-span-1", // Schools — hero tile
-    "md:col-span-1",               // Outreach
-    "md:col-span-1",               // Networking
-    "md:col-span-2",               // Support & Charity — wide bottom
-  ];
+  const doubled = [...CHANNELS, ...CHANNELS]; // duplicate for seamless loop
 
   return (
     <section className="section-padding relative overflow-hidden">
       <div className="absolute inset-0 bg-radial-dark" />
-      <div className="container-wide relative z-10">
-        <motion.div {...fadeInUp}>
-          <SectionHeading label="Our Channels" title="How We Advance The Mandate" description="Strategic channels designed to form, equip, deploy, and support men across every stage of life and calling." />
-        </motion.div>
+      <div className="relative z-10">
+        <div className="container-wide">
+          <motion.div {...fadeInUp}>
+            <SectionHeading label="Our Channels" title="How We Advance The Mandate" description="Strategic channels designed to form, equip, deploy, and support men across every stage of life and calling." />
+          </motion.div>
+        </div>
 
-        <motion.div {...stagger} className="mt-10 sm:mt-16">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-5">
-            {CHANNELS.map((channel, i) => {
-              const Icon = ICON_MAP[channel.icon];
-              const isHero = i === 0;
-              const isWide = i === 3;
-              return (
-                <motion.div key={channel.id} {...fadeInUp} className={gridClasses[i]}>
-                  <Link href={`/channels#${channel.id}`} className="block h-full">
+        {/* Marquee container — full width, overflow hidden */}
+        <div className="mt-10 sm:mt-16 relative">
+          {/* Fade edges */}
+          <div className="absolute left-0 top-0 bottom-0 w-16 sm:w-32 bg-linear-to-r from-zinc-950 to-transparent z-10 pointer-events-none" />
+          <div className="absolute right-0 top-0 bottom-0 w-16 sm:w-32 bg-linear-to-l from-zinc-950 to-transparent z-10 pointer-events-none" />
+
+          <div className="overflow-hidden">
+            <div className="flex gap-4 sm:gap-6 animate-marquee hover:[animation-play-state:paused]">
+              {doubled.map((channel, i) => {
+                const Icon = ICON_MAP[channel.icon];
+                const isEven = i % 2 === 0;
+                return (
+                  <Link
+                    key={`${channel.id}-${i}`}
+                    href={`/channels#${channel.id}`}
+                    className="block shrink-0 w-80 sm:w-95 md:w-105"
+                  >
                     <div className={cn(
-                      "group relative h-full rounded-2xl overflow-hidden border border-zinc-800/50 transition-all duration-500 hover:border-orange-500/30 hover:-translate-y-1",
-                      isHero || isWide ? "bg-white" : "bg-zinc-900/60 hover:bg-zinc-800/60"
+                      "group relative h-full rounded-2xl overflow-hidden border transition-all duration-500 hover:border-orange-500/30 hover:-translate-y-1",
+                      isEven
+                        ? "bg-white border-zinc-200"
+                        : "bg-zinc-900/60 border-zinc-800/50 hover:bg-zinc-800/60"
                     )}>
                       {/* Orange accent line */}
                       <div className="absolute top-0 left-0 right-0 h-1 bg-linear-to-r from-orange-500 to-orange-600 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
 
-                      <div className={cn("p-6 sm:p-8", isHero && "md:p-10", isWide && "md:flex md:items-center md:gap-10 md:p-10")}>
-                        <div className={cn(isWide && "md:shrink-0")}>
-                          <div className={cn(
-                            "rounded-xl flex items-center justify-center mb-4 sm:mb-5 transition-all duration-500",
-                            isHero || isWide
-                              ? "w-14 h-14 sm:w-16 sm:h-16 bg-orange-500 shadow-lg shadow-orange-500/20 group-hover:shadow-orange-500/40"
-                              : "w-11 h-11 sm:w-12 sm:h-12 bg-white"
-                          )}>
-                            <Icon className={cn(
-                              "w-6 h-6 sm:w-7 sm:h-7 transition-colors",
-                              isHero || isWide ? "text-white" : "text-orange-500"
-                            )} />
-                          </div>
-
-                          <p className={cn(
-                            "text-[10px] sm:text-xs font-semibold uppercase tracking-wider mb-2",
-                            isHero || isWide ? "text-orange-500" : "text-orange-500/60"
-                          )}>
-                            {channel.subtitle}
-                          </p>
-
-                          <h3 className={cn(
-                            "font-bold font-display mb-3",
-                            isHero ? "text-2xl sm:text-3xl text-zinc-900" : isWide ? "text-xl sm:text-2xl text-zinc-900" : "text-lg sm:text-xl text-white"
-                          )}>
-                            {channel.title}
-                          </h3>
+                      <div className="p-6 sm:p-8">
+                        <div className={cn(
+                          "w-12 h-12 sm:w-14 sm:h-14 rounded-xl flex items-center justify-center mb-4 sm:mb-5 transition-all duration-500",
+                          isEven
+                            ? "bg-orange-500 shadow-lg shadow-orange-500/20 group-hover:shadow-orange-500/40"
+                            : "bg-transparent"
+                        )}>
+                          <Icon className={cn(
+                            "w-6 h-6 sm:w-7 sm:h-7 transition-colors",
+                            isEven ? "text-white" : "text-orange-500"
+                          )} />
                         </div>
 
-                        <div className="flex-1">
-                          <p className={cn(
-                            "leading-relaxed",
-                            isHero ? "text-sm sm:text-base text-zinc-600" : isWide ? "text-sm text-zinc-600" : "text-xs sm:text-sm text-zinc-400"
-                          )}>
-                            {channel.description}
-                          </p>
+                        <p className={cn(
+                          "text-[10px] sm:text-xs font-semibold uppercase tracking-wider mb-2",
+                          isEven ? "text-orange-500" : "text-orange-500/60"
+                        )}>
+                          {channel.subtitle}
+                        </p>
 
-                          <div className={cn(
-                            "mt-4 sm:mt-5 flex items-center gap-2 font-semibold text-sm",
-                            isHero || isWide ? "text-orange-500" : "text-orange-500/80"
-                          )}>
-                            Learn more <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-                          </div>
+                        <h3 className={cn(
+                          "text-lg sm:text-xl font-bold font-display mb-3",
+                          isEven ? "text-zinc-900" : "text-white"
+                        )}>
+                          {channel.title}
+                        </h3>
+
+                        <p className={cn(
+                          "text-xs sm:text-sm leading-relaxed line-clamp-3",
+                          isEven ? "text-zinc-600" : "text-zinc-400"
+                        )}>
+                          {channel.description}
+                        </p>
+
+                        <div className={cn(
+                          "mt-4 sm:mt-5 flex items-center gap-2 font-semibold text-sm",
+                          isEven ? "text-orange-500" : "text-orange-500/80"
+                        )}>
+                          Learn more <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                         </div>
                       </div>
                     </div>
                   </Link>
-                </motion.div>
-              );
-            })}
+                );
+              })}
+            </div>
           </div>
-        </motion.div>
+        </div>
 
         <motion.div {...fadeInUp} className="mt-8 sm:mt-12 text-center">
           <Link href="/channels" className="block sm:inline">
@@ -355,7 +357,7 @@ function EventsPreview() {
                         "w-14 h-14 sm:w-16 sm:h-16 rounded-2xl flex items-center justify-center transition-all duration-500",
                         isEven
                           ? "bg-orange-500 shadow-lg shadow-orange-500/20 group-hover:shadow-orange-500/40"
-                          : "bg-white"
+                          : "bg-transparent"
                       )}>
                         <Icon className={cn("w-6 h-6 sm:w-7 sm:h-7", isEven ? "text-white" : "text-orange-500")} />
                       </div>

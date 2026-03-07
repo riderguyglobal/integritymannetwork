@@ -57,7 +57,7 @@ export const metadata: Metadata = {
     siteName: "The Integrity Man Network",
     images: [
       {
-        url: "/images/IntegrityMan Logo.png",
+        url: "/images/Integrity Man Official Logo.png",
         width: 512,
         height: 512,
         alt: "Integrity Man Network Logo",

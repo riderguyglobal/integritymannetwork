@@ -73,7 +73,7 @@ export default function AdminLayout({
           </button>
           <div className="flex items-center gap-2">
             <Image
-              src="/images/IntegrityMan Logo.png"
+              src="/images/Integrity Man Official Logo.png"
               alt="TIMN"
               width={28}
               height={28}
@@ -109,7 +109,7 @@ export default function AdminLayout({
         {/* Logo */}
         <div className="flex items-center gap-3 px-6 py-5 border-b border-zinc-800/50">
           <Image
-            src="/images/IntegrityMan Logo.png"
+            src="/images/Integrity Man Official Logo.png"
             alt="Integrity Man Network"
             width={36}
             height={36}

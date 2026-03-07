@@ -17,6 +17,7 @@ import {
   Shield,
 } from "lucide-react";
 import Link from "next/link";
+import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -111,8 +112,14 @@ function SchoolsSection() {
             {/* Right  Content */}
             <div className="p-5 sm:p-8 md:p-12 flex flex-col justify-center">
               <div className="flex items-center gap-3 sm:gap-4 mb-4 sm:mb-6">
-                <div className="w-11 h-11 sm:w-14 sm:h-14 rounded-xl bg-white flex items-center justify-center">
-                  <BookOpen className="w-5 h-5 sm:w-6 sm:h-6 text-orange-500" />
+                <div className="w-11 h-11 sm:w-14 sm:h-14 rounded-xl overflow-hidden bg-white flex items-center justify-center">
+                  <Image
+                    src="/images/School Of Integrity.png"
+                    alt="School of Integrity"
+                    width={56}
+                    height={56}
+                    className="w-full h-full object-contain"
+                  />
                 </div>
                 <div>
                   <h3 className="text-lg sm:text-2xl font-bold text-white font-display">

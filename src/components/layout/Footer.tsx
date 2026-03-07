@@ -82,7 +82,7 @@ export function Footer() {
           <div className="col-span-2 md:col-span-1">
             <Link href="/" className="flex items-center gap-2 sm:gap-3 mb-4 sm:mb-6">
               <Image
-                src="/images/IntegrityMan Logo.png"
+                src="/images/Integrity Man Official Logo.png"
                 alt="Integrity Man Network"
                 width={44}
                 height={44}
