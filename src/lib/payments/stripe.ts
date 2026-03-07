@@ -42,7 +42,7 @@ export async function createStripeCheckoutSession({
     metadata: { orderId },
     line_items: items.map((item) => ({
       price_data: {
-        currency: "ngn",
+        currency: "ghs",
         product_data: {
           name: item.name,
           ...(item.image ? { images: [item.image] } : {}),
@@ -84,7 +84,7 @@ export async function createStripeDonationSession({
     line_items: [
       {
         price_data: {
-          currency: "ngn",
+          currency: "ghs",
           product_data: {
             name: "Donation — The Integrity Man Network",
           },

@@ -162,19 +162,19 @@ export default function CheckoutPage() {
                     <label className="block text-sm text-zinc-400 mb-1.5">
                       City
                     </label>
-                    <Input placeholder="Lagos" />
+                    <Input placeholder="Accra" />
                   </div>
                   <div>
                     <label className="block text-sm text-zinc-400 mb-1.5">
-                      State
+                      Region
                     </label>
-                    <Input placeholder="Lagos" />
+                    <Input placeholder="Greater Accra" />
                   </div>
                   <div>
                     <label className="block text-sm text-zinc-400 mb-1.5">
                       Country
                     </label>
-                    <Input placeholder="Nigeria" />
+                    <Input placeholder="Ghana" />
                   </div>
                 </div>
 

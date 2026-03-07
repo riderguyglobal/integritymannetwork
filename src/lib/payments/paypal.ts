@@ -34,7 +34,7 @@ async function getPayPalAccessToken(): Promise<string> {
  */
 export async function createPayPalOrder({
   amount,
-  currency = "USD",
+  currency = "GHS",
   description,
   orderId,
   returnUrl,

@@ -226,7 +226,7 @@ const contactDetails = [
   {
     icon: MapPin,
     title: "Visit Us",
-    value: "Lagos, Nigeria",
+    value: "Accra, Ghana",
     href: null,
     color: "from-orange-500 to-yellow-500",
   },
@@ -346,7 +346,7 @@ const faqs = [
   {
     question: "Where is The Integrity Man Network located?",
     answer:
-      "We are currently based in Lagos, Nigeria, but our vision is global. Through our online platforms, events, and expanding chapters, we are reaching men across nations.",
+      "We are currently based in Accra, Ghana, but our vision is global. Through our online platforms, events, and expanding chapters, we are reaching men across nations.",
   },
 ];
 

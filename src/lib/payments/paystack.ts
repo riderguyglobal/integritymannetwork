@@ -33,11 +33,11 @@ export async function initializePaystackTransaction({
     headers: getHeaders(),
     body: JSON.stringify({
       email,
-      amount: Math.round(amount * 100), // Convert to Kobo
+      amount: Math.round(amount * 100), // Convert to Pesewas
       reference,
       callback_url: callbackUrl,
       metadata: metadata || {},
-      currency: "NGN",
+      currency: "GHS",
     }),
   });
 
@@ -107,7 +107,7 @@ export async function createPaystackPlan({
       name,
       amount: Math.round(amount * 100),
       interval,
-      currency: "NGN",
+      currency: "GHS",
     }),
   });
 

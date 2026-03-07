@@ -35,7 +35,7 @@ const PRODUCT = {
     "Designed specifically for men within The Integrity Man Network community, each page includes daily scripture meditation prompts, reflection questions on purpose and integrity, weekly accountability checkpoints, and goal-setting frameworks aligned with Kingdom principles.",
     "Premium quality: Hardcover binding, 160gsm paper, ribbon bookmark, and lay-flat design. The perfect companion for your formation journey.",
   ],
-  price: 15000,
+  price: 120,
   comparePrice: null,
   category: "Books & Journals",
   rating: 4.8,
@@ -61,13 +61,13 @@ const PRODUCT = {
 };
 
 const RELATED_PRODUCTS = [
-  { slug: "purpose-driven-man-book", name: "The Purpose-Driven Man", price: 8500, comparePrice: 12000, category: "Books & Journals", rating: 4.9, reviews: 56 },
-  { slug: "integrity-mug", name: "Integrity Ceramic Mug", price: 5000, comparePrice: null, category: "Accessories", rating: 4.5, reviews: 12 },
-  { slug: "timn-tshirt-orange", name: "TIMN Statement Tee — Orange", price: 12000, comparePrice: null, category: "Apparel", rating: 4.6, reviews: 32 },
+  { slug: "purpose-driven-man-book", name: "The Purpose-Driven Man", price: 70, comparePrice: 95, category: "Books & Journals", rating: 4.9, reviews: 56 },
+  { slug: "integrity-mug", name: "Integrity Ceramic Mug", price: 40, comparePrice: null, category: "Accessories", rating: 4.5, reviews: 12 },
+  { slug: "timn-tshirt-orange", name: "TIMN Statement Tee — Orange", price: 95, comparePrice: null, category: "Apparel", rating: 4.6, reviews: 32 },
 ];
 
 const SHIPPING_INFO = [
-  { icon: Truck, title: "Free Shipping", desc: "On orders over ₦50,000" },
+  { icon: Truck, title: "Free Shipping", desc: "On orders over GH₵500" },
   { icon: Shield, title: "Secure Payment", desc: "256-bit SSL encrypted" },
   { icon: RotateCcw, title: "30-Day Returns", desc: "Hassle-free returns" },
   { icon: Package, title: "Quality Guaranteed", desc: "Premium materials" },
@@ -235,7 +235,7 @@ export default function ProductPage() {
                     </>
                   )}
                 </div>
-                {product.price >= 50000 && (
+                {product.price >= 500 && (
                   <p className="text-xs text-emerald-400/80 flex items-center gap-1.5 mt-1">
                     <Truck className="w-3.5 h-3.5" />
                     Eligible for free shipping

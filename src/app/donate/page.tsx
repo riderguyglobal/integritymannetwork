@@ -207,12 +207,12 @@ function ImpactSection() {
 // ──────────────────────────────────────────
 
 const presetAmounts = [
-  { value: 5000, label: "₦5,000" },
-  { value: 10000, label: "₦10,000" },
-  { value: 25000, label: "₦25,000" },
-  { value: 50000, label: "₦50,000" },
-  { value: 100000, label: "₦100,000" },
-  { value: 250000, label: "₦250,000" },
+  { value: 50, label: "GH₵50" },
+  { value: 100, label: "GH₵100" },
+  { value: 200, label: "GH₵200" },
+  { value: 500, label: "GH₵500" },
+  { value: 1000, label: "GH₵1,000" },
+  { value: 2500, label: "GH₵2,500" },
 ];
 
 type PaymentMethod = "paystack" | "stripe" | "paypal";
@@ -227,7 +227,7 @@ const paymentMethods: {
     id: "paystack",
     name: "Paystack",
     description: "Cards, Bank Transfer, USSD",
-    regions: "Nigeria & Africa",
+    regions: "Ghana & Africa",
   },
   {
     id: "stripe",
@@ -244,14 +244,14 @@ const paymentMethods: {
 ];
 
 function DonationForm() {
-  const [selectedAmount, setSelectedAmount] = useState<number | null>(25000);
+  const [selectedAmount, setSelectedAmount] = useState<number | null>(200);
   const [customAmount, setCustomAmount] = useState<string>("");
   const [donationType, setDonationType] = useState<"one-time" | "monthly">("one-time");
   const [selectedPayment, setSelectedPayment] = useState<PaymentMethod>("paystack");
   const [isProcessing, setIsProcessing] = useState(false);
 
   const currentAmount = customAmount ? parseInt(customAmount, 10) : selectedAmount;
-  const isValid = currentAmount && currentAmount >= 500;
+  const isValid = currentAmount && currentAmount >= 5;
 
   const handleDonate = async () => {
     if (!isValid) return;
@@ -348,7 +348,7 @@ function DonationForm() {
         {/* Custom amount */}
         <div className="mt-3 sm:mt-4">
           <div className="relative">
-            <span className="absolute left-4 top-1/2 -translate-y-1/2 text-sm font-bold text-zinc-500">₦</span>
+            <span className="absolute left-4 top-1/2 -translate-y-1/2 text-sm font-bold text-zinc-500">GH₵</span>
             <Input
               type="number"
               placeholder="Enter custom amount"
@@ -360,7 +360,7 @@ function DonationForm() {
               className="pl-9 h-12 sm:h-13 text-base bg-zinc-800/30 border-zinc-700/40 focus:border-orange-500/50 rounded-xl"
             />
           </div>
-          <p className="text-[10px] text-zinc-600 mt-1.5">Minimum donation: ₦500</p>
+          <p className="text-[10px] text-zinc-600 mt-1.5">Minimum donation: GH₵5</p>
         </div>
       </div>
 

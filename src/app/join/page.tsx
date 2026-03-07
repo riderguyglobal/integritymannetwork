@@ -265,13 +265,13 @@ function RegistrationForm() {
           <label htmlFor="city" className="text-xs sm:text-sm font-medium text-zinc-300">
             City *
           </label>
-          <Input id="city" name="city" placeholder="Lagos" required />
+          <Input id="city" name="city" placeholder="Accra" required />
         </div>
         <div className="space-y-1.5 sm:space-y-2">
           <label htmlFor="country" className="text-xs sm:text-sm font-medium text-zinc-300">
             Country *
           </label>
-          <Input id="country" name="country" placeholder="Nigeria" required />
+          <Input id="country" name="country" placeholder="Ghana" required />
         </div>
       </div>
 

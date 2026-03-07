@@ -35,7 +35,7 @@ const PRODUCTS = [
     slug: "integrity-journal",
     name: "The Integrity Journal",
     description: "A premium guided journal designed for men pursuing purpose. 90-day structured reflections with scripture, prompts, and accountability tracking.",
-    price: 15000,
+    price: 120,
     comparePrice: null,
     category: "Books & Journals",
     rating: 4.8,
@@ -49,8 +49,8 @@ const PRODUCTS = [
     slug: "purpose-driven-man-book",
     name: "The Purpose-Driven Man",
     description: "A foundational teaching on eternal purpose, work, and integrity — distilled from the core teachings of The Integrity Man Network.",
-    price: 8500,
-    comparePrice: 12000,
+    price: 70,
+    comparePrice: 95,
     category: "Books & Journals",
     rating: 4.9,
     reviews: 56,
@@ -63,7 +63,7 @@ const PRODUCTS = [
     slug: "integrity-cap-black",
     name: "Integrity Cap — Midnight",
     description: "Premium structured cap with embroidered TIMN shield logo. Adjustable strap, breathable fabric.",
-    price: 7500,
+    price: 60,
     comparePrice: null,
     category: "Apparel",
     rating: 4.7,
@@ -77,7 +77,7 @@ const PRODUCTS = [
     slug: "timn-tshirt-orange",
     name: "TIMN Statement Tee — Orange",
     description: "Premium cotton tee with 'God. Work. Integrity.' statement print. Comfortable fit for everyday wear.",
-    price: 12000,
+    price: 95,
     comparePrice: null,
     category: "Apparel",
     rating: 4.6,
@@ -91,7 +91,7 @@ const PRODUCTS = [
     slug: "integrity-mug",
     name: "Integrity Ceramic Mug",
     description: "Matt black ceramic mug with orange TIMN branding. 350ml capacity, microwave & dishwasher safe.",
-    price: 5000,
+    price: 40,
     comparePrice: null,
     category: "Accessories",
     rating: 4.5,
@@ -105,8 +105,8 @@ const PRODUCTS = [
     slug: "matthew-633-wallart",
     name: "Matthew 6:33 Wall Art",
     description: "Premium canvas print featuring Matthew 6:33 in elegant typography with the TIMN brand treatment. 50×70cm.",
-    price: 25000,
-    comparePrice: 30000,
+    price: 200,
+    comparePrice: 250,
     category: "Accessories",
     rating: 5.0,
     reviews: 8,
@@ -171,7 +171,7 @@ function StoreHero() {
           {/* Trust bar */}
           <div className="flex flex-wrap items-center gap-4 sm:gap-6 text-zinc-500">
             {[
-              { icon: Truck, text: "Free shipping over ₦50,000" },
+              { icon: Truck, text: "Free shipping over GH₵500" },
               { icon: Shield, text: "Secure checkout" },
               { icon: Package, text: "Quality guaranteed" },
             ].map((item) => (
@@ -384,7 +384,7 @@ function ProductCard({
           </div>
 
           {/* Shipping hint */}
-          {product.price >= 50000 && (
+          {product.price >= 500 && (
             <p className="text-[10px] text-emerald-400/70 mt-1.5 flex items-center gap-1">
               <Truck className="w-3 h-3" />
               Free shipping
@@ -496,10 +496,10 @@ export default function StorePage() {
                 </h3>
                 <div className="space-y-0.5">
                   {[
-                    { label: "Under ₦5,000", filter: () => {} },
-                    { label: "₦5,000 – ₦10,000", filter: () => {} },
-                    { label: "₦10,000 – ₦25,000", filter: () => {} },
-                    { label: "Over ₦25,000", filter: () => {} },
+                    { label: "Under GH₵50", filter: () => {} },
+                    { label: "GH₵50 – GH₵100", filter: () => {} },
+                    { label: "GH₵100 – GH₵200", filter: () => {} },
+                    { label: "Over GH₵200", filter: () => {} },
                   ].map((range) => (
                     <button
                       key={range.label}
@@ -518,7 +518,7 @@ export default function StorePage() {
                   Free Shipping
                 </p>
                 <p className="text-[11px] text-zinc-400 leading-relaxed">
-                  On all orders over ₦50,000. No code needed.
+                  On all orders over GH₵500. No code needed.
                 </p>
               </div>
             </aside>

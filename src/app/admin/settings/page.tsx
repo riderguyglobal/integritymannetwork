@@ -152,7 +152,7 @@ export default function AdminSettingsPage() {
           </div>
           <div>
             <label className="block text-sm text-zinc-400 mb-1.5">Address</label>
-            <Input value={address} onChange={(e) => setAddress(e.target.value)} className="max-w-md" placeholder="Lagos, Nigeria" />
+            <Input value={address} onChange={(e) => setAddress(e.target.value)} className="max-w-md" placeholder="Accra, Ghana" />
           </div>
         </CardContent>
       </Card>
